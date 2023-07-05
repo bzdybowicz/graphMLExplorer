@@ -14,6 +14,11 @@
 		7F5226B72A557BC00082475D /* GraphMLExplorerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5226B62A557BC00082475D /* GraphMLExplorerTests.swift */; };
 		7F5226C12A557BC10082475D /* GraphMLExplorerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5226C02A557BC10082475D /* GraphMLExplorerUITests.swift */; };
 		7F5226C32A557BC10082475D /* GraphMLExplorerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5226C22A557BC10082475D /* GraphMLExplorerUITestsLaunchTests.swift */; };
+		7F5226D12A55C56E0082475D /* GraphMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5226D02A55C56E0082475D /* GraphMLParser.swift */; };
+		7F5226D32A55C5AE0082475D /* FileLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5226D22A55C5AE0082475D /* FileLoader.swift */; };
+		7F5226D62A55C70E0082475D /* sample.xml in Resources */ = {isa = PBXBuildFile; fileRef = 7F5226D52A55C70D0082475D /* sample.xml */; };
+		7F5226D92A55C84F0082475D /* AppStart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5226D82A55C84F0082475D /* AppStart.swift */; };
+		7F5226DC2A55C8CE0082475D /* SwiftyXMLParser in Frameworks */ = {isa = PBXBuildFile; productRef = 7F5226DB2A55C8CE0082475D /* SwiftyXMLParser */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +50,10 @@
 		7F5226BC2A557BC10082475D /* GraphMLExplorerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GraphMLExplorerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F5226C02A557BC10082475D /* GraphMLExplorerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphMLExplorerUITests.swift; sourceTree = "<group>"; };
 		7F5226C22A557BC10082475D /* GraphMLExplorerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphMLExplorerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		7F5226D02A55C56E0082475D /* GraphMLParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphMLParser.swift; sourceTree = "<group>"; };
+		7F5226D22A55C5AE0082475D /* FileLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileLoader.swift; sourceTree = "<group>"; };
+		7F5226D52A55C70D0082475D /* sample.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = sample.xml; sourceTree = SOURCE_ROOT; };
+		7F5226D82A55C84F0082475D /* AppStart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStart.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F5226DC2A55C8CE0082475D /* SwiftyXMLParser in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +105,10 @@
 		7F5226A32A557BBE0082475D /* GraphMLExplorer */ = {
 			isa = PBXGroup;
 			children = (
+				7F5226D72A55C82F0082475D /* Coordination */,
+				7F5226D52A55C70D0082475D /* sample.xml */,
+				7F5226D42A55C5DC0082475D /* Files */,
+				7F5226CF2A55C5620082475D /* Parsing */,
 				7F5226A42A557BBE0082475D /* GraphMLExplorerApp.swift */,
 				7F5226A62A557BBE0082475D /* ContentView.swift */,
 				7F5226A82A557BC00082475D /* Assets.xcassets */,
@@ -129,6 +143,30 @@
 			path = GraphMLExplorerUITests;
 			sourceTree = "<group>";
 		};
+		7F5226CF2A55C5620082475D /* Parsing */ = {
+			isa = PBXGroup;
+			children = (
+				7F5226D02A55C56E0082475D /* GraphMLParser.swift */,
+			);
+			path = Parsing;
+			sourceTree = "<group>";
+		};
+		7F5226D42A55C5DC0082475D /* Files */ = {
+			isa = PBXGroup;
+			children = (
+				7F5226D22A55C5AE0082475D /* FileLoader.swift */,
+			);
+			path = Files;
+			sourceTree = "<group>";
+		};
+		7F5226D72A55C82F0082475D /* Coordination */ = {
+			isa = PBXGroup;
+			children = (
+				7F5226D82A55C84F0082475D /* AppStart.swift */,
+			);
+			path = Coordination;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -145,6 +183,9 @@
 			dependencies = (
 			);
 			name = GraphMLExplorer;
+			packageProductDependencies = (
+				7F5226DB2A55C8CE0082475D /* SwiftyXMLParser */,
+			);
 			productName = GraphMLExplorer;
 			productReference = 7F5226A12A557BBE0082475D /* GraphMLExplorer.app */;
 			productType = "com.apple.product-type.application";
@@ -217,6 +258,9 @@
 				Base,
 			);
 			mainGroup = 7F5226982A557BBE0082475D;
+			packageReferences = (
+				7F5226DA2A55C8CE0082475D /* XCRemoteSwiftPackageReference "SwiftyXMLParser" */,
+			);
 			productRefGroup = 7F5226A22A557BBE0082475D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -233,6 +277,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F5226D62A55C70E0082475D /* sample.xml in Resources */,
 				7F5226AD2A557BC00082475D /* Preview Assets.xcassets in Resources */,
 				7F5226A92A557BC00082475D /* Assets.xcassets in Resources */,
 			);
@@ -261,6 +306,9 @@
 			files = (
 				7F5226A72A557BBE0082475D /* ContentView.swift in Sources */,
 				7F5226A52A557BBE0082475D /* GraphMLExplorerApp.swift in Sources */,
+				7F5226D32A55C5AE0082475D /* FileLoader.swift in Sources */,
+				7F5226D92A55C84F0082475D /* AppStart.swift in Sources */,
+				7F5226D12A55C56E0082475D /* GraphMLParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -612,6 +660,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7F5226DA2A55C8CE0082475D /* XCRemoteSwiftPackageReference "SwiftyXMLParser" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/yahoojapan/SwiftyXMLParser";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7F5226DB2A55C8CE0082475D /* SwiftyXMLParser */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7F5226DA2A55C8CE0082475D /* XCRemoteSwiftPackageReference "SwiftyXMLParser" */;
+			productName = SwiftyXMLParser;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7F5226992A557BBE0082475D /* Project object */;
 }
