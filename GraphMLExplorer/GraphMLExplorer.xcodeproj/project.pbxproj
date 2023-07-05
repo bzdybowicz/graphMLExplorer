@@ -1,0 +1,617 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7F5226A52A557BBE0082475D /* GraphMLExplorerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5226A42A557BBE0082475D /* GraphMLExplorerApp.swift */; };
+		7F5226A72A557BBE0082475D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5226A62A557BBE0082475D /* ContentView.swift */; };
+		7F5226A92A557BC00082475D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F5226A82A557BC00082475D /* Assets.xcassets */; };
+		7F5226AD2A557BC00082475D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F5226AC2A557BC00082475D /* Preview Assets.xcassets */; };
+		7F5226B72A557BC00082475D /* GraphMLExplorerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5226B62A557BC00082475D /* GraphMLExplorerTests.swift */; };
+		7F5226C12A557BC10082475D /* GraphMLExplorerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5226C02A557BC10082475D /* GraphMLExplorerUITests.swift */; };
+		7F5226C32A557BC10082475D /* GraphMLExplorerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5226C22A557BC10082475D /* GraphMLExplorerUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7F5226B32A557BC00082475D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7F5226992A557BBE0082475D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7F5226A02A557BBE0082475D;
+			remoteInfo = GraphMLExplorer;
+		};
+		7F5226BD2A557BC10082475D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7F5226992A557BBE0082475D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7F5226A02A557BBE0082475D;
+			remoteInfo = GraphMLExplorer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7F5226A12A557BBE0082475D /* GraphMLExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GraphMLExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F5226A42A557BBE0082475D /* GraphMLExplorerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphMLExplorerApp.swift; sourceTree = "<group>"; };
+		7F5226A62A557BBE0082475D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		7F5226A82A557BC00082475D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7F5226AA2A557BC00082475D /* GraphMLExplorer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GraphMLExplorer.entitlements; sourceTree = "<group>"; };
+		7F5226AC2A557BC00082475D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		7F5226B22A557BC00082475D /* GraphMLExplorerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GraphMLExplorerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F5226B62A557BC00082475D /* GraphMLExplorerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphMLExplorerTests.swift; sourceTree = "<group>"; };
+		7F5226BC2A557BC10082475D /* GraphMLExplorerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GraphMLExplorerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F5226C02A557BC10082475D /* GraphMLExplorerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphMLExplorerUITests.swift; sourceTree = "<group>"; };
+		7F5226C22A557BC10082475D /* GraphMLExplorerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphMLExplorerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7F52269E2A557BBE0082475D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7F5226AF2A557BC00082475D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7F5226B92A557BC10082475D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7F5226982A557BBE0082475D = {
+			isa = PBXGroup;
+			children = (
+				7F5226A32A557BBE0082475D /* GraphMLExplorer */,
+				7F5226B52A557BC00082475D /* GraphMLExplorerTests */,
+				7F5226BF2A557BC10082475D /* GraphMLExplorerUITests */,
+				7F5226A22A557BBE0082475D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7F5226A22A557BBE0082475D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7F5226A12A557BBE0082475D /* GraphMLExplorer.app */,
+				7F5226B22A557BC00082475D /* GraphMLExplorerTests.xctest */,
+				7F5226BC2A557BC10082475D /* GraphMLExplorerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7F5226A32A557BBE0082475D /* GraphMLExplorer */ = {
+			isa = PBXGroup;
+			children = (
+				7F5226A42A557BBE0082475D /* GraphMLExplorerApp.swift */,
+				7F5226A62A557BBE0082475D /* ContentView.swift */,
+				7F5226A82A557BC00082475D /* Assets.xcassets */,
+				7F5226AA2A557BC00082475D /* GraphMLExplorer.entitlements */,
+				7F5226AB2A557BC00082475D /* Preview Content */,
+			);
+			path = GraphMLExplorer;
+			sourceTree = "<group>";
+		};
+		7F5226AB2A557BC00082475D /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				7F5226AC2A557BC00082475D /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		7F5226B52A557BC00082475D /* GraphMLExplorerTests */ = {
+			isa = PBXGroup;
+			children = (
+				7F5226B62A557BC00082475D /* GraphMLExplorerTests.swift */,
+			);
+			path = GraphMLExplorerTests;
+			sourceTree = "<group>";
+		};
+		7F5226BF2A557BC10082475D /* GraphMLExplorerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				7F5226C02A557BC10082475D /* GraphMLExplorerUITests.swift */,
+				7F5226C22A557BC10082475D /* GraphMLExplorerUITestsLaunchTests.swift */,
+			);
+			path = GraphMLExplorerUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7F5226A02A557BBE0082475D /* GraphMLExplorer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7F5226C62A557BC10082475D /* Build configuration list for PBXNativeTarget "GraphMLExplorer" */;
+			buildPhases = (
+				7F52269D2A557BBE0082475D /* Sources */,
+				7F52269E2A557BBE0082475D /* Frameworks */,
+				7F52269F2A557BBE0082475D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GraphMLExplorer;
+			productName = GraphMLExplorer;
+			productReference = 7F5226A12A557BBE0082475D /* GraphMLExplorer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7F5226B12A557BC00082475D /* GraphMLExplorerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7F5226C92A557BC10082475D /* Build configuration list for PBXNativeTarget "GraphMLExplorerTests" */;
+			buildPhases = (
+				7F5226AE2A557BC00082475D /* Sources */,
+				7F5226AF2A557BC00082475D /* Frameworks */,
+				7F5226B02A557BC00082475D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7F5226B42A557BC00082475D /* PBXTargetDependency */,
+			);
+			name = GraphMLExplorerTests;
+			productName = GraphMLExplorerTests;
+			productReference = 7F5226B22A557BC00082475D /* GraphMLExplorerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		7F5226BB2A557BC10082475D /* GraphMLExplorerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7F5226CC2A557BC10082475D /* Build configuration list for PBXNativeTarget "GraphMLExplorerUITests" */;
+			buildPhases = (
+				7F5226B82A557BC10082475D /* Sources */,
+				7F5226B92A557BC10082475D /* Frameworks */,
+				7F5226BA2A557BC10082475D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7F5226BE2A557BC10082475D /* PBXTargetDependency */,
+			);
+			name = GraphMLExplorerUITests;
+			productName = GraphMLExplorerUITests;
+			productReference = 7F5226BC2A557BC10082475D /* GraphMLExplorerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7F5226992A557BBE0082475D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					7F5226A02A557BBE0082475D = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+					7F5226B12A557BC00082475D = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 7F5226A02A557BBE0082475D;
+					};
+					7F5226BB2A557BC10082475D = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 7F5226A02A557BBE0082475D;
+					};
+				};
+			};
+			buildConfigurationList = 7F52269C2A557BBE0082475D /* Build configuration list for PBXProject "GraphMLExplorer" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7F5226982A557BBE0082475D;
+			productRefGroup = 7F5226A22A557BBE0082475D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7F5226A02A557BBE0082475D /* GraphMLExplorer */,
+				7F5226B12A557BC00082475D /* GraphMLExplorerTests */,
+				7F5226BB2A557BC10082475D /* GraphMLExplorerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7F52269F2A557BBE0082475D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F5226AD2A557BC00082475D /* Preview Assets.xcassets in Resources */,
+				7F5226A92A557BC00082475D /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7F5226B02A557BC00082475D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7F5226BA2A557BC10082475D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7F52269D2A557BBE0082475D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F5226A72A557BBE0082475D /* ContentView.swift in Sources */,
+				7F5226A52A557BBE0082475D /* GraphMLExplorerApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7F5226AE2A557BC00082475D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F5226B72A557BC00082475D /* GraphMLExplorerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7F5226B82A557BC10082475D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F5226C12A557BC10082475D /* GraphMLExplorerUITests.swift in Sources */,
+				7F5226C32A557BC10082475D /* GraphMLExplorerUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7F5226B42A557BC00082475D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7F5226A02A557BBE0082475D /* GraphMLExplorer */;
+			targetProxy = 7F5226B32A557BC00082475D /* PBXContainerItemProxy */;
+		};
+		7F5226BE2A557BC10082475D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7F5226A02A557BBE0082475D /* GraphMLExplorer */;
+			targetProxy = 7F5226BD2A557BC10082475D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		7F5226C42A557BC10082475D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7F5226C52A557BC10082475D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		7F5226C72A557BC10082475D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = GraphMLExplorer/GraphMLExplorer.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"GraphMLExplorer/Preview Content\"";
+				DEVELOPMENT_TEAM = CJHC4J7DMG;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = bzdybowicz.GraphMLExplorer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7F5226C82A557BC10082475D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = GraphMLExplorer/GraphMLExplorer.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"GraphMLExplorer/Preview Content\"";
+				DEVELOPMENT_TEAM = CJHC4J7DMG;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = bzdybowicz.GraphMLExplorer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		7F5226CA2A557BC10082475D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CJHC4J7DMG;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = bzdybowicz.GraphMLExplorerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GraphMLExplorer.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GraphMLExplorer";
+			};
+			name = Debug;
+		};
+		7F5226CB2A557BC10082475D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CJHC4J7DMG;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = bzdybowicz.GraphMLExplorerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GraphMLExplorer.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GraphMLExplorer";
+			};
+			name = Release;
+		};
+		7F5226CD2A557BC10082475D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CJHC4J7DMG;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = bzdybowicz.GraphMLExplorerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = GraphMLExplorer;
+			};
+			name = Debug;
+		};
+		7F5226CE2A557BC10082475D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CJHC4J7DMG;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = bzdybowicz.GraphMLExplorerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = GraphMLExplorer;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7F52269C2A557BBE0082475D /* Build configuration list for PBXProject "GraphMLExplorer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7F5226C42A557BC10082475D /* Debug */,
+				7F5226C52A557BC10082475D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7F5226C62A557BC10082475D /* Build configuration list for PBXNativeTarget "GraphMLExplorer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7F5226C72A557BC10082475D /* Debug */,
+				7F5226C82A557BC10082475D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7F5226C92A557BC10082475D /* Build configuration list for PBXNativeTarget "GraphMLExplorerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7F5226CA2A557BC10082475D /* Debug */,
+				7F5226CB2A557BC10082475D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7F5226CC2A557BC10082475D /* Build configuration list for PBXNativeTarget "GraphMLExplorerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7F5226CD2A557BC10082475D /* Debug */,
+				7F5226CE2A557BC10082475D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7F5226992A557BBE0082475D /* Project object */;
+}
