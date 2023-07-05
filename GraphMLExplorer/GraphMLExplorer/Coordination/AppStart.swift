@@ -25,7 +25,7 @@ struct AppStart: AppStartProtocol {
     func start() {
         var fileContent: String = ""
         do {
-            fileContent = try fileLoader.loadAppBundleFile(xmlName: "Sample")
+            fileContent = try fileLoader.loadAppBundleFile(xmlName: "sample")
         } catch let error {
             print("Start error \(error)")
         }

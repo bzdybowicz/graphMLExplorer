@@ -27,6 +27,22 @@ struct GraphMLParser: GraphMLParserProtocol {
         }
         let xml = XML.parse(data)
         print("XML \(xml)")
+        switch xml {
+        case .singleElement(let element):
+            print("Element \(element)")
+            let graphElement = getGraphXMLElement(element: element)
+            print("Graph \(graphElement)")
+        case .sequence(let elements):
+            print("Sequence elements \(elements)")
+        case .failure(let error):
+            print("XML failure \(error)")
+        }
+    }
+
+    private func getGraphXMLElement(element: XML.Element) -> XML.Element? {
+        element.childElements.first { element in
+            element.name == "graphml"
+        }
     }
 
 }

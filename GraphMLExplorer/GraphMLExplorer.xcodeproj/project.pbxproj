@@ -19,6 +19,7 @@
 		7F5226D62A55C70E0082475D /* sample.xml in Resources */ = {isa = PBXBuildFile; fileRef = 7F5226D52A55C70D0082475D /* sample.xml */; };
 		7F5226D92A55C84F0082475D /* AppStart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5226D82A55C84F0082475D /* AppStart.swift */; };
 		7F5226DC2A55C8CE0082475D /* SwiftyXMLParser in Frameworks */ = {isa = PBXBuildFile; productRef = 7F5226DB2A55C8CE0082475D /* SwiftyXMLParser */; };
+		7F5226DF2A55D2910082475D /* SwiftGraph in Frameworks */ = {isa = PBXBuildFile; productRef = 7F5226DE2A55D2910082475D /* SwiftGraph */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F5226DC2A55C8CE0082475D /* SwiftyXMLParser in Frameworks */,
+				7F5226DF2A55D2910082475D /* SwiftGraph in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,6 +187,7 @@
 			name = GraphMLExplorer;
 			packageProductDependencies = (
 				7F5226DB2A55C8CE0082475D /* SwiftyXMLParser */,
+				7F5226DE2A55D2910082475D /* SwiftGraph */,
 			);
 			productName = GraphMLExplorer;
 			productReference = 7F5226A12A557BBE0082475D /* GraphMLExplorer.app */;
@@ -260,6 +263,7 @@
 			mainGroup = 7F5226982A557BBE0082475D;
 			packageReferences = (
 				7F5226DA2A55C8CE0082475D /* XCRemoteSwiftPackageReference "SwiftyXMLParser" */,
+				7F5226DD2A55D2910082475D /* XCRemoteSwiftPackageReference "SwiftGraph" */,
 			);
 			productRefGroup = 7F5226A22A557BBE0082475D /* Products */;
 			projectDirPath = "";
@@ -670,6 +674,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		7F5226DD2A55D2910082475D /* XCRemoteSwiftPackageReference "SwiftGraph" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/davecom/SwiftGraph";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -677,6 +689,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7F5226DA2A55C8CE0082475D /* XCRemoteSwiftPackageReference "SwiftyXMLParser" */;
 			productName = SwiftyXMLParser;
+		};
+		7F5226DE2A55D2910082475D /* SwiftGraph */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7F5226DD2A55D2910082475D /* XCRemoteSwiftPackageReference "SwiftGraph" */;
+			productName = SwiftGraph;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
