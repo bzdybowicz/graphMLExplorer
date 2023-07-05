@@ -9,15 +9,13 @@ import Foundation
 import SwiftyXMLParser
 import SwiftGraph
 
-protocol XMLParserProtocol {
-
-}
-
 protocol GraphMLParserProtocol {
-    func parse(xmlString: String) -> (any Graph)?
+    func parse(xmlString: String) -> UnweightedGraph<String>
 }
 
 struct GraphMLParser: GraphMLParserProtocol {
+
+    private let emptyGraph = UnweightedGraph<String>()
 
     private enum Constant {
         static let graphmlMarker = "graphml"
@@ -29,12 +27,9 @@ struct GraphMLParser: GraphMLParserProtocol {
         static let id = "id"
     }
 
-    init() {
-    }
-
-    func parse(xmlString: String) -> (any Graph)? {
+    func parse(xmlString: String) -> UnweightedGraph<String> {
         guard let data = xmlString.data(using: .utf8) else {
-            return nil
+            return emptyGraph
         }
         let xml = XML.parse(data)
         switch xml {
@@ -47,7 +42,7 @@ struct GraphMLParser: GraphMLParserProtocol {
         case .failure(let error):
             print("XML failure \(error)")
         }
-        return nil
+        return emptyGraph
     }
 
     private func getGraphXMLElement(element: XML.Element?) -> XML.Element? {
@@ -62,11 +57,10 @@ struct GraphMLParser: GraphMLParserProtocol {
         }
     }
 
-    private func setupGraph(from element: XML.Element?) -> (any Graph)? {
-        guard let element = element else { return nil }
+    private func setupGraph(from element: XML.Element?) -> UnweightedGraph<String> {
         let graph = UnweightedGraph<String>()
+        guard let element = element else { return graph }
         for child in element.childElements {
-            print("Child \(child)")
             if child.name == Constant.node {
                 if let name = child.attributes[Constant.id] {
                     _ = graph.addVertex(name)

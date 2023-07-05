@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7F5226A52A557BBE0082475D /* GraphMLExplorerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5226A42A557BBE0082475D /* GraphMLExplorerApp.swift */; };
-		7F5226A72A557BBE0082475D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5226A62A557BBE0082475D /* ContentView.swift */; };
+		7F5226A72A557BBE0082475D /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5226A62A557BBE0082475D /* GraphView.swift */; };
 		7F5226A92A557BC00082475D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F5226A82A557BC00082475D /* Assets.xcassets */; };
 		7F5226AD2A557BC00082475D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F5226AC2A557BC00082475D /* Preview Assets.xcassets */; };
 		7F5226B72A557BC00082475D /* GraphMLExplorerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5226B62A557BC00082475D /* GraphMLExplorerTests.swift */; };
@@ -42,7 +42,7 @@
 /* Begin PBXFileReference section */
 		7F5226A12A557BBE0082475D /* GraphMLExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GraphMLExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F5226A42A557BBE0082475D /* GraphMLExplorerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphMLExplorerApp.swift; sourceTree = "<group>"; };
-		7F5226A62A557BBE0082475D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		7F5226A62A557BBE0082475D /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 		7F5226A82A557BC00082475D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7F5226AA2A557BC00082475D /* GraphMLExplorer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GraphMLExplorer.entitlements; sourceTree = "<group>"; };
 		7F5226AC2A557BC00082475D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -107,12 +107,12 @@
 		7F5226A32A557BBE0082475D /* GraphMLExplorer */ = {
 			isa = PBXGroup;
 			children = (
+				7F5226E02A55F66B0082475D /* Graph */,
 				7F5226D72A55C82F0082475D /* Coordination */,
 				7F5226D52A55C70D0082475D /* sample.xml */,
 				7F5226D42A55C5DC0082475D /* Files */,
 				7F5226CF2A55C5620082475D /* Parsing */,
 				7F5226A42A557BBE0082475D /* GraphMLExplorerApp.swift */,
-				7F5226A62A557BBE0082475D /* ContentView.swift */,
 				7F5226A82A557BC00082475D /* Assets.xcassets */,
 				7F5226AA2A557BC00082475D /* GraphMLExplorer.entitlements */,
 				7F5226AB2A557BC00082475D /* Preview Content */,
@@ -167,6 +167,14 @@
 				7F5226D82A55C84F0082475D /* AppStart.swift */,
 			);
 			path = Coordination;
+			sourceTree = "<group>";
+		};
+		7F5226E02A55F66B0082475D /* Graph */ = {
+			isa = PBXGroup;
+			children = (
+				7F5226A62A557BBE0082475D /* GraphView.swift */,
+			);
+			path = Graph;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -308,7 +316,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F5226A72A557BBE0082475D /* ContentView.swift in Sources */,
+				7F5226A72A557BBE0082475D /* GraphView.swift in Sources */,
 				7F5226A52A557BBE0082475D /* GraphMLExplorerApp.swift in Sources */,
 				7F5226D32A55C5AE0082475D /* FileLoader.swift in Sources */,
 				7F5226D92A55C84F0082475D /* AppStart.swift in Sources */,

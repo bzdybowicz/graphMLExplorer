@@ -6,12 +6,13 @@
 //
 
 import Foundation
+import SwiftGraph
 
-protocol AppStartProtocol {
-    func start()
+protocol UnweightedGraphLoaderProtocol {
+    func start() -> UnweightedGraph<String>
 }
 
-struct AppStart: AppStartProtocol {
+struct AppStart: UnweightedGraphLoaderProtocol {
 
     private let fileLoader: FileLoadProtocol
     private let graphParser: GraphMLParserProtocol
@@ -22,13 +23,13 @@ struct AppStart: AppStartProtocol {
         self.graphParser = graphParser
     }
 
-    func start() {
+    func start() -> UnweightedGraph<String> {
         var fileContent: String = ""
         do {
             fileContent = try fileLoader.loadAppBundleFile(xmlName: "sample")
         } catch let error {
             print("Start error \(error)")
         }
-        graphParser.parse(xmlString: fileContent)
+        return graphParser.parse(xmlString: fileContent)
     }
 }
