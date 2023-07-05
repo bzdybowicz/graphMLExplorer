@@ -13,10 +13,10 @@ struct GraphMLExplorerApp: App {
     private let appStarter: UnweightedGraphLoaderProtocol
 
     init() {
-        self.init(appStarter: AppStart())
+        self.init(appStarter: UnweightedGraphLoader())
     }
 
-    init(appStarter: UnweightedGraphLoaderProtocol = AppStart()) {
+    init(appStarter: UnweightedGraphLoaderProtocol) {
         self.appStarter = appStarter
     }
 

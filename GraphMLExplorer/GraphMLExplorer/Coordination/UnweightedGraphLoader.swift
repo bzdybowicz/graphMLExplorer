@@ -12,7 +12,7 @@ protocol UnweightedGraphLoaderProtocol {
     func start() -> UnweightedGraph<String>
 }
 
-struct AppStart: UnweightedGraphLoaderProtocol {
+struct UnweightedGraphLoader: UnweightedGraphLoaderProtocol {
 
     private let fileLoader: FileLoadProtocol
     private let graphParser: GraphMLParserProtocol

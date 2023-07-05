@@ -13,6 +13,23 @@ protocol GraphMLParserProtocol {
     func parse(xmlString: String) -> UnweightedGraph<String>
 }
 
+enum Directed: String {
+    case undirected
+    case directed
+
+    var isDirected: Bool {
+        switch self {
+        case .directed: return true
+        case .undirected: return false
+        }
+    }
+
+    static func create(rawValue: String?) -> Directed {
+        guard let rawValue = rawValue else { return .undirected }
+        return Directed(rawValue: rawValue) ?? .undirected
+    }
+}
+
 struct GraphMLParser: GraphMLParserProtocol {
 
     private let emptyGraph = UnweightedGraph<String>()
@@ -24,6 +41,7 @@ struct GraphMLParser: GraphMLParserProtocol {
         static let edge = "edge"
         static let target = "target"
         static let source = "source"
+        static let edgeDefault = "edgedefault"
         static let id = "id"
     }
 
@@ -60,6 +78,7 @@ struct GraphMLParser: GraphMLParserProtocol {
     private func setupGraph(from element: XML.Element?) -> UnweightedGraph<String> {
         let graph = UnweightedGraph<String>()
         guard let element = element else { return graph }
+        let directed: Directed = Directed.create(rawValue: element.attributes[Constant.edgeDefault])
         for child in element.childElements {
             if child.name == Constant.node {
                 if let name = child.attributes[Constant.id] {
@@ -70,7 +89,8 @@ struct GraphMLParser: GraphMLParserProtocol {
             } else if child.name == Constant.edge {
                 if let source = child.attributes[Constant.source] {
                     if let target = child.attributes[Constant.target] {
-                        graph.addEdge(from: source, to: target)
+                        print("Adding source \(source), target \(target), directed \(directed.isDirected)")
+                        graph.addEdge(from: source, to: target, directed: directed.isDirected)
                     } else {
                         // not sure yet
                     }
