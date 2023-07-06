@@ -44,27 +44,20 @@ struct GraphView: View {
     }
 
     var body: some View {
-        ZStack(alignment: .top, content: {
-            Rectangle()
-                .border(.blue)
-            VStack {
-                Text(state.currentNode)
-                    .frame(width: 40, height: 40, alignment: .center)
-                    .background(Color.black)
-                    .clipShape(Rectangle())
-                ScrollView {
-                    LazyVGrid(columns: columns, spacing: 6) {
-                        ForEach(state.childNodes, id: \.self) { item in
-                            Text(state.currentNode)
-                                .frame(width: 40, height: 40, alignment: .center)
-                                .background(Color.black)
-                                .clipShape(Rectangle())
-                        }
+        GraphNodeView(
+            node:
+                GraphNode(
+                    label: state.currentNode,
+                    neighbors: state.childNodes.map {
+                        let neighbors = graph.neighborsForVertex($0) ?? []
+                        print("NESTED NEIGHs \(neighbors)")
+                        return GraphNode(label: $0,
+                                         neighbors: neighbors.map {
+                            GraphNode(label: $0, neighbors: [])
+                        })
                     }
-                    .padding(.horizontal)
-                }
-            }
-        })
+                )
+        )
     }
 }
 

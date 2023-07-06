@@ -24,6 +24,39 @@ struct NodeView: View {
     }
 }
 
+struct GraphNodeView: View {
+    let node: GraphNode
+    //let neighbors: [GraphNode]
+
+    var body: some View {
+        VStack {
+            Text(node.label)
+                .font(.title)
+                .foregroundColor(.white)
+                .padding()
+                .background(Color.blue)
+                .cornerRadius(10)
+
+            if !node.neighbors.isEmpty {
+                ForEach(node.neighbors, id: \.id) { neighbor in
+                    GraphNodeView(node: GraphNode(label: neighbor.label, neighbors: neighbor.neighbors))
+                    .padding(.leading)
+                }
+            }
+        }
+        .padding()
+        .background(Color.gray.opacity(0.2))
+        .cornerRadius(15)
+    }
+}
+
+struct GraphNode: Identifiable {
+    let id = UUID()
+    let label: String
+    let neighbors: [GraphNode]
+}
+
+
 struct NodeView_Previews: PreviewProvider {
     static var previews: some View {
         NodeView(title: "Sample node")
