@@ -15,9 +15,14 @@ extension String: Identifiable {
     }
 }
 
-struct GraphViewState {
-    let currentNode: String
-    let childNodes: [String]
+final class GraphViewState: ObservableObject {
+    @Published var currentNode: String
+    @Published var childNodes: [String]
+
+    init(currentNode: String, childNodes: [String]) {
+        self.currentNode = currentNode
+        self.childNodes = childNodes
+    }
 }
 
 struct GraphView: View {
@@ -31,13 +36,13 @@ struct GraphView: View {
         }
     }
 
-    @State private var state: GraphViewState
+    @StateObject var state: GraphViewState
 
     init(graph: UnweightedGraph<String>) {
         self.graph = graph
         let firstVertex = graph.vertices.first ?? fallbackTitle
         let neighbors = graph.neighborsForVertex(firstVertex) ?? []
-        state = GraphViewState(currentNode: firstVertex,
+        self.state = GraphViewState(currentNode: firstVertex,
                                childNodes: neighbors)
 
         print("state \(firstVertex), \(neighbors)")

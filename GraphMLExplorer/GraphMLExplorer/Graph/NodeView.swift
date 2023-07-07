@@ -26,7 +26,6 @@ struct NodeView: View {
 
 struct GraphNodeView: View {
     let node: GraphNode
-    //let neighbors: [GraphNode]
 
     var body: some View {
         VStack {
@@ -40,7 +39,9 @@ struct GraphNodeView: View {
             if !node.neighbors.isEmpty {
                 ForEach(node.neighbors, id: \.id) { neighbor in
                     GraphNodeView(node: GraphNode(label: neighbor.label, neighbors: neighbor.neighbors))
-                    .padding(.leading)
+                        .padding(.leading).onTapGesture {
+                            print("Tap on \(neighbor.label)")
+                        }
                 }
             }
         }
