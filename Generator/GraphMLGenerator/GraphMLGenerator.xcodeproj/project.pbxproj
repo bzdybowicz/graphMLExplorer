@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7FCC81FF2A5C42D40022C243 /* GraphMLGeneratorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCC81FE2A5C42D40022C243 /* GraphMLGeneratorApp.swift */; };
-		7FCC82012A5C42D40022C243 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCC82002A5C42D40022C243 /* ContentView.swift */; };
+		7FCC82012A5C42D40022C243 /* GeneratorInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCC82002A5C42D40022C243 /* GeneratorInputView.swift */; };
 		7FCC82032A5C42D50022C243 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FCC82022A5C42D50022C243 /* Assets.xcassets */; };
 		7FCC82072A5C42D50022C243 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FCC82062A5C42D50022C243 /* Preview Assets.xcassets */; };
 		7FCC82112A5C42D50022C243 /* GraphMLGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCC82102A5C42D50022C243 /* GraphMLGeneratorTests.swift */; };
@@ -37,7 +37,7 @@
 /* Begin PBXFileReference section */
 		7FCC81FB2A5C42D40022C243 /* GraphMLGenerator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GraphMLGenerator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FCC81FE2A5C42D40022C243 /* GraphMLGeneratorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphMLGeneratorApp.swift; sourceTree = "<group>"; };
-		7FCC82002A5C42D40022C243 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		7FCC82002A5C42D40022C243 /* GeneratorInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratorInputView.swift; sourceTree = "<group>"; };
 		7FCC82022A5C42D50022C243 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7FCC82042A5C42D50022C243 /* GraphMLGenerator.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GraphMLGenerator.entitlements; sourceTree = "<group>"; };
 		7FCC82062A5C42D50022C243 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -98,7 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				7FCC81FE2A5C42D40022C243 /* GraphMLGeneratorApp.swift */,
-				7FCC82002A5C42D40022C243 /* ContentView.swift */,
+				7FCC82002A5C42D40022C243 /* GeneratorInputView.swift */,
 				7FCC82022A5C42D50022C243 /* Assets.xcassets */,
 				7FCC82042A5C42D50022C243 /* GraphMLGenerator.entitlements */,
 				7FCC82052A5C42D50022C243 /* Preview Content */,
@@ -263,7 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7FCC822A2A5C47EC0022C243 /* Generator.swift in Sources */,
-				7FCC82012A5C42D40022C243 /* ContentView.swift in Sources */,
+				7FCC82012A5C42D40022C243 /* GeneratorInputView.swift in Sources */,
 				7FCC81FF2A5C42D40022C243 /* GraphMLGeneratorApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
