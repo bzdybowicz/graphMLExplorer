@@ -7,25 +7,9 @@
 
 import SwiftUI
 
-struct NodeView: View {
-
-    private let title: String
-
-    init(title: String) {
-        self.title = title
-    }
-
-    var body: some View {
-        ZStack(alignment: .top, content: {
-            Rectangle()
-                .border(.blue)
-            Text(title).foregroundColor(.black)
-        })
-    }
-}
-
 struct GraphNodeView: View {
-    let node: GraphNode
+    @ObservedObject var node: GraphNode
+    @ObservedObject var state: GraphViewState
 
     var body: some View {
         VStack {
@@ -38,9 +22,10 @@ struct GraphNodeView: View {
 
             if !node.neighbors.isEmpty {
                 ForEach(node.neighbors, id: \.id) { neighbor in
-                    GraphNodeView(node: GraphNode(label: neighbor.label, neighbors: neighbor.neighbors))
+                    GraphNodeView(node: GraphNode(label: neighbor.label, neighbors: neighbor.neighbors), state: state)
                         .padding(.leading).onTapGesture {
                             print("Tap on \(neighbor.label)")
+                            state.selectVertex(vertex: neighbor.label)
                         }
                 }
             }
@@ -51,15 +36,21 @@ struct GraphNodeView: View {
     }
 }
 
-struct GraphNode: Identifiable {
+final class GraphNode: Identifiable, ObservableObject {
     let id = UUID()
     let label: String
     let neighbors: [GraphNode]
-}
 
-
-struct NodeView_Previews: PreviewProvider {
-    static var previews: some View {
-        NodeView(title: "Sample node")
+    init(label: String, neighbors: [GraphNode]) {
+        self.label = label
+        self.neighbors = neighbors
     }
 }
+
+
+//struct GraphNodeView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        GraphNodeView(node: GraphNode(label: "Sample", neighbors: []),
+//                      state: GraphViewState())
+//    }
+//}

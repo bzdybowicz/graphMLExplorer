@@ -15,20 +15,11 @@ extension String: Identifiable {
     }
 }
 
-final class GraphViewState: ObservableObject {
-    @Published var currentNode: String
-    @Published var childNodes: [String]
 
-    init(currentNode: String, childNodes: [String]) {
-        self.currentNode = currentNode
-        self.childNodes = childNodes
-    }
-}
 
 struct GraphView: View {
 
     private let graph: UnweightedGraph<String>
-    private let fallbackTitle = "No nodes in loaded graph!"
 
     private var columns: [GridItem] {
         state.childNodes.map { _ in
@@ -36,16 +27,12 @@ struct GraphView: View {
         }
     }
 
-    @StateObject var state: GraphViewState
+    @StateObject private var state: GraphViewState
 
     init(graph: UnweightedGraph<String>) {
         self.graph = graph
-        let firstVertex = graph.vertices.first ?? fallbackTitle
-        let neighbors = graph.neighborsForVertex(firstVertex) ?? []
-        self.state = GraphViewState(currentNode: firstVertex,
-                               childNodes: neighbors)
 
-        print("state \(firstVertex), \(neighbors)")
+        _state = StateObject(wrappedValue: GraphViewState(graph: graph))
     }
 
     var body: some View {
@@ -61,7 +48,8 @@ struct GraphView: View {
                             GraphNode(label: $0, neighbors: [])
                         })
                     }
-                )
+                ),
+            state: state
         )
     }
 }
