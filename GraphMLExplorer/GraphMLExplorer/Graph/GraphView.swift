@@ -36,7 +36,7 @@ struct GraphView: View {
     }
 
     var body: some View {
-        GraphNodeView(
+        GraphNodeLayoutWrapperView(layoutType: .horizontal,
             node:
                 GraphNode(
                     label: state.currentNode,
