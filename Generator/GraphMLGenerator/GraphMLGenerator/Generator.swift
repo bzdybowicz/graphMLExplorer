@@ -116,14 +116,14 @@ private extension Generator {
             graph.addChild(edge)
         }
 
-        let edge = XMLElement(name: "edge")
-        edge.setAttributesWith(["id": "e0", "source": "n0", "target": "n1"])
-        graph.addChild(edge)
-
-        let dataEdge = XMLElement(name: "data")
-        dataEdge.setAttributesWith(["key": "d1"])
-        dataEdge.stringValue = "1.5"
-        edge.addChild(dataEdge)
+//        let edge = XMLElement(name: "edge")
+//        edge.setAttributesWith(["id": "e0", "source": "n0", "target": "n1"])
+//        graph.addChild(edge)
+//
+//        let dataEdge = XMLElement(name: "data")
+//        dataEdge.setAttributesWith(["key": "d1"])
+//        dataEdge.stringValue = "1.5"
+//        edge.addChild(dataEdge)
     }
 
     func createDocument() -> XMLDocument {
