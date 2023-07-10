@@ -1,0 +1,621 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7FCC81FF2A5C42D40022C243 /* GraphMLGeneratorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCC81FE2A5C42D40022C243 /* GraphMLGeneratorApp.swift */; };
+		7FCC82012A5C42D40022C243 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCC82002A5C42D40022C243 /* ContentView.swift */; };
+		7FCC82032A5C42D50022C243 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FCC82022A5C42D50022C243 /* Assets.xcassets */; };
+		7FCC82072A5C42D50022C243 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FCC82062A5C42D50022C243 /* Preview Assets.xcassets */; };
+		7FCC82112A5C42D50022C243 /* GraphMLGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCC82102A5C42D50022C243 /* GraphMLGeneratorTests.swift */; };
+		7FCC821B2A5C42D50022C243 /* GraphMLGeneratorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCC821A2A5C42D50022C243 /* GraphMLGeneratorUITests.swift */; };
+		7FCC821D2A5C42D50022C243 /* GraphMLGeneratorUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCC821C2A5C42D50022C243 /* GraphMLGeneratorUITestsLaunchTests.swift */; };
+		7FCC822A2A5C47EC0022C243 /* Generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCC82292A5C47EC0022C243 /* Generator.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7FCC820D2A5C42D50022C243 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7FCC81F32A5C42D40022C243 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7FCC81FA2A5C42D40022C243;
+			remoteInfo = GraphMLGenerator;
+		};
+		7FCC82172A5C42D50022C243 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7FCC81F32A5C42D40022C243 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7FCC81FA2A5C42D40022C243;
+			remoteInfo = GraphMLGenerator;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7FCC81FB2A5C42D40022C243 /* GraphMLGenerator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GraphMLGenerator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FCC81FE2A5C42D40022C243 /* GraphMLGeneratorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphMLGeneratorApp.swift; sourceTree = "<group>"; };
+		7FCC82002A5C42D40022C243 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		7FCC82022A5C42D50022C243 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7FCC82042A5C42D50022C243 /* GraphMLGenerator.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GraphMLGenerator.entitlements; sourceTree = "<group>"; };
+		7FCC82062A5C42D50022C243 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		7FCC820C2A5C42D50022C243 /* GraphMLGeneratorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GraphMLGeneratorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FCC82102A5C42D50022C243 /* GraphMLGeneratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphMLGeneratorTests.swift; sourceTree = "<group>"; };
+		7FCC82162A5C42D50022C243 /* GraphMLGeneratorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GraphMLGeneratorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FCC821A2A5C42D50022C243 /* GraphMLGeneratorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphMLGeneratorUITests.swift; sourceTree = "<group>"; };
+		7FCC821C2A5C42D50022C243 /* GraphMLGeneratorUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphMLGeneratorUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		7FCC82292A5C47EC0022C243 /* Generator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Generator.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7FCC81F82A5C42D40022C243 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7FCC82092A5C42D50022C243 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7FCC82132A5C42D50022C243 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7FCC81F22A5C42D40022C243 = {
+			isa = PBXGroup;
+			children = (
+				7FCC81FD2A5C42D40022C243 /* GraphMLGenerator */,
+				7FCC820F2A5C42D50022C243 /* GraphMLGeneratorTests */,
+				7FCC82192A5C42D50022C243 /* GraphMLGeneratorUITests */,
+				7FCC81FC2A5C42D40022C243 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7FCC81FC2A5C42D40022C243 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7FCC81FB2A5C42D40022C243 /* GraphMLGenerator.app */,
+				7FCC820C2A5C42D50022C243 /* GraphMLGeneratorTests.xctest */,
+				7FCC82162A5C42D50022C243 /* GraphMLGeneratorUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7FCC81FD2A5C42D40022C243 /* GraphMLGenerator */ = {
+			isa = PBXGroup;
+			children = (
+				7FCC81FE2A5C42D40022C243 /* GraphMLGeneratorApp.swift */,
+				7FCC82002A5C42D40022C243 /* ContentView.swift */,
+				7FCC82022A5C42D50022C243 /* Assets.xcassets */,
+				7FCC82042A5C42D50022C243 /* GraphMLGenerator.entitlements */,
+				7FCC82052A5C42D50022C243 /* Preview Content */,
+				7FCC82292A5C47EC0022C243 /* Generator.swift */,
+			);
+			path = GraphMLGenerator;
+			sourceTree = "<group>";
+		};
+		7FCC82052A5C42D50022C243 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				7FCC82062A5C42D50022C243 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		7FCC820F2A5C42D50022C243 /* GraphMLGeneratorTests */ = {
+			isa = PBXGroup;
+			children = (
+				7FCC82102A5C42D50022C243 /* GraphMLGeneratorTests.swift */,
+			);
+			path = GraphMLGeneratorTests;
+			sourceTree = "<group>";
+		};
+		7FCC82192A5C42D50022C243 /* GraphMLGeneratorUITests */ = {
+			isa = PBXGroup;
+			children = (
+				7FCC821A2A5C42D50022C243 /* GraphMLGeneratorUITests.swift */,
+				7FCC821C2A5C42D50022C243 /* GraphMLGeneratorUITestsLaunchTests.swift */,
+			);
+			path = GraphMLGeneratorUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7FCC81FA2A5C42D40022C243 /* GraphMLGenerator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7FCC82202A5C42D50022C243 /* Build configuration list for PBXNativeTarget "GraphMLGenerator" */;
+			buildPhases = (
+				7FCC81F72A5C42D40022C243 /* Sources */,
+				7FCC81F82A5C42D40022C243 /* Frameworks */,
+				7FCC81F92A5C42D40022C243 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GraphMLGenerator;
+			productName = GraphMLGenerator;
+			productReference = 7FCC81FB2A5C42D40022C243 /* GraphMLGenerator.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7FCC820B2A5C42D50022C243 /* GraphMLGeneratorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7FCC82232A5C42D50022C243 /* Build configuration list for PBXNativeTarget "GraphMLGeneratorTests" */;
+			buildPhases = (
+				7FCC82082A5C42D50022C243 /* Sources */,
+				7FCC82092A5C42D50022C243 /* Frameworks */,
+				7FCC820A2A5C42D50022C243 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7FCC820E2A5C42D50022C243 /* PBXTargetDependency */,
+			);
+			name = GraphMLGeneratorTests;
+			productName = GraphMLGeneratorTests;
+			productReference = 7FCC820C2A5C42D50022C243 /* GraphMLGeneratorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		7FCC82152A5C42D50022C243 /* GraphMLGeneratorUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7FCC82262A5C42D50022C243 /* Build configuration list for PBXNativeTarget "GraphMLGeneratorUITests" */;
+			buildPhases = (
+				7FCC82122A5C42D50022C243 /* Sources */,
+				7FCC82132A5C42D50022C243 /* Frameworks */,
+				7FCC82142A5C42D50022C243 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7FCC82182A5C42D50022C243 /* PBXTargetDependency */,
+			);
+			name = GraphMLGeneratorUITests;
+			productName = GraphMLGeneratorUITests;
+			productReference = 7FCC82162A5C42D50022C243 /* GraphMLGeneratorUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7FCC81F32A5C42D40022C243 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					7FCC81FA2A5C42D40022C243 = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+					7FCC820B2A5C42D50022C243 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 7FCC81FA2A5C42D40022C243;
+					};
+					7FCC82152A5C42D50022C243 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 7FCC81FA2A5C42D40022C243;
+					};
+				};
+			};
+			buildConfigurationList = 7FCC81F62A5C42D40022C243 /* Build configuration list for PBXProject "GraphMLGenerator" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7FCC81F22A5C42D40022C243;
+			productRefGroup = 7FCC81FC2A5C42D40022C243 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7FCC81FA2A5C42D40022C243 /* GraphMLGenerator */,
+				7FCC820B2A5C42D50022C243 /* GraphMLGeneratorTests */,
+				7FCC82152A5C42D50022C243 /* GraphMLGeneratorUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7FCC81F92A5C42D40022C243 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7FCC82072A5C42D50022C243 /* Preview Assets.xcassets in Resources */,
+				7FCC82032A5C42D50022C243 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7FCC820A2A5C42D50022C243 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7FCC82142A5C42D50022C243 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7FCC81F72A5C42D40022C243 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7FCC822A2A5C47EC0022C243 /* Generator.swift in Sources */,
+				7FCC82012A5C42D40022C243 /* ContentView.swift in Sources */,
+				7FCC81FF2A5C42D40022C243 /* GraphMLGeneratorApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7FCC82082A5C42D50022C243 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7FCC82112A5C42D50022C243 /* GraphMLGeneratorTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7FCC82122A5C42D50022C243 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7FCC821D2A5C42D50022C243 /* GraphMLGeneratorUITestsLaunchTests.swift in Sources */,
+				7FCC821B2A5C42D50022C243 /* GraphMLGeneratorUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7FCC820E2A5C42D50022C243 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7FCC81FA2A5C42D40022C243 /* GraphMLGenerator */;
+			targetProxy = 7FCC820D2A5C42D50022C243 /* PBXContainerItemProxy */;
+		};
+		7FCC82182A5C42D50022C243 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7FCC81FA2A5C42D40022C243 /* GraphMLGenerator */;
+			targetProxy = 7FCC82172A5C42D50022C243 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		7FCC821E2A5C42D50022C243 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7FCC821F2A5C42D50022C243 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		7FCC82212A5C42D50022C243 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = GraphMLGenerator/GraphMLGenerator.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"GraphMLGenerator/Preview Content\"";
+				DEVELOPMENT_TEAM = CJHC4J7DMG;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = bzdybowicz.GraphMLGenerator;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7FCC82222A5C42D50022C243 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = GraphMLGenerator/GraphMLGenerator.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"GraphMLGenerator/Preview Content\"";
+				DEVELOPMENT_TEAM = CJHC4J7DMG;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = bzdybowicz.GraphMLGenerator;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		7FCC82242A5C42D50022C243 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CJHC4J7DMG;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = bzdybowicz.GraphMLGeneratorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GraphMLGenerator.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GraphMLGenerator";
+			};
+			name = Debug;
+		};
+		7FCC82252A5C42D50022C243 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CJHC4J7DMG;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = bzdybowicz.GraphMLGeneratorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GraphMLGenerator.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GraphMLGenerator";
+			};
+			name = Release;
+		};
+		7FCC82272A5C42D50022C243 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CJHC4J7DMG;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = bzdybowicz.GraphMLGeneratorUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = GraphMLGenerator;
+			};
+			name = Debug;
+		};
+		7FCC82282A5C42D50022C243 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CJHC4J7DMG;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = bzdybowicz.GraphMLGeneratorUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = GraphMLGenerator;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7FCC81F62A5C42D40022C243 /* Build configuration list for PBXProject "GraphMLGenerator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7FCC821E2A5C42D50022C243 /* Debug */,
+				7FCC821F2A5C42D50022C243 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7FCC82202A5C42D50022C243 /* Build configuration list for PBXNativeTarget "GraphMLGenerator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7FCC82212A5C42D50022C243 /* Debug */,
+				7FCC82222A5C42D50022C243 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7FCC82232A5C42D50022C243 /* Build configuration list for PBXNativeTarget "GraphMLGeneratorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7FCC82242A5C42D50022C243 /* Debug */,
+				7FCC82252A5C42D50022C243 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7FCC82262A5C42D50022C243 /* Build configuration list for PBXNativeTarget "GraphMLGeneratorUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7FCC82272A5C42D50022C243 /* Debug */,
+				7FCC82282A5C42D50022C243 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7FCC81F32A5C42D40022C243 /* Project object */;
+}
