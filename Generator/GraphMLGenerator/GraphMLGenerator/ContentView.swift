@@ -8,6 +8,13 @@
 import SwiftUI
 
 struct ContentView: View {
+
+    private let generator: GeneratorProtocol
+
+    init(generator: GeneratorProtocol = Generator()) {
+        self.generator = generator
+    }
+
     var body: some View {
         VStack {
             Image(systemName: "globe")
@@ -16,7 +23,7 @@ struct ContentView: View {
             Text("Hello, world!")
             Spacer(minLength: 20)
             Button("Generate") {
-                Generator().generate()
+                self.generator.generate()
             }
         }
         .padding()
