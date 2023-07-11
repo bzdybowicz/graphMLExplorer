@@ -10,6 +10,7 @@ import SwiftyXMLParser
 
 protocol FileLoadProtocol {
     func load(filePath: String) throws -> String
+    func load(fileURL: URL) throws -> String
     func loadAppBundleFile(xmlName: String) throws -> String
 }
 
@@ -20,7 +21,13 @@ enum FileLoaderError: Error {
 struct FileLoader: FileLoadProtocol {
 
     func load(filePath: String) throws -> String {
-        ""
+        let string = try String(contentsOfFile: filePath, encoding: String.Encoding.utf8)
+        return string
+    }
+
+    func load(fileURL: URL) throws -> String {
+        let string = try String(contentsOf: fileURL, encoding: String.Encoding.utf8)
+        return string
     }
 
     func loadAppBundleFile(xmlName: String) throws -> String {

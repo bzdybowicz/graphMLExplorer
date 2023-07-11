@@ -10,19 +10,19 @@ import SwiftUI
 @main
 struct GraphMLExplorerApp: App {
 
-    private let appStarter: UnweightedGraphLoaderProtocol
+    private let unweightedGraphLoader: UnweightedGraphLoaderProtocol
 
     init() {
-        self.init(appStarter: UnweightedGraphLoader())
+        self.init(unweightedGraphLoader: UnweightedGraphLoader())
     }
 
-    init(appStarter: UnweightedGraphLoaderProtocol) {
-        self.appStarter = appStarter
+    init(unweightedGraphLoader: UnweightedGraphLoaderProtocol) {
+        self.unweightedGraphLoader = unweightedGraphLoader
     }
 
     var body: some Scene {
         WindowGroup {
-            GraphView(graph: appStarter.start())
+            GraphView(graph: unweightedGraphLoader.start(), unweightedGraphLoader: unweightedGraphLoader)
         }
     }
 }

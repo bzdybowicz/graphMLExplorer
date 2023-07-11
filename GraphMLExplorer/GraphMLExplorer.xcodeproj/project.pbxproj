@@ -111,12 +111,12 @@
 		7F5226A32A557BBE0082475D /* GraphMLExplorer */ = {
 			isa = PBXGroup;
 			children = (
+				7F5226A42A557BBE0082475D /* GraphMLExplorerApp.swift */,
 				7F5226E02A55F66B0082475D /* Graph */,
 				7F5226D72A55C82F0082475D /* Coordination */,
 				7F5226D52A55C70D0082475D /* sample.xml */,
 				7F5226D42A55C5DC0082475D /* Files */,
 				7F5226CF2A55C5620082475D /* Parsing */,
-				7F5226A42A557BBE0082475D /* GraphMLExplorerApp.swift */,
 				7F5226A82A557BC00082475D /* Assets.xcassets */,
 				7F5226AA2A557BC00082475D /* GraphMLExplorer.entitlements */,
 				7F5226AB2A557BC00082475D /* Preview Content */,
