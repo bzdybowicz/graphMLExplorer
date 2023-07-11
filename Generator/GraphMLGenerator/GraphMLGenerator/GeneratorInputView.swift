@@ -12,6 +12,12 @@ struct GeneratorInput {
     var edgesInputMin: String = ""
     var edgesInputMax: String = ""
     var edgeDefault: EdgeDefault = .undirected
+    var dataType: DataType = .string
+    var elementKind: ElementKind = .node
+    var customDataName: String = ""
+
+    var customDataSet: Set<CustomData> = []
+    var customDataArray: [CustomData] { Array(customDataSet) }
 
     var numberOfNodes: Int {
         if let int = Int(numberOfNodesInput) {
@@ -29,6 +35,18 @@ struct GeneratorInput {
         if minValue > maxValue { return Int.random(in: maxValue..<minValue) }
         return Int.random(in: minValue..<maxValue)
     }
+
+    mutating func addCustomData() {
+        customDataSet.insert(CustomData(dataType: dataType,
+                                          elementKind: elementKind,
+                                          name: customDataName))
+    }
+}
+
+struct CustomData: Equatable, Hashable {
+    let dataType: DataType
+    let elementKind: ElementKind
+    let name: String
 }
 
 struct GeneratorInputView: View {
@@ -62,8 +80,30 @@ struct GeneratorInputView: View {
                     }
                 })
                 .pickerStyle(.segmented)
-
             }
+            Spacer(minLength: 10).frame(height: 100)
+            HStack {
+                Picker("Custom data type", selection: $input.dataType, content: {
+                    ForEach(DataType.allCases, id: \.self) {
+                        Text($0.rawValue.capitalized).tag($0)
+                    }
+                })
+                .pickerStyle(.menu)
+                Picker("Custom data for:", selection: $input.elementKind, content: {
+                    ForEach(ElementKind.allCases, id: \.self) {
+                        Text($0.rawValue.capitalized).tag($0)
+                    }
+                })
+                .pickerStyle(.menu)
+            }
+            HStack {
+                Text("Data name")
+                TextField("Data name", text: $input.customDataName)
+                Button("Tap to confirm adding custom data") {
+                    self.input.addCustomData()
+                }
+            }
+            Spacer(minLength: 10).frame(height: 100)
             Button("Generate") {
                 self.generator.generate(input: input)
             }

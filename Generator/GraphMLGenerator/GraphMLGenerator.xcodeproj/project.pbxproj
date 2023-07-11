@@ -16,6 +16,8 @@
 		7FCC821D2A5C42D50022C243 /* GraphMLGeneratorUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCC821C2A5C42D50022C243 /* GraphMLGeneratorUITestsLaunchTests.swift */; };
 		7FCC822A2A5C47EC0022C243 /* Generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCC82292A5C47EC0022C243 /* Generator.swift */; };
 		7FCC822C2A5D56E80022C243 /* EdgeDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCC822B2A5D56E80022C243 /* EdgeDefault.swift */; };
+		7FCC822E2A5D5B950022C243 /* DataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCC822D2A5D5B950022C243 /* DataType.swift */; };
+		7FCC82302A5D5C150022C243 /* ElementKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCC822F2A5D5C150022C243 /* ElementKind.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		7FCC821C2A5C42D50022C243 /* GraphMLGeneratorUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphMLGeneratorUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		7FCC82292A5C47EC0022C243 /* Generator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Generator.swift; sourceTree = "<group>"; };
 		7FCC822B2A5D56E80022C243 /* EdgeDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdgeDefault.swift; sourceTree = "<group>"; };
+		7FCC822D2A5D5B950022C243 /* DataType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataType.swift; sourceTree = "<group>"; };
+		7FCC822F2A5D5C150022C243 /* ElementKind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementKind.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,8 @@
 				7FCC82052A5C42D50022C243 /* Preview Content */,
 				7FCC82292A5C47EC0022C243 /* Generator.swift */,
 				7FCC822B2A5D56E80022C243 /* EdgeDefault.swift */,
+				7FCC822D2A5D5B950022C243 /* DataType.swift */,
+				7FCC822F2A5D5C150022C243 /* ElementKind.swift */,
 			);
 			path = GraphMLGenerator;
 			sourceTree = "<group>";
@@ -266,8 +272,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				7FCC822A2A5C47EC0022C243 /* Generator.swift in Sources */,
+				7FCC822E2A5D5B950022C243 /* DataType.swift in Sources */,
 				7FCC822C2A5D56E80022C243 /* EdgeDefault.swift in Sources */,
 				7FCC82012A5C42D40022C243 /* GeneratorInputView.swift in Sources */,
+				7FCC82302A5D5C150022C243 /* ElementKind.swift in Sources */,
 				7FCC81FF2A5C42D40022C243 /* GraphMLGeneratorApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -445,10 +453,11 @@
 				PRODUCT_BUNDLE_IDENTIFIER = bzdybowicz.GraphMLGenerator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = macosx;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -483,10 +492,11 @@
 				PRODUCT_BUNDLE_IDENTIFIER = bzdybowicz.GraphMLGenerator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = macosx;
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
