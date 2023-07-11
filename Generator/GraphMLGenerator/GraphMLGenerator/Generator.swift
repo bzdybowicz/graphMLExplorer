@@ -20,7 +20,7 @@ final class Generator: GeneratorProtocol {
     func generate(input: GeneratorInput) {
         print("Input number of nodes \(input.numberOfNodes)")
         let document = createDocument()
-        var graph = createGraphElement(document: document)
+        let graph = createGraphElement(document: document, input: input)
         //addKeys(graph: graph)
         addNodes(graph: graph, input: input)
         saveUsingPanel(document: document, input: input)
@@ -28,7 +28,7 @@ final class Generator: GeneratorProtocol {
 }
 
 private extension Generator {
-    func createGraphElement(document: XMLDocument) -> XMLElement {
+    func createGraphElement(document: XMLDocument, input: GeneratorInput) -> XMLElement {
         let graphml = XMLElement(name: "graphml")
         document.addChild(graphml)
         let headerAttributes = [
@@ -39,9 +39,13 @@ private extension Generator {
         graphml.setAttributesWith(headerAttributes)
 
         let graph = XMLElement(name: "graph")
-        graph.setAttributesWith(["id": "G", "edgedefault": "undirected"])
+        setEdge(graph: graph, input: input)
         graphml.addChild(graph)
         return graph
+    }
+
+    func setEdge(graph: XMLElement, input: GeneratorInput) {
+        graph.setAttributesWith(["id": "G", "edgedefault": input.edgeDefault.xmlValue])
     }
 
     func saveUsingPanel(document: XMLDocument, input: GeneratorInput) {
@@ -112,7 +116,11 @@ private extension Generator {
             let maxNode = input.numberOfNodes
             let targetInt = (Int.random(in: 0..<maxNode))
             let targetString = "n\(targetInt)"
-            edge.setAttributesWith(["source": sourceId, "target": targetString])
+            var attributes = ["source": sourceId, "target": targetString]
+            if input.edgeDefault == .mixed {
+                attributes["directed"] = String(Bool.random())
+            }
+            edge.setAttributesWith(attributes)
             graph.addChild(edge)
         }
 

@@ -15,6 +15,7 @@
 		7FCC821B2A5C42D50022C243 /* GraphMLGeneratorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCC821A2A5C42D50022C243 /* GraphMLGeneratorUITests.swift */; };
 		7FCC821D2A5C42D50022C243 /* GraphMLGeneratorUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCC821C2A5C42D50022C243 /* GraphMLGeneratorUITestsLaunchTests.swift */; };
 		7FCC822A2A5C47EC0022C243 /* Generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCC82292A5C47EC0022C243 /* Generator.swift */; };
+		7FCC822C2A5D56E80022C243 /* EdgeDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCC822B2A5D56E80022C243 /* EdgeDefault.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		7FCC821A2A5C42D50022C243 /* GraphMLGeneratorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphMLGeneratorUITests.swift; sourceTree = "<group>"; };
 		7FCC821C2A5C42D50022C243 /* GraphMLGeneratorUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphMLGeneratorUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		7FCC82292A5C47EC0022C243 /* Generator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Generator.swift; sourceTree = "<group>"; };
+		7FCC822B2A5D56E80022C243 /* EdgeDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdgeDefault.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				7FCC82042A5C42D50022C243 /* GraphMLGenerator.entitlements */,
 				7FCC82052A5C42D50022C243 /* Preview Content */,
 				7FCC82292A5C47EC0022C243 /* Generator.swift */,
+				7FCC822B2A5D56E80022C243 /* EdgeDefault.swift */,
 			);
 			path = GraphMLGenerator;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7FCC822A2A5C47EC0022C243 /* Generator.swift in Sources */,
+				7FCC822C2A5D56E80022C243 /* EdgeDefault.swift in Sources */,
 				7FCC82012A5C42D40022C243 /* GeneratorInputView.swift in Sources */,
 				7FCC81FF2A5C42D40022C243 /* GraphMLGeneratorApp.swift in Sources */,
 			);

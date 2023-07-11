@@ -11,6 +11,7 @@ struct GeneratorInput {
     var numberOfNodesInput: String = ""
     var edgesInputMin: String = ""
     var edgesInputMax: String = ""
+    var edgeDefault: EdgeDefault = .undirected
 
     var numberOfNodes: Int {
         if let int = Int(numberOfNodesInput) {
@@ -21,10 +22,12 @@ struct GeneratorInput {
     }
 
     var edgesPerNode: Int {
-        guard let min = Int(edgesInputMin), let max = Int(edgesInputMax) else {
+        guard let minValue = Int(edgesInputMin), let maxValue = Int(edgesInputMax) else {
             return Int.random(in: 1..<5)
         }
-        return Int.random(in: min..<max)
+        if minValue == maxValue { return max(minValue - 1, 0) }
+        if minValue > maxValue { return Int.random(in: maxValue..<minValue) }
+        return Int.random(in: minValue..<maxValue)
     }
 }
 
@@ -43,7 +46,6 @@ struct GeneratorInputView: View {
                 Text("Number of nodes:")
                 TextField("Type integer number", text: $input.numberOfNodesInput)
             }
-            //Spacer(minLength: 20)
             Text("The edges count will be (pseudo) random between min and max per node - default 1...5")
             HStack {
                 Text("Min edges count")
@@ -52,6 +54,15 @@ struct GeneratorInputView: View {
             HStack {
                 Text("Max edges count")
                 TextField("Type int number", text: $input.edgesInputMax)
+            }
+            HStack {
+                Picker("Edge default", selection: $input.edgeDefault, content: {
+                    ForEach(EdgeDefault.allCases, id: \.self) {
+                        Text($0.rawValue.capitalized).tag($0)
+                    }
+                })
+                .pickerStyle(.segmented)
+
             }
             Button("Generate") {
                 self.generator.generate(input: input)
