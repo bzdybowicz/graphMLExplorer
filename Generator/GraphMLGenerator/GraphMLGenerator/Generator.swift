@@ -95,7 +95,7 @@ private extension Generator {
         }
     }
 
-    func addValueIfElementKindMatched(element: XMLElement, customData: CustomData, elementKind: ElementKind) {
+    func addValueIfElementKindMatched(element: XMLElement, customData: CustomData, elementKind: AttributeValueKind) {
         var value: String
         if customData.elementKind == elementKind || customData.elementKind == .all {
             switch customData.dataType {

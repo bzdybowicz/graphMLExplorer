@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum ElementKind: String, CaseIterable {
+enum AttributeValueKind: String, CaseIterable {
     case node
     case edge
     case graph

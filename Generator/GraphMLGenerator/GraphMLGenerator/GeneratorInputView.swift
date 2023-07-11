@@ -13,7 +13,7 @@ struct GeneratorInput {
     var edgesInputMax: String = ""
     var edgeDefault: EdgeDefault = .undirected
     var dataType: DataType = .string
-    var elementKind: ElementKind = .node
+    var elementKind: AttributeValueKind = .node
     var customDataName: String = ""
 
     var customDataSet: Set<CustomData> = []
@@ -45,7 +45,7 @@ struct GeneratorInput {
 
 struct CustomData: Equatable, Hashable {
     let dataType: DataType
-    let elementKind: ElementKind
+    let elementKind: AttributeValueKind
     let name: String
 }
 
@@ -83,23 +83,23 @@ struct GeneratorInputView: View {
             }
             Spacer(minLength: 10).frame(height: 100)
             HStack {
-                Picker("Custom data type", selection: $input.dataType, content: {
+                Picker("Attribute value type", selection: $input.dataType, content: {
                     ForEach(DataType.allCases, id: \.self) {
                         Text($0.rawValue.capitalized).tag($0)
                     }
                 })
                 .pickerStyle(.menu)
-                Picker("Custom data for:", selection: $input.elementKind, content: {
-                    ForEach(ElementKind.allCases, id: \.self) {
+                Picker("Attribute value for:", selection: $input.elementKind, content: {
+                    ForEach(AttributeValueKind.allCases, id: \.self) {
                         Text($0.rawValue.capitalized).tag($0)
                     }
                 })
                 .pickerStyle(.menu)
             }
             HStack {
-                Text("Data name")
-                TextField("Data name", text: $input.customDataName)
-                Button("Tap to confirm adding custom data") {
+                Text("Value name")
+                TextField("Value name", text: $input.customDataName)
+                Button("Tap to confirm adding attribute") {
                     self.input.addCustomData()
                 }
             }
