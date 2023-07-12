@@ -30,20 +30,20 @@ final class GraphViewState: ObservableObject {
 
         unweightedGraphLoader
             .graphPublisher
-            .print("Emit event")
+            //.print("Emit event")
             .assign(to: \.graph, on: self)
             .store(in: &cancellables)
 
         unweightedGraphLoader
             .graphPublisher
-            .print("Emit current node")
+            //.print("Emit current node")
             .map { $0.vertices.first ?? GraphViewState.fallbackTitle }
             .assign(to: \.currentNode, on: self)
             .store(in: &cancellables)
 
         unweightedGraphLoader
             .graphPublisher
-            .print("Emit child nodes")
+            //.print("Emit child nodes")
             .map { $0.neighborsForVertex(firstVertex) ?? [] }
             .assign(to: \.childNodes, on: self)
             .store(in: &cancellables)

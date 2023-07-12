@@ -38,7 +38,9 @@ struct UnweightedGraphLoader: UnweightedGraphLoaderProtocol {
         } catch let error {
             print("File load error \(error)")
         }
-        subject.send(graphParser.parse(xmlString: fileContent))
+        let graph = graphParser.parse(xmlString: fileContent)
+        print("Graph \(graph), file \(fileContent)")
+        subject.send(graph)
     }
 
     func start() -> UnweightedGraph<String> {
@@ -48,6 +50,8 @@ struct UnweightedGraphLoader: UnweightedGraphLoaderProtocol {
         } catch let error {
             print("Start error \(error)")
         }
+        let startGraph = graphParser.parse(xmlString: fileContent)
+        print("Start graph \(startGraph)")
         return graphParser.parse(xmlString: fileContent)
     }
 }

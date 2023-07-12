@@ -25,19 +25,20 @@ struct GraphView: View {
             GridItem(.adaptive(minimum: 20))
         }
     }
-
+    
     @State private var importing = false
-    @ObservedObject private var graphViewState: GraphViewState
-
+    @StateObject private var graphViewState: GraphViewState
+    
     private let unweightedGraphLoader: UnweightedGraphLoaderProtocol
-
+    
     init(graph: UnweightedGraph<String>,
          unweightedGraphLoader: UnweightedGraphLoaderProtocol) {
         self.graph = graph
         self.unweightedGraphLoader = unweightedGraphLoader
-        graphViewState = GraphViewState(graph: graph, unweightedGraphLoader: unweightedGraphLoader)
+        _graphViewState = StateObject(wrappedValue: GraphViewState(graph: graph,
+                                                                   unweightedGraphLoader: unweightedGraphLoader))
     }
-
+    
     var body: some View {
         HStack {
             GraphNodeLayoutWrapperView(

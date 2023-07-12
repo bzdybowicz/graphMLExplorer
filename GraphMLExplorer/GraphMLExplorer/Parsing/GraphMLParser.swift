@@ -79,9 +79,18 @@ struct GraphMLParser: GraphMLParserProtocol {
         let graph = UnweightedGraph<String>()
         guard let element = element else { return graph }
         let directed: Directed = Directed.create(rawValue: element.attributes[Constant.edgeDefault])
+
+        // Additional computation, but this graph impl. requires adding vertexes first.
+
+        var vertexes: [String] = []
+
         for child in element.childElements {
             if child.name == Constant.node {
                 if let name = child.attributes[Constant.id] {
+                    if vertexes.firstIndex(of: name) == nil {
+                        vertexes.append(name)
+                        _ = graph.addVertex(name)
+                    }
                     _ = graph.addVertex(name)
                 } else {
                     // throw error?
@@ -90,6 +99,14 @@ struct GraphMLParser: GraphMLParserProtocol {
                 if let source = child.attributes[Constant.source] {
                     if let target = child.attributes[Constant.target] {
                         print("Adding source \(source), target \(target), directed \(directed.isDirected)")
+                        if vertexes.firstIndex(of: source) == nil {
+                            vertexes.append(source)
+                            _ = graph.addVertex(source)
+                        }
+                        if vertexes.firstIndex(of: target) == nil {
+                            vertexes.append(target)
+                            _ = graph.addVertex(target)
+                        }
                         graph.addEdge(from: source, to: target, directed: directed.isDirected)
                     } else {
                         // not sure yet
@@ -99,5 +116,7 @@ struct GraphMLParser: GraphMLParserProtocol {
         }
         return graph
     }
+
+    // Do my own graph impl that does not requires sort?!
 
 }
