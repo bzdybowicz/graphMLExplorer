@@ -25,12 +25,12 @@ struct GraphView: View {
             GridItem(.adaptive(minimum: 20))
         }
     }
-    
+
     @State private var importing = false
     @StateObject private var graphViewState: GraphViewState
-    
+
     private let unweightedGraphLoader: UnweightedGraphLoaderProtocol
-    
+
     init(graph: UnweightedGraph<String>,
          unweightedGraphLoader: UnweightedGraphLoaderProtocol) {
         self.graph = graph
@@ -38,35 +38,46 @@ struct GraphView: View {
         _graphViewState = StateObject(wrappedValue: GraphViewState(graph: graph,
                                                                    unweightedGraphLoader: unweightedGraphLoader))
     }
-    
+
     var body: some View {
-        HStack {
-            GraphNodeLayoutWrapperView(
-                layoutType: .horizontal,
-                node: GraphNode(
-                    label: graphViewState.currentNode,
-                    neighbors: graphViewState.childNodes.map {
-                        let neighbors = graph.neighborsForVertex($0) ?? []
-                        print("NESTED NEIGHs \(neighbors)")
-                        return GraphNode(label: $0,
-                                         neighbors: neighbors.map {
-                            GraphNode(label: $0, neighbors: [])
-                        })
+        GeometryReader { geometry in
+            VStack {
+                ScrollView([.vertical, .horizontal]) {
+                    HStack(alignment: .center) {
+                        GraphNodeLayoutWrapperView(
+                            layoutType: .horizontal,
+                            node: GraphNode(
+                                label: graphViewState.currentNode,
+                                neighbors: graphViewState.childNodes.map {
+                                    let neighbors = graph.neighborsForVertex($0) ?? []
+                                    print("NESTED NEIGHs \(neighbors)")
+                                    return GraphNode(label: $0,
+                                                     neighbors: neighbors.map {
+                                        GraphNode(label: $0, neighbors: [])
+                                    })
+                                }
+                            ),
+                            state: graphViewState
+                        )
                     }
-                ),
-                state: graphViewState
-            )
-            Button("Pick new graphML file") {
-                importing = true
-            }
-            .fileImporter(isPresented: $importing,
-                          allowedContentTypes: [.xml]) { result in
-                switch result {
-                case .success(let success):
-                    print("success \(success)")
-                    unweightedGraphLoader.load(fileURL: success)
-                case .failure(let failure):
-                    print("error \(failure)")
+                }
+                .frame(width: geometry.size.width, height: geometry.size.height * 0.9, alignment: .center)
+                .background(Color.white.opacity(0.9))
+                HStack {
+                    Button("Pick new graphML file") {
+                        importing = true
+                    }
+                    .fileImporter(isPresented: $importing,
+                                  allowedContentTypes: [.xml]) { result in
+                        switch result {
+                        case .success(let success):
+                            print("success \(success)")
+                            unweightedGraphLoader.load(fileURL: success)
+                        case .failure(let failure):
+                            print("error \(failure)")
+                        }
+                    }
+
                 }
             }
         }
