@@ -63,16 +63,12 @@ struct GraphView: View {
                 switch result {
                 case .success(let success):
                     print("success \(success)")
-                    //unweightedGraphLoader.load(filePath: success.absoluteString)
                     unweightedGraphLoader.load(fileURL: success)
                 case .failure(let failure):
                     print("error \(failure)")
                 }
             }
         }
-//        onReceive(graphViewState.$graph) { value in
-//            print("On received \(value)")
-//        }
     }
 }
 

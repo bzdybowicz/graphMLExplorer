@@ -12,7 +12,6 @@ import SwiftGraph
 protocol UnweightedGraphLoaderProtocol {
     func start() -> UnweightedGraph<String>
 
-    func load(filePath: String)
     func load(fileURL: URL)
 
     var graphPublisher: AnyPublisher<UnweightedGraph<String>, Never> { get }
@@ -36,16 +35,6 @@ struct UnweightedGraphLoader: UnweightedGraphLoaderProtocol {
         var fileContent: String = ""
         do {
             fileContent = try fileLoader.load(fileURL: fileURL)
-        } catch let error {
-            print("File load error \(error)")
-        }
-        subject.send(graphParser.parse(xmlString: fileContent))
-    }
-
-    func load(filePath: String) {
-        var fileContent: String = ""
-        do {
-            fileContent = try fileLoader.load(filePath: filePath)
         } catch let error {
             print("File load error \(error)")
         }
