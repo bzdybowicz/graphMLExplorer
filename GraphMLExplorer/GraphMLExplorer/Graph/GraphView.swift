@@ -47,16 +47,15 @@ struct GraphView: View {
                                 label: graphViewState.currentNode,
                                 neighbors:
                                     graphViewState.childNodes.map {
-                                        //print("### REDRAWING ###")
                                         let neighbors = graphViewState.graph.neighborsForVertex($0) ?? []
                                         print("neighbors \(neighbors) current node \(graphViewState.currentNode), middle \($0)")
                                         return GraphNode(label: $0,
                                                          neighbors: neighbors.map {
                                             let neighbors = graphViewState.graph.neighborsForVertex($0) ?? []
-                                            return GraphNode(label: $0, neighbors: [])
-                                            //                                                            neighbors.map {
-                                            //                                            return GraphNode(label: $0, nestLevel: .fourth, neighbors: [])
-                                            //                                        })
+                                            return GraphNode(label: $0, neighbors:
+                                                                neighbors.map {
+                                                return GraphNode(label: $0, neighbors: [])
+                                            })
                                         })
                                     }),
                             state: graphViewState
