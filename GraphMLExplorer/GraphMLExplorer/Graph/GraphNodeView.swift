@@ -12,24 +12,6 @@ enum LayoutType {
     case horizontal
 }
 
-enum NestLevel {
-    case first
-    case second
-    case third
-    case fourth
-    case end
-
-    var next: NestLevel {
-        switch self {
-        case .first: return .second
-        case .second: return .third
-        case .third: return .fourth
-        case .fourth: return .end
-        case .end: return .end
-        }
-    }
-}
-
 struct GraphNodeLayoutWrapperView: View {
     let layoutType: LayoutType
     @ObservedObject var node: GraphNode
@@ -69,7 +51,6 @@ struct GraphNodeView: View {
         .background(Color.blue)
         .cornerRadius(4)
         .onTapGesture {
-            print("## TAP 3. TAPPED node \(node.label)")
             state.selectVertex(vertex: node.label)
         }
 
@@ -78,10 +59,6 @@ struct GraphNodeView: View {
                                        node: GraphNode(label: value.label,
                                                        neighbors: value.neighbors),
                                        state: state)
-//            .onTapGesture {
-//                print("## TAP 4. TAPPED node \(value.label)")
-//                state.selectVertex(vertex: value.label)
-//            }
         }
 
 

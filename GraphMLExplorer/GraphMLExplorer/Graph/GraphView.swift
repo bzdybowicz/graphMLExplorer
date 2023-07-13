@@ -48,7 +48,6 @@ struct GraphView: View {
                                 neighbors:
                                     graphViewState.childNodes.map {
                                         let neighbors = graphViewState.graph.neighborsForVertex($0) ?? []
-                                        print("neighbors \(neighbors) current node \(graphViewState.currentNode), middle \($0)")
                                         return GraphNode(label: $0,
                                                          neighbors: neighbors.map {
                                             let neighbors = graphViewState.graph.neighborsForVertex($0) ?? []
