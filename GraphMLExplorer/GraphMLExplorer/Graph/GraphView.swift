@@ -18,8 +18,6 @@ extension String: Identifiable {
 
 struct GraphView: View {
 
-    private let graph: UnweightedGraph<String>
-
     private var columns: [GridItem] {
         graphViewState.childNodes.map { _ in
             GridItem(.adaptive(minimum: 20))
@@ -33,7 +31,6 @@ struct GraphView: View {
 
     init(graph: UnweightedGraph<String>,
          unweightedGraphLoader: UnweightedGraphLoaderProtocol) {
-        self.graph = graph
         self.unweightedGraphLoader = unweightedGraphLoader
         _graphViewState = StateObject(wrappedValue: GraphViewState(graph: graph,
                                                                    unweightedGraphLoader: unweightedGraphLoader))
@@ -49,7 +46,7 @@ struct GraphView: View {
                             node: GraphNode(
                                 label: graphViewState.currentNode,
                                 neighbors: graphViewState.childNodes.map {
-                                    let neighbors = graph.neighborsForVertex($0) ?? []
+                                    let neighbors = graphViewState.graph.neighborsForVertex($0) ?? []
                                     print("NESTED NEIGHs \(neighbors)")
                                     for neighbor in neighbors {
                                         print("fIRST LEVEL NESTED \(neighbor.id)")

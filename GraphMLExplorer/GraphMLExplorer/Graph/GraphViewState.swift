@@ -35,7 +35,11 @@ final class GraphViewState: ObservableObject {
                 self?.graph = value.graph
                 self?.filePath = value.filePath
                 self?.currentNode = value.graph.vertices.first ?? GraphViewState.fallbackTitle
-                self?.childNodes = value.graph.neighborsForVertex(firstVertex) ?? []
+                let newChildNodes = value.graph.neighborsForVertex(firstVertex) ?? []
+                for childNode in newChildNodes {
+                    print("Child \(childNode.id)")
+                }
+                self?.childNodes = newChildNodes
             })
             .store(in: &cancellables)
     }
