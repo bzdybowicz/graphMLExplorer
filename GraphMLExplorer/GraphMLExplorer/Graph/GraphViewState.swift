@@ -39,7 +39,7 @@ final class GraphViewState: ObservableObject {
                 for childNode in newChildNodes {
                     print("Child \(childNode.id)")
                 }
-                self?.childNodes = newChildNodes
+                self?.childNodes = newChildNodes.sorted()
             })
             .store(in: &cancellables)
     }
@@ -49,6 +49,6 @@ final class GraphViewState: ObservableObject {
             return
         }
         self.currentNode = vertex
-        self.childNodes = graph.neighborsForVertex(vertex) ?? []
+        self.childNodes = (graph.neighborsForVertex(vertex) ?? []).sorted()
     }
 }

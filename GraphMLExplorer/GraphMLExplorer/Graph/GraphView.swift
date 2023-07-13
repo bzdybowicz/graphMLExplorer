@@ -39,24 +39,28 @@ struct GraphView: View {
     var body: some View {
         GeometryReader { geometry in
             VStack {
-                ScrollView([.vertical, .horizontal]) {
+                //ScrollView([.vertical, .horizontal]) {
                     HStack(alignment: .center) {
                         GraphNodeLayoutWrapperView(
                             layoutType: .horizontal,
                             node: GraphNode(
                                 label: graphViewState.currentNode,
-                                neighbors: graphViewState.childNodes.map {
-                                    let neighbors = graphViewState.graph.neighborsForVertex($0) ?? []
-                                    print("NESTED NEIGHs \(neighbors)")
-                                    for neighbor in neighbors {
-                                        print("fIRST LEVEL NESTED \(neighbor.id)")
-                                    }
-                                    return GraphNode(label: $0,
-                                                     neighbors: neighbors.map {
-                                        GraphNode(label: $0, neighbors: [])
-                                    })
-                                }
-                            ),
+                                nestLevel: .first,
+                                neighbors:
+                                    graphViewState.childNodes.map {
+                                        //print("### REDRAWING ###")
+                                        let neighbors = graphViewState.graph.neighborsForVertex($0) ?? []
+                                        print("neighbors \(neighbors) current node \(graphViewState.currentNode), middle \($0)")
+                                        return GraphNode(label: $0,
+                                                         nestLevel: .second,
+                                                         neighbors: neighbors.map {
+                                            let neighbors = graphViewState.graph.neighborsForVertex($0) ?? []
+                                            return GraphNode(label: $0, nestLevel: .third, neighbors: [])
+                                            //                                                            neighbors.map {
+                                            //                                            return GraphNode(label: $0, nestLevel: .fourth, neighbors: [])
+                                            //                                        })
+                                        })
+                                    }),
                             state: graphViewState
                         )
                     }
@@ -81,7 +85,6 @@ struct GraphView: View {
                 }
             }
         }
-    }
 }
 
 struct ContentView_Previews: PreviewProvider {
