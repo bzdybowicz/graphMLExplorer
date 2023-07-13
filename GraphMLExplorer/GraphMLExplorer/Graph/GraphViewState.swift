@@ -14,6 +14,7 @@ final class GraphViewState: ObservableObject {
     @Published var childNodes: [String]
 
     @Published var graph: UnweightedGraph<String>
+    @Published var filePath: String = ""
     private static let fallbackTitle = "No nodes in loaded graph!"
     private let unweightedGraphLoader: UnweightedGraphLoaderProtocol
 
@@ -30,22 +31,12 @@ final class GraphViewState: ObservableObject {
 
         unweightedGraphLoader
             .graphPublisher
-            //.print("Emit event")
-            .assign(to: \.graph, on: self)
-            .store(in: &cancellables)
-
-        unweightedGraphLoader
-            .graphPublisher
-            //.print("Emit current node")
-            .map { $0.vertices.first ?? GraphViewState.fallbackTitle }
-            .assign(to: \.currentNode, on: self)
-            .store(in: &cancellables)
-
-        unweightedGraphLoader
-            .graphPublisher
-            //.print("Emit child nodes")
-            .map { $0.neighborsForVertex(firstVertex) ?? [] }
-            .assign(to: \.childNodes, on: self)
+            .sink(receiveValue: { [weak self] value in
+                self?.graph = value.graph
+                self?.filePath = value.filePath
+                self?.currentNode = value.graph.vertices.first ?? GraphViewState.fallbackTitle
+                self?.childNodes = value.graph.neighborsForVertex(firstVertex) ?? []
+            })
             .store(in: &cancellables)
     }
 

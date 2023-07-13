@@ -9,21 +9,26 @@ import Combine
 import Foundation
 import SwiftGraph
 
+struct GraphData {
+    let filePath: String
+    let graph: UnweightedGraph<String>
+}
+
 protocol UnweightedGraphLoaderProtocol {
     func start() -> UnweightedGraph<String>
 
     func load(fileURL: URL)
 
-    var graphPublisher: AnyPublisher<UnweightedGraph<String>, Never> { get }
+    var graphPublisher: AnyPublisher<GraphData, Never> { get }
 }
 
 struct UnweightedGraphLoader: UnweightedGraphLoaderProtocol {
 
-    var graphPublisher: AnyPublisher<UnweightedGraph<String>, Never> { subject.eraseToAnyPublisher() }
+    var graphPublisher: AnyPublisher<GraphData, Never> { subject.eraseToAnyPublisher() }
 
     private let fileLoader: FileLoadProtocol
     private let graphParser: GraphMLParserProtocol
-    private let subject = PassthroughSubject<UnweightedGraph<String>, Never>()
+    private let subject = PassthroughSubject<GraphData, Never>()
 
     init(fileLoader: FileLoadProtocol = FileLoader(),
          graphParser: GraphMLParserProtocol = GraphMLParser()) {
@@ -40,7 +45,7 @@ struct UnweightedGraphLoader: UnweightedGraphLoaderProtocol {
         }
         let graph = graphParser.parse(xmlString: fileContent)
         print("Graph \(graph), file \(fileContent)")
-        subject.send(graph)
+        subject.send(GraphData(filePath: fileURL.absoluteString, graph: graph))
     }
 
     func start() -> UnweightedGraph<String> {

@@ -84,26 +84,30 @@ struct GraphMLParser: GraphMLParserProtocol {
 
         var vertexes: [String] = []
 
+        print("1. VERTICES COUNT \(graph.vertices.count) \(graph.vertexCount)")
+
         for child in element.childElements {
             if child.name == Constant.node {
                 if let name = child.attributes[Constant.id] {
                     if vertexes.firstIndex(of: name) == nil {
+                        print("3. Adding vertex \(name), directed \(directed.isDirected)")
                         vertexes.append(name)
                         _ = graph.addVertex(name)
                     }
-                    _ = graph.addVertex(name)
+                    //_ = graph.addVertex(name)
                 } else {
                     // throw error?
                 }
             } else if child.name == Constant.edge {
                 if let source = child.attributes[Constant.source] {
                     if let target = child.attributes[Constant.target] {
-                        print("Adding source \(source), target \(target), directed \(directed.isDirected)")
                         if vertexes.firstIndex(of: source) == nil {
+                            print("1. Adding vertex source \(source), target \(target), directed \(directed.isDirected)")
                             vertexes.append(source)
                             _ = graph.addVertex(source)
                         }
                         if vertexes.firstIndex(of: target) == nil {
+                            print("2. Adding vertex source \(source), target \(target), directed \(directed.isDirected)")
                             vertexes.append(target)
                             _ = graph.addVertex(target)
                         }
@@ -114,6 +118,13 @@ struct GraphMLParser: GraphMLParserProtocol {
                 }
             }
         }
+        for vertex in vertexes {
+            print("VERTEX\(vertex)")
+        }
+        for vertex in graph.vertices {
+            print("VERTICE \(vertex)")
+        }
+        print("2. VERTICES COUNT \(graph.vertices.count) \(graph.vertexCount)")
         return graph
     }
 

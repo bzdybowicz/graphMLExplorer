@@ -50,15 +50,18 @@ struct GraphNodeView: View {
         .background(Color.blue)
         .cornerRadius(4)
 
-        if !node.neighbors.isEmpty {
-            ForEach(node.neighbors, id: \.id) { neighbor in
-                GraphNodeLayoutWrapperView(layoutType: .vertical,
-                                           node: GraphNode(label: neighbor.label,
-                                                           neighbors: neighbor.neighbors), state: state)
-                .padding(.leading).onTapGesture {
-                    print("Tap on \(neighbor.label)")
-                    state.selectVertex(vertex: neighbor.label)
+        ForEach(node.neighbors, id: \.id) { neighbor in
+            GraphNodeLayoutWrapperView(layoutType: .vertical,
+                                       node: GraphNode(label: neighbor.label,
+                                                       neighbors: neighbor.neighbors), state: state)
+            .onTapGesture {
+                print("state, graph \(state.graph), vertexes \(state.graph.vertices)")
+                for vertice in state.graph.vertices {
+                    print("Label \(vertice.id)")
                 }
+                print("Tap on \(neighbor.label), parent \(node.label), \(neighbor.id)")
+                print("node \(node.neighbors)")
+                state.selectVertex(vertex: neighbor.label)
             }
         }
     }

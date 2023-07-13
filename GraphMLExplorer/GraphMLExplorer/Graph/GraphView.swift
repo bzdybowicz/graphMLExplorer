@@ -51,6 +51,9 @@ struct GraphView: View {
                                 neighbors: graphViewState.childNodes.map {
                                     let neighbors = graph.neighborsForVertex($0) ?? []
                                     print("NESTED NEIGHs \(neighbors)")
+                                    for neighbor in neighbors {
+                                        print("fIRST LEVEL NESTED \(neighbor.id)")
+                                    }
                                     return GraphNode(label: $0,
                                                      neighbors: neighbors.map {
                                         GraphNode(label: $0, neighbors: [])
@@ -77,7 +80,7 @@ struct GraphView: View {
                             print("error \(failure)")
                         }
                     }
-
+                    Text(graphViewState.filePath)
                 }
             }
         }
