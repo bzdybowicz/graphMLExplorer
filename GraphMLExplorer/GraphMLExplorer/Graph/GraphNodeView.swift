@@ -39,30 +39,14 @@ struct GraphNodeLayoutWrapperView: View {
         switch layoutType {
         case .vertical:
             VStack {
-                if node.nestLevel == .third {
-                    GraphNodeTapView(node: node, state: state)
-                } else {
-                    GraphNodeView(node: node, state: state)
-                }
-
-//                    .onTapGesture {
-//                        print("## TAP 2. node \(node.label)")
-//                        for neighbor in node.neighbors {
-//                            print("neig \(neighbor.label)")
-//                        }
-//                        state.selectVertex(vertex: node.label)
-//                    }
+                GraphNodeView(node: node, state: state)
             }
             .padding()
             .background(Color.gray.opacity(0.2))
             .cornerRadius(15)
         case .horizontal:
             HStack {
-                if node.nestLevel == .third {
-                    GraphNodeTapView(node: node, state: state)
-                } else {
-                    GraphNodeView(node: node, state: state)
-                }
+                GraphNodeView(node: node, state: state)
             }
             .padding()
             .background(Color.gray.opacity(0.2))
@@ -92,66 +76,27 @@ struct GraphNodeView: View {
         ForEach(node.neighbors, id: \.label) { value in
             GraphNodeLayoutWrapperView(layoutType: .vertical,
                                        node: GraphNode(label: value.label,
-                                                       nestLevel: value.nestLevel.next,
-                                                       neighbors: value.neighbors),
-                                       state: state)
-            .onTapGesture {
-                print("## TAP 4. TAPPED node \(value.label)")
-                state.selectVertex(vertex: value.label)
-            }
-        }
-
-
-    }
-}
-
-struct GraphNodeTapView: View {
-    @ObservedObject var node: GraphNode
-    @ObservedObject var state: GraphViewState
-
-    var body: some View {
-        ZStack {
-            Text(node.label)
-                .font(.body)
-                .foregroundColor(.white)
-        }
-        .padding(EdgeInsets(top: 2, leading: 2, bottom: 2, trailing: 2))
-        .background(Color.blue)
-        .cornerRadius(4)
-
-        ForEach(node.neighbors, id: \.label) { value in
-            GraphNodeLayoutWrapperView(layoutType: .vertical,
-                                       node: GraphNode(label: value.label,
-                                                       nestLevel: value.nestLevel.next,
                                                        neighbors: value.neighbors),
                                        state: state)
 //            .onTapGesture {
-//                print("## TAP 3. TAPPED \(value.label), node \(node.label)")
+//                print("## TAP 4. TAPPED node \(value.label)")
 //                state.selectVertex(vertex: value.label)
 //            }
         }
+
+
     }
 }
 
 final class GraphNode: Identifiable, ObservableObject {
     let id = UUID()
     let label: String
-    let nestLevel: NestLevel
     let neighbors: [GraphNode]
 
-    init(label: String,  nestLevel: NestLevel, neighbors: [GraphNode]) {
+    init(label: String, neighbors: [GraphNode]) {
         self.label = label
         self.neighbors = neighbors.sorted(by: {
             $0.label > $1.label
         })
-        self.nestLevel = nestLevel
     }
 }
-
-
-//struct GraphNodeView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        GraphNodeView(node: GraphNode(label: "Sample", neighbors: []),
-//                      state: GraphViewState())
-//    }
-//}
