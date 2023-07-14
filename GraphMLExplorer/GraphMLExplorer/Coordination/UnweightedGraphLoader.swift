@@ -39,11 +39,15 @@ struct UnweightedGraphLoader: UnweightedGraphLoaderProtocol {
     func load(fileURL: URL) {
         var fileContent: String = ""
         do {
+            TimeMeasure.instance.event(.pickFile)
             fileContent = try fileLoader.load(fileURL: fileURL)
+            TimeMeasure.instance.event(.fileLoaded)
         } catch let error {
             print("File load error \(error)")
         }
+        TimeMeasure.instance.event(.parsingStart)
         let graph = graphParser.parse(xmlString: fileContent)
+        TimeMeasure.instance.event(.parsingEnd)
         subject.send(GraphData(filePath: fileURL.absoluteString, graph: graph))
     }
 
@@ -55,6 +59,6 @@ struct UnweightedGraphLoader: UnweightedGraphLoaderProtocol {
             print("Start error \(error)")
         }
         let startGraph = graphParser.parse(xmlString: fileContent)
-        return graphParser.parse(xmlString: fileContent)
+        return startGraph
     }
 }

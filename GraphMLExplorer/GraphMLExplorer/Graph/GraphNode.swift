@@ -44,9 +44,14 @@ final class GraphNode: Identifiable, ObservableObject {
 
     init(label: String, nestLevel: NestLevel, neighbors: [GraphNode]) {
         self.label = label
-        self.neighbors = neighbors.sorted(by: {
-            $0.label < $1.label
-        })
+        self.neighbors = neighbors
         self.nestLevel = nestLevel
+        var testSet = Set<String>()
+        for neighbor in neighbors {
+            if testSet.contains(neighbor.label) {
+                print("Duplicate")
+            }
+            testSet.insert(neighbor.label)
+        }
     }
 }

@@ -90,7 +90,7 @@ struct GraphMLParser: GraphMLParserProtocol {
             if child.name == Constant.node {
                 if let name = child.attributes[Constant.id] {
                     if vertexes.firstIndex(of: name) == nil {
-                        print("3. Adding vertex \(name), directed \(directed.isDirected)")
+                        //print("3. Adding vertex \(name), directed \(directed.isDirected)")
                         vertexes.append(name)
                         _ = graph.addVertex(name)
                     }
@@ -102,12 +102,12 @@ struct GraphMLParser: GraphMLParserProtocol {
                 if let source = child.attributes[Constant.source] {
                     if let target = child.attributes[Constant.target] {
                         if vertexes.firstIndex(of: source) == nil {
-                            print("1. Adding vertex source \(source), target \(target), directed \(directed.isDirected)")
+                            //print("1. Adding vertex source \(source), target \(target), directed \(directed.isDirected)")
                             vertexes.append(source)
                             _ = graph.addVertex(source)
                         }
                         if vertexes.firstIndex(of: target) == nil {
-                            print("2. Adding vertex source \(source), target \(target), directed \(directed.isDirected)")
+                            //print("2. Adding vertex source \(source), target \(target), directed \(directed.isDirected)")
                             vertexes.append(target)
                             _ = graph.addVertex(target)
                         }

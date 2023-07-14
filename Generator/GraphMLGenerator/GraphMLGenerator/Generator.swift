@@ -13,7 +13,14 @@ protocol GeneratorProtocol {
     func generate(input: GeneratorInput)
 }
 
+struct Edge: Equatable, Hashable {
+    let source: String
+    let target: String
+}
+
 final class Generator: GeneratorProtocol {
+
+    private var edgeSet = Set<Edge>()
 
     func generate(input: GeneratorInput) {
         let document = createDocument()
@@ -132,18 +139,24 @@ private extension Generator {
 
     func addEdges(graph: XMLElement, sourceId: String, input: GeneratorInput) {
         for _ in 0...input.edgesPerNode {
-            let edge = XMLElement(name: "edge")
+            let edgeElement = XMLElement(name: "edge")
             let maxNode = input.numberOfNodes
             let targetInt = (Int.random(in: 0..<maxNode))
             let targetString = "n\(targetInt)"
             var attributes = ["source": sourceId, "target": targetString]
 
+            let edge = Edge(source: sourceId, target: targetString)
+            if edgeSet.contains(edge) || (input.edgeDefault == .undirected && edgeSet.contains(Edge(source: targetString, target: sourceId))) {
+                // No duplicates.
+                continue
+            }
+            edgeSet.insert(edge)
             if input.edgeDefault == .mixed {
                 attributes["directed"] = String(Bool.random())
             }
-            edge.setAttributesWith(attributes)
-            addValuesIfElementKindMatched(parent: edge, input: input)
-            graph.addChild(edge)
+            edgeElement.setAttributesWith(attributes)
+            addValuesIfElementKindMatched(parent: edgeElement, input: input)
+            graph.addChild(edgeElement)
         }
     }
 
