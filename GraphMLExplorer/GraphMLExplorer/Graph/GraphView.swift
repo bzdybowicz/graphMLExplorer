@@ -37,9 +37,15 @@ struct GraphView: View {
     }
 
     private var node: GraphNode {
-        GraphNode(label: graphViewState.currentNode,
-                  nestLevel: .first,
-                  neighbors: graphViewState.childNodes.map {
+        TimeMeasure().event(.buildingNode)
+//        let verticesCount = graphViewState.graph.vertices.count
+//        let edgesCount = graphViewState.graph.edgeCount
+//        print("Vertices \(verticesCount), edges count \(edgesCount)")
+//        let showForthLevel = verticesCount > 1000 || edgesCount > 2000
+//        print("show forth \(showForthLevel)")
+        return GraphNode(label: graphViewState.currentNode,
+                         nestLevel: .first,
+                         neighbors: graphViewState.childNodes.map {
             let neighbors = graphViewState.graph.neighborsForVertex($0) ?? []
             return GraphNode(label: $0,
                              nestLevel: .second,
