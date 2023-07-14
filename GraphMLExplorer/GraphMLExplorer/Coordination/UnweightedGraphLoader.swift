@@ -44,7 +44,6 @@ struct UnweightedGraphLoader: UnweightedGraphLoaderProtocol {
             print("File load error \(error)")
         }
         let graph = graphParser.parse(xmlString: fileContent)
-        print("Graph \(graph), file \(fileContent)")
         subject.send(GraphData(filePath: fileURL.absoluteString, graph: graph))
     }
 
@@ -56,7 +55,6 @@ struct UnweightedGraphLoader: UnweightedGraphLoaderProtocol {
             print("Start error \(error)")
         }
         let startGraph = graphParser.parse(xmlString: fileContent)
-        print("Start graph \(startGraph)")
         return graphParser.parse(xmlString: fileContent)
     }
 }
