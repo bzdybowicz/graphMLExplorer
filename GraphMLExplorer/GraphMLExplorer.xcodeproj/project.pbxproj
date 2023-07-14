@@ -25,6 +25,7 @@
 		7F5226DC2A55C8CE0082475D /* SwiftyXMLParser in Frameworks */ = {isa = PBXBuildFile; productRef = 7F5226DB2A55C8CE0082475D /* SwiftyXMLParser */; };
 		7F5226DF2A55D2910082475D /* SwiftGraph in Frameworks */ = {isa = PBXBuildFile; productRef = 7F5226DE2A55D2910082475D /* SwiftGraph */; };
 		7F5226E42A5600A90082475D /* GraphNodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5226E32A5600A90082475D /* GraphNodeView.swift */; };
+		7F73A24F2A61596C00CCDA70 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 7F73A24E2A61596C00CCDA70 /* SnapshotTesting */; };
 		7FCC81F12A5C33AE0022C243 /* GraphViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCC81F02A5C33AE0022C243 /* GraphViewState.swift */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F73A24F2A61596C00CCDA70 /* SnapshotTesting in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,6 +235,9 @@
 				7F5226B42A557BC00082475D /* PBXTargetDependency */,
 			);
 			name = GraphMLExplorerTests;
+			packageProductDependencies = (
+				7F73A24E2A61596C00CCDA70 /* SnapshotTesting */,
+			);
 			productName = GraphMLExplorerTests;
 			productReference = 7F5226B22A557BC00082475D /* GraphMLExplorerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -290,6 +295,7 @@
 			packageReferences = (
 				7F5226DA2A55C8CE0082475D /* XCRemoteSwiftPackageReference "SwiftyXMLParser" */,
 				7F5226DD2A55D2910082475D /* XCRemoteSwiftPackageReference "SwiftGraph" */,
+				7F73A24D2A61596C00CCDA70 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
 			);
 			productRefGroup = 7F5226A22A557BBE0082475D /* Products */;
 			projectDirPath = "";
@@ -714,6 +720,14 @@
 				minimumVersion = 3.0.0;
 			};
 		};
+		7F73A24D2A61596C00CCDA70 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-snapshot-testing";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -726,6 +740,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7F5226DD2A55D2910082475D /* XCRemoteSwiftPackageReference "SwiftGraph" */;
 			productName = SwiftGraph;
+		};
+		7F73A24E2A61596C00CCDA70 /* SnapshotTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7F73A24D2A61596C00CCDA70 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = SnapshotTesting;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
