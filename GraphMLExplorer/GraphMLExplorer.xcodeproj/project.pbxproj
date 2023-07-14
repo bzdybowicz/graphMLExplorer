@@ -28,6 +28,7 @@
 		7F73A24F2A61596C00CCDA70 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 7F73A24E2A61596C00CCDA70 /* SnapshotTesting */; };
 		7F73A2512A61681900CCDA70 /* GraphViewSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F73A2502A61681800CCDA70 /* GraphViewSnapshotsTests.swift */; };
 		7F73A2532A61817A00CCDA70 /* TimeMeasure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F73A2522A61817A00CCDA70 /* TimeMeasure.swift */; };
+		7F73A2552A61A00700CCDA70 /* GraphMLParserOptimize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F73A2542A61A00700CCDA70 /* GraphMLParserOptimize.swift */; };
 		7FCC81F12A5C33AE0022C243 /* GraphViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCC81F02A5C33AE0022C243 /* GraphViewState.swift */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +72,7 @@
 		7F5226E32A5600A90082475D /* GraphNodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphNodeView.swift; sourceTree = "<group>"; };
 		7F73A2502A61681800CCDA70 /* GraphViewSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewSnapshotsTests.swift; sourceTree = "<group>"; };
 		7F73A2522A61817A00CCDA70 /* TimeMeasure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeMeasure.swift; sourceTree = "<group>"; };
+		7F73A2542A61A00700CCDA70 /* GraphMLParserOptimize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphMLParserOptimize.swift; sourceTree = "<group>"; };
 		7FCC81F02A5C33AE0022C243 /* GraphViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -170,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				7F5226D02A55C56E0082475D /* GraphMLParser.swift */,
+				7F73A2542A61A00700CCDA70 /* GraphMLParserOptimize.swift */,
 			);
 			path = Parsing;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 				7F2F51DD2A61331E00A99AB8 /* GraphNode.swift in Sources */,
 				7F73A2532A61817A00CCDA70 /* TimeMeasure.swift in Sources */,
 				7F5226A72A557BBE0082475D /* GraphView.swift in Sources */,
+				7F73A2552A61A00700CCDA70 /* GraphMLParserOptimize.swift in Sources */,
 				7F5226A52A557BBE0082475D /* GraphMLExplorerApp.swift in Sources */,
 				7F5226E42A5600A90082475D /* GraphNodeView.swift in Sources */,
 				7F5226D32A55C5AE0082475D /* FileLoader.swift in Sources */,

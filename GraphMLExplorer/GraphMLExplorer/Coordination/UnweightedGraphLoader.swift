@@ -11,11 +11,12 @@ import SwiftGraph
 
 struct GraphData {
     let filePath: String
-    let graph: UnweightedGraph<String>
+    //let graph: UnweightedGraph<String>
+    let graph: MyGraph
 }
 
 protocol UnweightedGraphLoaderProtocol {
-    func start() -> UnweightedGraph<String>
+    func start() -> MyGraph //UnweightedGraph<String>
 
     func load(fileURL: URL)
 
@@ -51,7 +52,7 @@ struct UnweightedGraphLoader: UnweightedGraphLoaderProtocol {
         subject.send(GraphData(filePath: fileURL.absoluteString, graph: graph))
     }
 
-    func start() -> UnweightedGraph<String> {
+    func start() -> MyGraph { //UnweightedGraph<String> {
         var fileContent: String = ""
         do {
             fileContent = try fileLoader.loadAppBundleFile(xmlName: "sample")

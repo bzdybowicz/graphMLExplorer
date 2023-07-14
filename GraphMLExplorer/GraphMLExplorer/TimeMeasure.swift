@@ -13,6 +13,11 @@ enum TimeEvent {
     case parsingStart
     case parsingEnd
     case buildingNode
+
+    case parserStart
+    case parserXMLDone
+    case parserRestDone
+    case parser4
 }
 
 final class TimeMeasure {
@@ -36,6 +41,12 @@ final class TimeMeasure {
         }
         if let start = table[.parsingEnd], let end = table[.buildingNode] {
             print("Time from parsing end to building node \(end - start)")
+        }
+        if let start = table[.parserStart], let end = table[.parserXMLDone] {
+            print("Time from parser start to xml done \(end - start)")
+        }
+        if let start = table[.parserStart], let end = table[.parserRestDone] {
+            print("Time from parser start to all done \(end - start)")
         }
     }
 }

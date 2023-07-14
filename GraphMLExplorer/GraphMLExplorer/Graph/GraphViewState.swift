@@ -12,7 +12,7 @@ import SwiftGraph
 final class GraphViewState: ObservableObject {
     @Published var currentNode: String
     @Published var childNodes: [String]
-    @Published var graph: UnweightedGraph<String>
+    @Published var graph: MyGraph //UnweightedGraph<String>
     @Published var filePath: String = ""
 
     private let unweightedGraphLoader: UnweightedGraphLoaderProtocol
@@ -22,7 +22,7 @@ final class GraphViewState: ObservableObject {
         static let fallbackTitle = "No nodes in loaded graph!"
     }
 
-    init(graph: UnweightedGraph<String>,
+    init(graph: MyGraph,//UnweightedGraph<String>,
          unweightedGraphLoader: UnweightedGraphLoaderProtocol) {
         self.graph = graph
         let firstVertex = graph.vertices.first ?? Constant.fallbackTitle

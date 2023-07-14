@@ -29,7 +29,7 @@ struct GraphView: View {
 
     private let unweightedGraphLoader: UnweightedGraphLoaderProtocol
 
-    init(graph: UnweightedGraph<String>,
+    init(graph: MyGraph,//UnweightedGraph<String>,
          unweightedGraphLoader: UnweightedGraphLoaderProtocol) {
         self.unweightedGraphLoader = unweightedGraphLoader
         _graphViewState = StateObject(wrappedValue: GraphViewState(graph: graph,
@@ -103,6 +103,6 @@ struct GraphView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        GraphView(graph: UnweightedGraph(), unweightedGraphLoader: UnweightedGraphLoader())
+        GraphView(graph: .empty, unweightedGraphLoader: UnweightedGraphLoader())
     }
 }
