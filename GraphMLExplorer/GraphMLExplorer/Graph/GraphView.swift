@@ -38,11 +38,11 @@ struct GraphView: View {
 
     private var node: GraphNode {
         TimeMeasure().event(.buildingNode)
-//        let verticesCount = graphViewState.graph.vertices.count
-//        let edgesCount = graphViewState.graph.edgeCount
-//        print("Vertices \(verticesCount), edges count \(edgesCount)")
-//        let showForthLevel = verticesCount > 1000 || edgesCount > 2000
-//        print("show forth \(showForthLevel)")
+        let verticesCount = graphViewState.graph.vertices.count
+        let edgesCount = graphViewState.graph.edgeCount
+        print("Vertices \(verticesCount), edges count \(edgesCount)")
+        let showForthLevel = verticesCount < 1000 && edgesCount < 2000
+        print("show forth \(showForthLevel)")
         return GraphNode(label: graphViewState.currentNode,
                          nestLevel: .first,
                          neighbors: graphViewState.childNodes.map {
@@ -72,6 +72,12 @@ struct GraphView: View {
                             state: graphViewState
                         )
                     }
+#if os(macOS)
+                    // Without this mac os tap gestures are broken. (touch areas don't match their views)
+                    // With this on iOS scroll is broken.
+                    // My bet is on some SwiftUI imperfection. Maybe I'm missing sth, but it seems pointless to try to invest yet more time in it.
+                    .frame(width: geometry.size.width, height: geometry.size.height * 0.9, alignment: .center)
+#endif
                     .background(Color.white.opacity(0.9))
                     HStack {
                         Button("Pick new graphML file") {
