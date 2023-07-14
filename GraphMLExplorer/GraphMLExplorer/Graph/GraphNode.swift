@@ -29,7 +29,7 @@ enum NestLevel: Int {
 #if os(iOS) || os(watchOS) || os(tvOS)
         rawValue%2 == 0 ? .vertical : .horizontal
 #elseif os(macOS)
-        rawValue%2 == 0 ? .horizontal : .vertical
+        rawValue%2 == 0 ? .vertical : .horizontal
 #else
         rawValue%2 == 0 ? .horizontal : .vertical
 #endif
@@ -46,12 +46,5 @@ final class GraphNode: Identifiable, ObservableObject {
         self.label = label
         self.neighbors = neighbors
         self.nestLevel = nestLevel
-        var testSet = Set<String>()
-        for neighbor in neighbors {
-            if testSet.contains(neighbor.label) {
-                print("Duplicate")
-            }
-            testSet.insert(neighbor.label)
-        }
     }
 }

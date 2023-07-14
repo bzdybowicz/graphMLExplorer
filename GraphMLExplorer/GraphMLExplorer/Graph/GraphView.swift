@@ -64,6 +64,24 @@ struct GraphView: View {
     var body: some View {
         GeometryReader { geometry in
             VStack {
+                Spacer()
+                HStack {
+                    Button("Pick new graphML file") {
+                        importing = true
+                    }
+                    .fileImporter(isPresented: $importing,
+                                  allowedContentTypes: [.xml]) { result in
+                        switch result {
+                        case .success(let success):
+                            print("success \(success)")
+                            unweightedGraphLoader.load(fileURL: success)
+                        case .failure(let failure):
+                            print("error \(failure)")
+                        }
+                    }
+                    Text(graphViewState.filePath)
+                }
+                Spacer()
                 ScrollView([.horizontal, .vertical]) {
                     HStack(alignment: .center) {
                         GraphNodeLayoutWrapperView(
@@ -72,29 +90,11 @@ struct GraphView: View {
                             state: graphViewState
                         )
                     }
-#if os(macOS)
-                    // Without this mac os tap gestures are broken. (touch areas don't match their views)
-                    // With this on iOS scroll is broken.
-                    // My bet is on some SwiftUI imperfection. Maybe I'm missing sth, but it seems pointless to try to invest yet more time in it.
-                    .frame(width: geometry.size.width, height: geometry.size.height * 0.9, alignment: .center)
-#endif
+                    // If content frames are smaller than scroll view then scroll view is broken (either taps - views with touch areas
+                    // don't match or there is no scroll indicators when reloaded).
+                    // https://stackoverflow.com/questions/61183673/swiftui-scrollview-does-not-center-content-when-content-fits-scrollview-bounds
+                    .frame(minWidth: geometry.size.width, minHeight: geometry.size.height)
                     .background(Color.white.opacity(0.9))
-                    HStack {
-                        Button("Pick new graphML file") {
-                            importing = true
-                        }
-                        .fileImporter(isPresented: $importing,
-                                      allowedContentTypes: [.xml]) { result in
-                            switch result {
-                            case .success(let success):
-                                print("success \(success)")
-                                unweightedGraphLoader.load(fileURL: success)
-                            case .failure(let failure):
-                                print("error \(failure)")
-                            }
-                        }
-                        Text(graphViewState.filePath)
-                    }
                 }
             }
         }
