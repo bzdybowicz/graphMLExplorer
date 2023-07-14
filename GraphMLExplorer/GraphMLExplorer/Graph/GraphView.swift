@@ -36,31 +36,36 @@ struct GraphView: View {
                                                                    unweightedGraphLoader: unweightedGraphLoader))
     }
 
+    private var node: GraphNode {
+        GraphNode(label: graphViewState.currentNode,
+                  nestLevel: .first,
+                  neighbors: graphViewState.childNodes.map {
+            let neighbors = graphViewState.graph.neighborsForVertex($0) ?? []
+            return GraphNode(label: $0,
+                             nestLevel: .second,
+                             neighbors: neighbors.map {
+                let neighbors = graphViewState.graph.neighborsForVertex($0) ?? []
+                return GraphNode(label: $0,
+                                 nestLevel: .third,
+                                 neighbors: neighbors.map { GraphNode(label: $0,
+                                                                      nestLevel: .fourth,
+                                                                      neighbors: [])
+                })
+            })
+        })
+    }
+
     var body: some View {
         GeometryReader { geometry in
             VStack {
-                ScrollView([.vertical, .horizontal]) {
+                ScrollView([.horizontal, .vertical]) {
                     HStack(alignment: .center) {
                         GraphNodeLayoutWrapperView(
                             layoutType: .horizontal,
-                            node: GraphNode(
-                                label: graphViewState.currentNode,
-                                neighbors:
-                                    graphViewState.childNodes.map {
-                                        let neighbors = graphViewState.graph.neighborsForVertex($0) ?? []
-                                        return GraphNode(label: $0,
-                                                         neighbors: neighbors.map {
-                                            let neighbors = graphViewState.graph.neighborsForVertex($0) ?? []
-                                            return GraphNode(label: $0, neighbors:
-                                                                neighbors.map {
-                                                return GraphNode(label: $0, neighbors: [])
-                                            })
-                                        })
-                                    }),
+                            node: node,
                             state: graphViewState
                         )
                     }
-                    .frame(width: geometry.size.width, height: geometry.size.height * 0.9, alignment: .center)
                     .background(Color.white.opacity(0.9))
                     HStack {
                         Button("Pick new graphML file") {

@@ -118,12 +118,12 @@ struct GraphMLParser: GraphMLParserProtocol {
                 }
             }
         }
-        for vertex in vertexes {
-            print("VERTEX\(vertex)")
-        }
-        for vertex in graph.vertices {
-            print("VERTICE \(vertex)")
-        }
+//        for vertex in vertexes {
+//            print("VERTEX\(vertex)")
+//        }
+//        for vertex in graph.vertices {
+//            print("VERTICE \(vertex)")
+//        }
         print("2. VERTICES COUNT \(graph.vertices.count) \(graph.vertexCount)")
         return graph
     }

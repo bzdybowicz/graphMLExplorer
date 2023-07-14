@@ -12,18 +12,20 @@ import SwiftGraph
 final class GraphViewState: ObservableObject {
     @Published var currentNode: String
     @Published var childNodes: [String]
-
     @Published var graph: UnweightedGraph<String>
     @Published var filePath: String = ""
-    private static let fallbackTitle = "No nodes in loaded graph!"
-    private let unweightedGraphLoader: UnweightedGraphLoaderProtocol
 
+    private let unweightedGraphLoader: UnweightedGraphLoaderProtocol
     private var cancellables: Set<AnyCancellable> = []
+
+    private enum Constant {
+        static let fallbackTitle = "No nodes in loaded graph!"
+    }
 
     init(graph: UnweightedGraph<String>,
          unweightedGraphLoader: UnweightedGraphLoaderProtocol) {
         self.graph = graph
-        let firstVertex = graph.vertices.first ?? GraphViewState.fallbackTitle
+        let firstVertex = graph.vertices.first ?? Constant.fallbackTitle
         let neighbors = graph.neighborsForVertex(firstVertex) ?? []
         self.currentNode = firstVertex
         self.childNodes = neighbors
@@ -34,11 +36,8 @@ final class GraphViewState: ObservableObject {
             .sink(receiveValue: { [weak self] value in
                 self?.graph = value.graph
                 self?.filePath = value.filePath
-                self?.currentNode = value.graph.vertices.first ?? GraphViewState.fallbackTitle
+                self?.currentNode = value.graph.vertices.first ?? Constant.fallbackTitle
                 let newChildNodes = value.graph.neighborsForVertex(firstVertex) ?? []
-                for childNode in newChildNodes {
-                    print("Child \(childNode.id)")
-                }
                 self?.childNodes = newChildNodes.sorted()
             })
             .store(in: &cancellables)
