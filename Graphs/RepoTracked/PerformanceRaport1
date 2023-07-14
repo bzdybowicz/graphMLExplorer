@@ -1,0 +1,12 @@
+Performance:
+
+Loading 10000 nodes, file:
+
+10000edgeMin3edgeMax4.xml
+
+1st attempt time:
+
+Time from pick file to loaded 0.004420042037963867
+Time from parsing start to end 91.12929892539978
+Vertices 10000, edges count 79971
+
