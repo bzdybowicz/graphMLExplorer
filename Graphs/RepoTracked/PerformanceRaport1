@@ -10,3 +10,14 @@ Time from pick file to loaded 0.004420042037963867
 Time from parsing start to end 91.12929892539978
 Vertices 10000, edges count 79971
 
+
+Onw struct:
+
+2. VERTICES COUNT 0 0
+Time from parser start to xml done 0.9302250146865845
+Time from parser start to all done 0.9678490161895752
+Time from pick file to loaded 0.007789969444274902
+Time from parsing start to end 0.9994618892669678
+Time from parser start to xml done 0.9302250146865845
+Time from parser start to all done 0.9678490161895752
+Vertices 10000, edges count 39987

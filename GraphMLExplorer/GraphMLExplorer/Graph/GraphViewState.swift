@@ -12,8 +12,9 @@ import SwiftGraph
 final class GraphViewState: ObservableObject {
     @Published var currentNode: String
     @Published var childNodes: [String]
-    @Published var graph: MyGraph //UnweightedGraph<String>
+    @Published var graph: BZGraph //UnweightedGraph<String>
     @Published var filePath: String = ""
+    @Published var animating: Bool = false
 
     private let unweightedGraphLoader: UnweightedGraphLoaderProtocol
     private var cancellables: Set<AnyCancellable> = []
@@ -22,11 +23,11 @@ final class GraphViewState: ObservableObject {
         static let fallbackTitle = "No nodes in loaded graph!"
     }
 
-    init(graph: MyGraph,//UnweightedGraph<String>,
+    init(graph: BZGraph,//UnweightedGraph<String>,
          unweightedGraphLoader: UnweightedGraphLoaderProtocol) {
         self.graph = graph
         let firstVertex = graph.vertices.first ?? Constant.fallbackTitle
-        let neighbors = graph.neighborsForVertex(firstVertex) ?? []
+        let neighbors = graph.neighborsForVertex(firstVertex)
         self.currentNode = firstVertex
         self.childNodes = neighbors
         self.unweightedGraphLoader = unweightedGraphLoader
@@ -37,7 +38,7 @@ final class GraphViewState: ObservableObject {
                 self?.graph = value.graph
                 self?.filePath = value.filePath
                 self?.currentNode = value.graph.vertices.first ?? Constant.fallbackTitle
-                let newChildNodes = value.graph.neighborsForVertex(firstVertex) ?? []
+                let newChildNodes = value.graph.neighborsForVertex(firstVertex)
                 self?.childNodes = newChildNodes.sorted()
             })
             .store(in: &cancellables)
@@ -48,6 +49,6 @@ final class GraphViewState: ObservableObject {
             return
         }
         self.currentNode = vertex
-        self.childNodes = (graph.neighborsForVertex(vertex) ?? []).sorted()
+        self.childNodes = (graph.neighborsForVertex(vertex)).sorted()
     }
 }

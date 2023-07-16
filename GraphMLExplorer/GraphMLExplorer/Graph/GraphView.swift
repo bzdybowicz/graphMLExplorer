@@ -23,13 +23,12 @@ struct GraphView: View {
             GridItem(.adaptive(minimum: 20))
         }
     }
-
     @State private var importing = false
     @StateObject private var graphViewState: GraphViewState
 
     private let unweightedGraphLoader: UnweightedGraphLoaderProtocol
 
-    init(graph: MyGraph,//UnweightedGraph<String>,
+    init(graph: BZGraph,//UnweightedGraph<String>,
          unweightedGraphLoader: UnweightedGraphLoaderProtocol) {
         self.unweightedGraphLoader = unweightedGraphLoader
         _graphViewState = StateObject(wrappedValue: GraphViewState(graph: graph,
@@ -46,11 +45,11 @@ struct GraphView: View {
         return GraphNode(label: graphViewState.currentNode,
                          nestLevel: .first,
                          neighbors: graphViewState.childNodes.map {
-            let neighbors = graphViewState.graph.neighborsForVertex($0) ?? []
+            let neighbors = graphViewState.graph.neighborsForVertex($0)
             return GraphNode(label: $0,
                              nestLevel: .second,
                              neighbors: neighbors.map {
-                let neighbors = graphViewState.graph.neighborsForVertex($0) ?? []
+                let neighbors = graphViewState.graph.neighborsForVertex($0)
                 return GraphNode(label: $0,
                                  nestLevel: .third,
                                  neighbors: neighbors.map { GraphNode(label: $0,
@@ -95,6 +94,9 @@ struct GraphView: View {
                     // https://stackoverflow.com/questions/61183673/swiftui-scrollview-does-not-center-content-when-content-fits-scrollview-bounds
                     .frame(minWidth: geometry.size.width, minHeight: geometry.size.height)
                     .background(Color.white.opacity(0.9))
+                }
+                if graphViewState.animating {
+                    ProgressView("Loading graph")
                 }
             }
         }
