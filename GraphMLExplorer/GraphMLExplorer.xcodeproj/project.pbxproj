@@ -29,8 +29,12 @@
 		7F73A24F2A61596C00CCDA70 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 7F73A24E2A61596C00CCDA70 /* SnapshotTesting */; };
 		7F73A2512A61681900CCDA70 /* GraphViewSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F73A2502A61681800CCDA70 /* GraphViewSnapshotsTests.swift */; };
 		7F73A2532A61817A00CCDA70 /* TimeMeasure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F73A2522A61817A00CCDA70 /* TimeMeasure.swift */; };
-		7F73A2552A61A00700CCDA70 /* GraphMLParserOptimize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F73A2542A61A00700CCDA70 /* GraphMLParserOptimize.swift */; };
 		7FCC81F12A5C33AE0022C243 /* GraphViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCC81F02A5C33AE0022C243 /* GraphViewState.swift */; };
+		7FE86D162A6434830084A7E7 /* Fuzi in Frameworks */ = {isa = PBXBuildFile; productRef = 7FE86D152A6434830084A7E7 /* Fuzi */; };
+		7FE86D182A6436190084A7E7 /* GraphMLCoreFoundationParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE86D172A6436190084A7E7 /* GraphMLCoreFoundationParser.swift */; };
+		7FE86D1A2A64426C0084A7E7 /* GraphMLFuziParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE86D192A64426C0084A7E7 /* GraphMLFuziParser.swift */; };
+		7FE86D1C2A6446030084A7E7 /* GraphMLCoreFoundationParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE86D1B2A6446030084A7E7 /* GraphMLCoreFoundationParserTests.swift */; };
+		7FE86D1E2A64462D0084A7E7 /* GraphMLFuziParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE86D1D2A64462D0084A7E7 /* GraphMLFuziParserTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,8 +79,11 @@
 		7F5226E32A5600A90082475D /* GraphNodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphNodeView.swift; sourceTree = "<group>"; };
 		7F73A2502A61681800CCDA70 /* GraphViewSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewSnapshotsTests.swift; sourceTree = "<group>"; };
 		7F73A2522A61817A00CCDA70 /* TimeMeasure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeMeasure.swift; sourceTree = "<group>"; };
-		7F73A2542A61A00700CCDA70 /* GraphMLParserOptimize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphMLParserOptimize.swift; sourceTree = "<group>"; };
 		7FCC81F02A5C33AE0022C243 /* GraphViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewState.swift; sourceTree = "<group>"; };
+		7FE86D172A6436190084A7E7 /* GraphMLCoreFoundationParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphMLCoreFoundationParser.swift; sourceTree = "<group>"; };
+		7FE86D192A64426C0084A7E7 /* GraphMLFuziParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphMLFuziParser.swift; sourceTree = "<group>"; };
+		7FE86D1B2A6446030084A7E7 /* GraphMLCoreFoundationParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphMLCoreFoundationParserTests.swift; sourceTree = "<group>"; };
+		7FE86D1D2A64462D0084A7E7 /* GraphMLFuziParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphMLFuziParserTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FE86D162A6434830084A7E7 /* Fuzi in Frameworks */,
 				7F5226DC2A55C8CE0082475D /* SwiftyXMLParser in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -110,6 +118,8 @@
 			isa = PBXGroup;
 			children = (
 				7F3294CE2A640B3D00AB9251 /* GraphMLParserTests.swift */,
+				7FE86D1B2A6446030084A7E7 /* GraphMLCoreFoundationParserTests.swift */,
+				7FE86D1D2A64462D0084A7E7 /* GraphMLFuziParserTests.swift */,
 			);
 			path = Parsing;
 			sourceTree = "<group>";
@@ -183,7 +193,8 @@
 			isa = PBXGroup;
 			children = (
 				7F5226D02A55C56E0082475D /* GraphMLParser.swift */,
-				7F73A2542A61A00700CCDA70 /* GraphMLParserOptimize.swift */,
+				7FE86D172A6436190084A7E7 /* GraphMLCoreFoundationParser.swift */,
+				7FE86D192A64426C0084A7E7 /* GraphMLFuziParser.swift */,
 			);
 			path = Parsing;
 			sourceTree = "<group>";
@@ -236,6 +247,7 @@
 			name = GraphMLExplorer;
 			packageProductDependencies = (
 				7F5226DB2A55C8CE0082475D /* SwiftyXMLParser */,
+				7FE86D152A6434830084A7E7 /* Fuzi */,
 			);
 			productName = GraphMLExplorer;
 			productReference = 7F5226A12A557BBE0082475D /* GraphMLExplorer.app */;
@@ -315,6 +327,7 @@
 			packageReferences = (
 				7F5226DA2A55C8CE0082475D /* XCRemoteSwiftPackageReference "SwiftyXMLParser" */,
 				7F73A24D2A61596C00CCDA70 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
+				7FE86D142A6434830084A7E7 /* XCRemoteSwiftPackageReference "Fuzi" */,
 			);
 			productRefGroup = 7F5226A22A557BBE0082475D /* Products */;
 			projectDirPath = "";
@@ -359,16 +372,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FE86D1A2A64426C0084A7E7 /* GraphMLFuziParser.swift in Sources */,
 				7F2F51DD2A61331E00A99AB8 /* GraphNode.swift in Sources */,
 				7F73A2532A61817A00CCDA70 /* TimeMeasure.swift in Sources */,
 				7F5226A72A557BBE0082475D /* GraphView.swift in Sources */,
-				7F73A2552A61A00700CCDA70 /* GraphMLParserOptimize.swift in Sources */,
 				7F3294CC2A6404B700AB9251 /* Graph.swift in Sources */,
 				7F5226A52A557BBE0082475D /* GraphMLExplorerApp.swift in Sources */,
 				7F5226E42A5600A90082475D /* GraphNodeView.swift in Sources */,
 				7F5226D32A55C5AE0082475D /* FileLoader.swift in Sources */,
 				7FCC81F12A5C33AE0022C243 /* GraphViewState.swift in Sources */,
 				7F5226D92A55C84F0082475D /* UnweightedGraphLoader.swift in Sources */,
+				7FE86D182A6436190084A7E7 /* GraphMLCoreFoundationParser.swift in Sources */,
 				7F2F51DB2A6132F000A99AB8 /* GraphNodeLayoutWrapperView.swift in Sources */,
 				7F2F51D92A61312500A99AB8 /* RoundedRectangleModifier.swift in Sources */,
 				7F5226D12A55C56E0082475D /* GraphMLParser.swift in Sources */,
@@ -381,7 +395,9 @@
 			files = (
 				7F73A2512A61681900CCDA70 /* GraphViewSnapshotsTests.swift in Sources */,
 				7F2F51DF2A614B5C00A99AB8 /* FileLoaderTests.swift in Sources */,
+				7FE86D1C2A6446030084A7E7 /* GraphMLCoreFoundationParserTests.swift in Sources */,
 				7F3294CF2A640B3D00AB9251 /* GraphMLParserTests.swift in Sources */,
+				7FE86D1E2A64462D0084A7E7 /* GraphMLFuziParserTests.swift in Sources */,
 				7F5226B72A557BC00082475D /* GraphMLExplorerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -744,6 +760,14 @@
 				minimumVersion = 1.11.0;
 			};
 		};
+		7FE86D142A6434830084A7E7 /* XCRemoteSwiftPackageReference "Fuzi" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/cezheng/Fuzi.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -756,6 +780,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7F73A24D2A61596C00CCDA70 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
 			productName = SnapshotTesting;
+		};
+		7FE86D152A6434830084A7E7 /* Fuzi */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7FE86D142A6434830084A7E7 /* XCRemoteSwiftPackageReference "Fuzi" */;
+			productName = Fuzi;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -33,6 +33,7 @@ final class TimeMeasure {
     }
 
     func printResults() {
+        print("**** NEW ****")
         if let start = table[.pickFile], let end = table[.fileLoaded] {
             print("Time from pick file to loaded \(end - start)")
         }

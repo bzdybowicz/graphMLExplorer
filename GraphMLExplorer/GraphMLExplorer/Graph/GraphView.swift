@@ -35,7 +35,7 @@ struct GraphView: View {
     }
 
     private var node: GraphNode {
-        TimeMeasure().event(.buildingNode)
+        TimeMeasure.instance.event(.buildingNode)
         let verticesCount = graphViewState.graph.vertices.count
         let edgesCount = graphViewState.graph.edgeCount
         print("Vertices \(verticesCount), edges count \(edgesCount)")

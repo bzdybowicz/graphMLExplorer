@@ -4,14 +4,20 @@ Loading 10000 nodes, file:
 
 10000edgeMin3edgeMax4.xml
 
-1st attempt time:
 
+
+SwistyXMLParser & SwiftGraph:
+
+1st attempt time:
 Time from pick file to loaded 0.004420042037963867
 Time from parsing start to end 91.12929892539978
 Vertices 10000, edges count 79971
 
+SwiftGraph creation is way too expensive. Indexing on each element creation is likely a cause.
 
-Onw struct:
+SwistyXMLParser:
+
+Own struct:
 
 2. VERTICES COUNT 0 0
 Time from parser start to xml done 0.9302250146865845
@@ -21,3 +27,64 @@ Time from parsing start to end 0.9994618892669678
 Time from parser start to xml done 0.9302250146865845
 Time from parser start to all done 0.9678490161895752
 Vertices 10000, edges count 39987
+
+**** NEW ****
+Time from pick file to loaded 0.004323005676269531
+Time from parsing start to end 0.9633859395980835
+Time from parser start to xml done 0.8989319801330566
+Time from parser start to all done 0.9343130588531494
+
+**** NEW ****
+Time from pick file to loaded 0.004284024238586426
+Time from parsing start to end 0.941215991973877
+Time from parsing end to building node 0.02114999294281006
+Time from parser start to xml done 0.8746660947799683
+Time from parser start to all done 0.9107520580291748
+Vertices 10000, edges count 39987
+
+
+NSXML parser:
+
+**** NEW ****
+Time from pick file to loaded 0.011224985122680664
+Time from parsing start to end 0.20665502548217773
+Time from parsing end to building node 0.025583982467651367
+Time from parser start to xml done 0.15333294868469238
+Time from parser start to all done 0.2042839527130127
+Vertices 10000, edges count 39987
+
+Time from pick file to loaded 0.010946989059448242
+Time from parsing start to end 0.2172839641571045
+Time from parsing end to building node 0.025027036666870117
+Time from parser start to xml done 0.15331900119781494
+Time from parser start to all done 0.21489500999450684
+Vertices 10000, edges count 39987
+
+FUZI parser:
+
+1.
+**** NEW ****
+Time from pick file to loaded 0.011707901954650879
+Time from parsing start to end 0.26991891860961914 (whole parsing operation)
+Time from parsing end to building node 0.024738073348999023
+Time from parser start to xml done 0.07940995693206787 (xml parser itself)
+Time from parser start to all done 0.23392295837402344 (xml parser itself + my iteration to create object)
+Vertices 10000, edges count 39987
+
+2.
+**** NEW ****
+Time from pick file to loaded 0.011371016502380371
+Time from parsing start to end 0.27319300174713135
+Time from parsing end to building node 0.01530003547668457
+Time from parser start to xml done 0.08606398105621338
+Time from parser start to all done 0.2387230396270752
+Vertices 10000, edges count 39987
+
+**** NEW ****
+Time from pick file to loaded 0.006828904151916504
+Time from parsing start to end 0.27068400382995605
+Time from parsing end to building node 0.019100069999694824
+Time from parser start to xml done 0.08065998554229736
+Time from parser start to all done 0.2364720106124878
+Vertices 10000, edges count 39987
+
