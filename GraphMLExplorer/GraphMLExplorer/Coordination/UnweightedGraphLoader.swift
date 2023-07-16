@@ -7,15 +7,14 @@
 
 import Combine
 import Foundation
-import SwiftGraph
 
 struct GraphData {
     let filePath: String
-    let graph: BZGraph
+    let graph: Graph
 }
 
 protocol UnweightedGraphLoaderProtocol {
-    func start() -> BZGraph
+    func start() -> Graph
 
     func load(fileURL: URL)
 
@@ -51,7 +50,7 @@ struct UnweightedGraphLoader: UnweightedGraphLoaderProtocol {
         subject.send(GraphData(filePath: fileURL.absoluteString, graph: graph))
     }
 
-    func start() -> BZGraph {
+    func start() -> Graph {
         var fileContent: String = ""
         do {
             fileContent = try fileLoader.loadAppBundleFile(xmlName: "sample")

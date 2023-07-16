@@ -7,10 +7,9 @@
 
 import Foundation
 import SwiftyXMLParser
-import SwiftGraph
 
 protocol GraphMLParserProtocol {
-    func parse(xmlString: String) -> BZGraph
+    func parse(xmlString: String) -> Graph
 }
 
 enum Directed: String {
@@ -32,8 +31,6 @@ enum Directed: String {
 
 struct GraphMLParser: GraphMLParserProtocol {
 
-    private let emptyGraph = UnweightedGraph<String>()
-
     private enum Constant {
         static let graphmlMarker = "graphml"
         static let graphMarker = "graph"
@@ -45,7 +42,7 @@ struct GraphMLParser: GraphMLParserProtocol {
         static let id = "id"
     }
 
-    func parse(xmlString: String) -> BZGraph {
+    func parse(xmlString: String) -> Graph {
         guard let data = xmlString.data(using: .utf8) else {
             return .empty
         }
@@ -79,8 +76,7 @@ struct GraphMLParser: GraphMLParserProtocol {
         }
     }
 
-    private func setupGraph(from element: XML.Element?) -> BZGraph {
-        let graph = UnweightedGraph<String>()
+    private func setupGraph(from element: XML.Element?) -> Graph {
         guard let element = element else { return .empty }
         let directed: Directed = Directed.create(rawValue: element.attributes[Constant.edgeDefault])
 
@@ -101,12 +97,7 @@ struct GraphMLParser: GraphMLParserProtocol {
                 }
             }
         }
-        return BZGraph(vertices: Array(vertexes), edges: Array(edges), directed: directed)
+        return Graph(vertices: Array(vertexes), edges: Array(edges), directed: directed)
     }
 
-}
-
-struct EdgeStruct: Hashable {
-    let source: String
-    let target: String
 }

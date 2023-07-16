@@ -7,9 +7,9 @@
 
 import Foundation
 
-struct BZGraph {
+struct Graph {
 
-    static let empty = BZGraph(vertices: [], edges: [], directed: .undirected)
+    static let empty = Graph(vertices: [], edges: [], directed: .undirected)
     let edges: [EdgeStruct]
     var vertices: [String]
     let directed: Directed
@@ -38,4 +38,9 @@ struct BZGraph {
         vertices.firstIndex(of: vertex) != nil
     }
 
+}
+
+struct EdgeStruct: Hashable {
+    let source: String
+    let target: String
 }

@@ -11,7 +11,7 @@
 		7F2F51DB2A6132F000A99AB8 /* GraphNodeLayoutWrapperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2F51DA2A6132F000A99AB8 /* GraphNodeLayoutWrapperView.swift */; };
 		7F2F51DD2A61331E00A99AB8 /* GraphNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2F51DC2A61331E00A99AB8 /* GraphNode.swift */; };
 		7F2F51DF2A614B5C00A99AB8 /* FileLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2F51DE2A614B5C00A99AB8 /* FileLoaderTests.swift */; };
-		7F3294CC2A6404B700AB9251 /* BZGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3294CB2A6404B700AB9251 /* BZGraph.swift */; };
+		7F3294CC2A6404B700AB9251 /* Graph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3294CB2A6404B700AB9251 /* Graph.swift */; };
 		7F3294CF2A640B3D00AB9251 /* GraphMLParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3294CE2A640B3D00AB9251 /* GraphMLParserTests.swift */; };
 		7F5226A52A557BBE0082475D /* GraphMLExplorerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5226A42A557BBE0082475D /* GraphMLExplorerApp.swift */; };
 		7F5226A72A557BBE0082475D /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5226A62A557BBE0082475D /* GraphView.swift */; };
@@ -25,7 +25,6 @@
 		7F5226D62A55C70E0082475D /* sample.xml in Resources */ = {isa = PBXBuildFile; fileRef = 7F5226D52A55C70D0082475D /* sample.xml */; };
 		7F5226D92A55C84F0082475D /* UnweightedGraphLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5226D82A55C84F0082475D /* UnweightedGraphLoader.swift */; };
 		7F5226DC2A55C8CE0082475D /* SwiftyXMLParser in Frameworks */ = {isa = PBXBuildFile; productRef = 7F5226DB2A55C8CE0082475D /* SwiftyXMLParser */; };
-		7F5226DF2A55D2910082475D /* SwiftGraph in Frameworks */ = {isa = PBXBuildFile; productRef = 7F5226DE2A55D2910082475D /* SwiftGraph */; };
 		7F5226E42A5600A90082475D /* GraphNodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5226E32A5600A90082475D /* GraphNodeView.swift */; };
 		7F73A24F2A61596C00CCDA70 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 7F73A24E2A61596C00CCDA70 /* SnapshotTesting */; };
 		7F73A2512A61681900CCDA70 /* GraphViewSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F73A2502A61681800CCDA70 /* GraphViewSnapshotsTests.swift */; };
@@ -56,7 +55,7 @@
 		7F2F51DA2A6132F000A99AB8 /* GraphNodeLayoutWrapperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphNodeLayoutWrapperView.swift; sourceTree = "<group>"; };
 		7F2F51DC2A61331E00A99AB8 /* GraphNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphNode.swift; sourceTree = "<group>"; };
 		7F2F51DE2A614B5C00A99AB8 /* FileLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileLoaderTests.swift; sourceTree = "<group>"; };
-		7F3294CB2A6404B700AB9251 /* BZGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BZGraph.swift; sourceTree = "<group>"; };
+		7F3294CB2A6404B700AB9251 /* Graph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Graph.swift; sourceTree = "<group>"; };
 		7F3294CE2A640B3D00AB9251 /* GraphMLParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphMLParserTests.swift; sourceTree = "<group>"; };
 		7F5226A12A557BBE0082475D /* GraphMLExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GraphMLExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F5226A42A557BBE0082475D /* GraphMLExplorerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphMLExplorerApp.swift; sourceTree = "<group>"; };
@@ -86,7 +85,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F5226DC2A55C8CE0082475D /* SwiftyXMLParser in Frameworks */,
-				7F5226DF2A55D2910082475D /* SwiftGraph in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,7 +213,7 @@
 				7F2F51D82A61312500A99AB8 /* RoundedRectangleModifier.swift */,
 				7F2F51DA2A6132F000A99AB8 /* GraphNodeLayoutWrapperView.swift */,
 				7F2F51DC2A61331E00A99AB8 /* GraphNode.swift */,
-				7F3294CB2A6404B700AB9251 /* BZGraph.swift */,
+				7F3294CB2A6404B700AB9251 /* Graph.swift */,
 			);
 			path = Graph;
 			sourceTree = "<group>";
@@ -238,7 +236,6 @@
 			name = GraphMLExplorer;
 			packageProductDependencies = (
 				7F5226DB2A55C8CE0082475D /* SwiftyXMLParser */,
-				7F5226DE2A55D2910082475D /* SwiftGraph */,
 			);
 			productName = GraphMLExplorer;
 			productReference = 7F5226A12A557BBE0082475D /* GraphMLExplorer.app */;
@@ -317,7 +314,6 @@
 			mainGroup = 7F5226982A557BBE0082475D;
 			packageReferences = (
 				7F5226DA2A55C8CE0082475D /* XCRemoteSwiftPackageReference "SwiftyXMLParser" */,
-				7F5226DD2A55D2910082475D /* XCRemoteSwiftPackageReference "SwiftGraph" */,
 				7F73A24D2A61596C00CCDA70 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
 			);
 			productRefGroup = 7F5226A22A557BBE0082475D /* Products */;
@@ -367,7 +363,7 @@
 				7F73A2532A61817A00CCDA70 /* TimeMeasure.swift in Sources */,
 				7F5226A72A557BBE0082475D /* GraphView.swift in Sources */,
 				7F73A2552A61A00700CCDA70 /* GraphMLParserOptimize.swift in Sources */,
-				7F3294CC2A6404B700AB9251 /* BZGraph.swift in Sources */,
+				7F3294CC2A6404B700AB9251 /* Graph.swift in Sources */,
 				7F5226A52A557BBE0082475D /* GraphMLExplorerApp.swift in Sources */,
 				7F5226E42A5600A90082475D /* GraphNodeView.swift in Sources */,
 				7F5226D32A55C5AE0082475D /* FileLoader.swift in Sources */,
@@ -740,14 +736,6 @@
 				minimumVersion = 5.0.0;
 			};
 		};
-		7F5226DD2A55D2910082475D /* XCRemoteSwiftPackageReference "SwiftGraph" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/davecom/SwiftGraph";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.0.0;
-			};
-		};
 		7F73A24D2A61596C00CCDA70 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pointfreeco/swift-snapshot-testing";
@@ -763,11 +751,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7F5226DA2A55C8CE0082475D /* XCRemoteSwiftPackageReference "SwiftyXMLParser" */;
 			productName = SwiftyXMLParser;
-		};
-		7F5226DE2A55D2910082475D /* SwiftGraph */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 7F5226DD2A55D2910082475D /* XCRemoteSwiftPackageReference "SwiftGraph" */;
-			productName = SwiftGraph;
 		};
 		7F73A24E2A61596C00CCDA70 /* SnapshotTesting */ = {
 			isa = XCSwiftPackageProductDependency;

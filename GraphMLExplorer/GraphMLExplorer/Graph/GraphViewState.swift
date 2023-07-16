@@ -7,12 +7,11 @@
 
 import Combine
 import Foundation
-import SwiftGraph
 
 final class GraphViewState: ObservableObject {
     @Published var currentNode: String
     @Published var childNodes: [String]
-    @Published var graph: BZGraph //UnweightedGraph<String>
+    @Published var graph: Graph //UnweightedGraph<String>
     @Published var filePath: String = ""
     @Published var animating: Bool = false
 
@@ -23,7 +22,7 @@ final class GraphViewState: ObservableObject {
         static let fallbackTitle = "No nodes in loaded graph!"
     }
 
-    init(graph: BZGraph,//UnweightedGraph<String>,
+    init(graph: Graph,//UnweightedGraph<String>,
          unweightedGraphLoader: UnweightedGraphLoaderProtocol) {
         self.graph = graph
         let firstVertex = graph.vertices.first ?? Constant.fallbackTitle

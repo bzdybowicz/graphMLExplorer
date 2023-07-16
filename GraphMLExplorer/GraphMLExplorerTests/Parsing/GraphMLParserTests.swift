@@ -9,7 +9,7 @@ import Foundation
 @testable import GraphMLExplorer
 import XCTest
 
-extension BZGraph: Equatable {
+extension Graph: Equatable {
     public static func == (lhs: Self, rhs: Self) -> Bool {
         let vertices = Set(lhs.vertices) == Set(rhs.vertices)
         let directed = lhs.directed == rhs.directed
@@ -22,7 +22,7 @@ extension BZGraph: Equatable {
 
 final class GraphMLParserTests: XCTestCase {
 
-    func testParseUndirected10nodes12edges() {
+    func testParseUndirected11nodes13edges() {
         let sut = GraphMLParser()
         let sampleString =
 """
@@ -43,11 +43,11 @@ final class GraphMLParserTests: XCTestCase {
                              EdgeStruct(source: "n8", target: "n7"),
                              EdgeStruct(source: "n8", target: "n9"),
                              EdgeStruct(source: "n8", target: "n10")]
-        XCTAssertEqual(graph, BZGraph(vertices: expectedVertices, edges: expectedEdges, directed: .undirected))
+        XCTAssertEqual(graph, Graph(vertices: expectedVertices, edges: expectedEdges, directed: .undirected))
     }
 
 
-    func testParseDirected() {
+    func testParseDirected10vertices11edges() {
         let sut = GraphMLParser()
         let sampleString =
 """
@@ -66,6 +66,6 @@ final class GraphMLParserTests: XCTestCase {
                              EdgeStruct(source: "n6", target: "n8"),
                              EdgeStruct(source: "n8", target: "n9"),
                              EdgeStruct(source: "n8", target: "n10")]
-        XCTAssertEqual(graph, BZGraph(vertices: expectedVertices, edges: expectedEdges, directed: .directed))
+        XCTAssertEqual(graph, Graph(vertices: expectedVertices, edges: expectedEdges, directed: .directed))
     }
 }

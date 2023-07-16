@@ -7,7 +7,6 @@
 
 import Combine
 import SwiftUI
-import SwiftGraph
 
 extension String: Identifiable {
     public typealias ID = Int
@@ -28,7 +27,7 @@ struct GraphView: View {
 
     private let unweightedGraphLoader: UnweightedGraphLoaderProtocol
 
-    init(graph: BZGraph,//UnweightedGraph<String>,
+    init(graph: Graph,//UnweightedGraph<String>,
          unweightedGraphLoader: UnweightedGraphLoaderProtocol) {
         self.unweightedGraphLoader = unweightedGraphLoader
         _graphViewState = StateObject(wrappedValue: GraphViewState(graph: graph,
