@@ -12,6 +12,7 @@
 		7F2F51DD2A61331E00A99AB8 /* GraphNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2F51DC2A61331E00A99AB8 /* GraphNode.swift */; };
 		7F2F51DF2A614B5C00A99AB8 /* FileLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2F51DE2A614B5C00A99AB8 /* FileLoaderTests.swift */; };
 		7F3294CC2A6404B700AB9251 /* BZGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3294CB2A6404B700AB9251 /* BZGraph.swift */; };
+		7F3294CF2A640B3D00AB9251 /* GraphMLParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3294CE2A640B3D00AB9251 /* GraphMLParserTests.swift */; };
 		7F5226A52A557BBE0082475D /* GraphMLExplorerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5226A42A557BBE0082475D /* GraphMLExplorerApp.swift */; };
 		7F5226A72A557BBE0082475D /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5226A62A557BBE0082475D /* GraphView.swift */; };
 		7F5226A92A557BC00082475D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F5226A82A557BC00082475D /* Assets.xcassets */; };
@@ -56,6 +57,7 @@
 		7F2F51DC2A61331E00A99AB8 /* GraphNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphNode.swift; sourceTree = "<group>"; };
 		7F2F51DE2A614B5C00A99AB8 /* FileLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileLoaderTests.swift; sourceTree = "<group>"; };
 		7F3294CB2A6404B700AB9251 /* BZGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BZGraph.swift; sourceTree = "<group>"; };
+		7F3294CE2A640B3D00AB9251 /* GraphMLParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphMLParserTests.swift; sourceTree = "<group>"; };
 		7F5226A12A557BBE0082475D /* GraphMLExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GraphMLExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F5226A42A557BBE0082475D /* GraphMLExplorerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphMLExplorerApp.swift; sourceTree = "<group>"; };
 		7F5226A62A557BBE0082475D /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
@@ -106,6 +108,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7F3294CD2A640B2A00AB9251 /* Parsing */ = {
+			isa = PBXGroup;
+			children = (
+				7F3294CE2A640B3D00AB9251 /* GraphMLParserTests.swift */,
+			);
+			path = Parsing;
+			sourceTree = "<group>";
+		};
 		7F5226982A557BBE0082475D = {
 			isa = PBXGroup;
 			children = (
@@ -154,6 +164,7 @@
 		7F5226B52A557BC00082475D /* GraphMLExplorerTests */ = {
 			isa = PBXGroup;
 			children = (
+				7F3294CD2A640B2A00AB9251 /* Parsing */,
 				7F5226B62A557BC00082475D /* GraphMLExplorerTests.swift */,
 				7F2F51DE2A614B5C00A99AB8 /* FileLoaderTests.swift */,
 				7F73A2502A61681800CCDA70 /* GraphViewSnapshotsTests.swift */,
@@ -374,6 +385,7 @@
 			files = (
 				7F73A2512A61681900CCDA70 /* GraphViewSnapshotsTests.swift in Sources */,
 				7F2F51DF2A614B5C00A99AB8 /* FileLoaderTests.swift in Sources */,
+				7F3294CF2A640B3D00AB9251 /* GraphMLParserTests.swift in Sources */,
 				7F5226B72A557BC00082475D /* GraphMLExplorerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

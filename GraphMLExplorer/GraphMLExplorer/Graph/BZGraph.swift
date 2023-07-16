@@ -8,6 +8,8 @@
 import Foundation
 
 struct BZGraph {
+
+    static let empty = BZGraph(vertices: [], edges: [], directed: .undirected)
     let edges: [EdgeStruct]
     var vertices: [String]
     let directed: Directed
@@ -19,8 +21,6 @@ struct BZGraph {
         self.edges = edges
         self.directed = directed
     }
-
-    static let empty = BZGraph(vertices: [], edges: [], directed: .undirected)
 
     func neighborsForVertex(_ vertex: String) -> [String] {
         var neighbors: [String] = []
