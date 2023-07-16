@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <key for="edge" id="d0" attr.type="long" attr.name="LongValueName"></key>
+    <key id="d1" attr.type="float" attr.name="FloatValueName" for="graph"></key>
+    <key for="all" attr.name="BooleanValueName" id="d2" attr.type="boolean"></key>
+    <key id="d3" attr.name="StringValueName" attr.type="string" for="node"></key>
+    <graph edgedefault="undirected" id="G">
+        <data key="d0"></data>
+        <data key="d1"></data>
+        <data key="d2">true</data>
+        <data key="d3">yellow</data>
+        <edge target="n8" source="n0" directed="false">
+            <data key="d0"></data>
+            <data key="d1"></data>
+            <data key="d2">true</data>
+            <data key="d3">red</data>
+        </edge>
+        <edge target="n2" source="n0" directed="false">
+            <data key="d0"></data>
+            <data key="d1"></data>
+            <data key="d2">false</data>
+            <data key="d3">red</data>
+        </edge>
+        <node id="n0">
+            <data key="d0"></data>
+            <data key="d1"></data>
+            <data key="d2">true</data>
+            <data key="d3">black</data>
+        </node>
+        <edge target="n9" source="n1" directed="true">
+            <data key="d0"></data>
+            <data key="d1"></data>
+            <data key="d2">true</data>
+            <data key="d3">orange</data>
+        </edge>
+        <edge target="n7" source="n1" directed="false">
+            <data key="d0"></data>
+            <data key="d1"></data>
+            <data key="d2">false</data>
+            <data key="d3">yellow</data>
+        </edge>
+        <node id="n1">
+            <data key="d0"></data>
+            <data key="d1"></data>
+            <data key="d2">false</data>
+            <data key="d3">red</data>
+        </node>
+        <edge target="n9" source="n2" directed="false">
+            <data key="d0"></data>
+            <data key="d1"></data>
+            <data key="d2">true</data>
+            <data key="d3">red</data>
+        </edge>
+        <edge target="n2" source="n2" directed="false">
+            <data key="d0"></data>
+            <data key="d1"></data>
+            <data key="d2">true</data>
+            <data key="d3">magenta</data>
+        </edge>
+        <node id="n2">
+            <data key="d0"></data>
+            <data key="d1"></data>
+            <data key="d2">false</data>
+            <data key="d3">magenta</data>
+        </node>
+        <edge target="n0" source="n3" directed="true">
+            <data key="d0"></data>
+            <data key="d1"></data>
+            <data key="d2">false</data>
+            <data key="d3">yellow</data>
+        </edge>
+        <edge target="n8" source="n3" directed="false">
+            <data key="d0"></data>
+            <data key="d1"></data>
+            <data key="d2">false</data>
+            <data key="d3">white</data>
+        </edge>
+        <edge target="n6" source="n3" directed="true">
+            <data key="d0"></data>
+            <data key="d1"></data>
+            <data key="d2">false</data>
+            <data key="d3">red</data>
+        </edge>
+        <node id="n3">
+            <data key="d0"></data>
+            <data key="d1"></data>
+            <data key="d2">false</data>
+            <data key="d3">white</data>
+        </node>
+        <edge directed="true" target="n6" source="n4">
+            <data key="d0"></data>
+            <data key="d1"></data>
+            <data key="d2">true</data>
+            <data key="d3">magenta</data>
+        </edge>
+        <edge directed="false" target="n2" source="n4">
+            <data key="d0"></data>
+            <data key="d1"></data>
+            <data key="d2">true</data>
+            <data key="d3">black</data>
+        </edge>
+        <edge directed="true" target="n7" source="n4">
+            <data key="d0"></data>
+            <data key="d1"></data>
+            <data key="d2">true</data>
+            <data key="d3">black</data>
+        </edge>
+        <node id="n4">
+            <data key="d0"></data>
+            <data key="d1"></data>
+            <data key="d2">true</data>
+            <data key="d3">orange</data>
+        </node>
+        <edge directed="true" target="n7" source="n5">
+            <data key="d0"></data>
+            <data key="d1"></data>
+            <data key="d2">true</data>
+            <data key="d3">black</data>
+        </edge>
+        <edge directed="false" target="n3" source="n5">
+            <data key="d0"></data>
+            <data key="d1"></data>
+            <data key="d2">true</data>
+            <data key="d3">red</data>
+        </edge>
+        <edge directed="false" target="n1" source="n5">
+            <data key="d0"></data>
+            <data key="d1"></data>
+            <data key="d2">true</data>
+            <data key="d3">red</data>
+        </edge>
+        <node id="n5">
+            <data key="d0"></data>
+            <data key="d1"></data>
+            <data key="d2">false</data>
+            <data key="d3">yellow</data>
+        </node>
+        <edge directed="false" target="n4" source="n6">
+            <data key="d0"></data>
+            <data key="d1"></data>
+            <data key="d2">false</data>
+            <data key="d3">white</data>
+        </edge>
+        <edge directed="true" target="n9" source="n6">
+            <data key="d0"></data>
+            <data key="d1"></data>
+            <data key="d2">true</data>
+            <data key="d3">orange</data>
+        </edge>
+        <edge directed="false" target="n8" source="n6">
+            <data key="d0"></data>
+            <data key="d1"></data>
+            <data key="d2">true</data>
+            <data key="d3">orange</data>
+        </edge>
+        <node id="n6">
+            <data key="d0"></data>
+            <data key="d1"></data>
+            <data key="d2">false</data>
+            <data key="d3">orange</data>
+        </node>
+        <edge directed="true" target="n6" source="n7">
+            <data key="d0"></data>
+            <data key="d1"></data>
+            <data key="d2">true</data>
+            <data key="d3">white</data>
+        </edge>
+        <edge directed="true" target="n9" source="n7">
+            <data key="d0"></data>
+            <data key="d1"></data>
+            <data key="d2">false</data>
+            <data key="d3">white</data>
+        </edge>
+        <edge directed="false" target="n2" source="n7">
+            <data key="d0"></data>
+            <data key="d1"></data>
+            <data key="d2">true</data>
+            <data key="d3">magenta</data>
+        </edge>
+        <node id="n7">
+            <data key="d0"></data>
+            <data key="d1"></data>
+            <data key="d2">false</data>
+            <data key="d3">blue</data>
+        </node>
+        <edge directed="true" target="n8" source="n8">
+            <data key="d0"></data>
+            <data key="d1"></data>
+            <data key="d2">false</data>
+            <data key="d3">orange</data>
+        </edge>
+        <node id="n8">
+            <data key="d0"></data>
+            <data key="d1"></data>
+            <data key="d2">true</data>
+            <data key="d3">orange</data>
+        </node>
+        <edge directed="false" target="n1" source="n9">
+            <data key="d0"></data>
+            <data key="d1"></data>
+            <data key="d2">false</data>
+            <data key="d3">yellow</data>
+        </edge>
+        <node id="n9">
+            <data key="d0"></data>
+            <data key="d1"></data>
+            <data key="d2">false</data>
+            <data key="d3">blue</data>
+        </node>
+    </graph>
+</graphml>

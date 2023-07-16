@@ -57,4 +57,37 @@ final class GraphMLCoreFoundationParserTests: XCTestCase {
                              EdgeStruct(source: "n8", target: "n10")]
         XCTAssertEqual(graph, Graph(vertices: expectedVertices, edges: expectedEdges, directed: .directed))
     }
+
+    func testParseCustomData() {
+        let sut = GraphMLCoreFoundationParser()
+        let graph = sut.parse(xmlString: GraphMLParserTests.customDataXMLString)
+        let expectedVertices = ["n0", "n1", "n2", "n3", "n4", "n5", "n6", "n7", "n8", "n9"]
+        let expectedEdges = [
+            EdgeStruct(source: "n8", target: "n8"),
+            EdgeStruct(source: "n9", target: "n1"),
+            EdgeStruct(source: "n0", target: "n2"),
+            EdgeStruct(source: "n2", target: "n2"),
+            EdgeStruct(source: "n3", target: "n8"),
+            EdgeStruct(source: "n6", target: "n8"),
+            EdgeStruct(source: "n7", target: "n2"),
+            EdgeStruct(source: "n3", target: "n0"),
+            EdgeStruct(source: "n2", target: "n9"),
+            EdgeStruct(source: "n5", target: "n1"),
+            EdgeStruct(source: "n0", target: "n8"),
+            EdgeStruct(source: "n7", target: "n9"),
+            EdgeStruct(source: "n1", target: "n7"),
+            EdgeStruct(source: "n7", target: "n6"),
+            EdgeStruct(source: "n4", target: "n7"),
+            EdgeStruct(source: "n6", target: "n4"),
+            EdgeStruct(source: "n1", target: "n9"),
+            EdgeStruct(source: "n5", target: "n7"),
+            EdgeStruct(source: "n5", target: "n3"),
+            EdgeStruct(source: "n3", target: "n6"),
+            EdgeStruct(source: "n4", target: "n6"),
+            EdgeStruct(source: "n4", target: "n2"),
+            EdgeStruct(source: "n6", target: "n9"),
+        ]
+        print("expec \(expectedEdges.count), graph \(graph.edgeCount)")
+        XCTAssertEqual(graph, Graph(vertices: expectedVertices, edges: expectedEdges, directed: .undirected))
+    }
 }

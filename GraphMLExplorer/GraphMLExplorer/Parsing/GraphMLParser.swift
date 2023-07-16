@@ -77,7 +77,9 @@ struct GraphMLParser: GraphMLParserProtocol {
     }
 
     private func setupGraph(from element: XML.Element?) -> Graph {
-        guard let element = element else { return .empty }
+        guard let element = element else {
+            return .empty
+        }
         let directed: Directed = Directed.create(rawValue: element.attributes[Constant.edgeDefault])
 
         var vertexes: Set<String> = []
