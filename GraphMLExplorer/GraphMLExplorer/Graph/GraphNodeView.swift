@@ -27,7 +27,6 @@ struct GraphNodeView: View {
         .background(Color.blue)
         .cornerRadius(4)
         .onTapGesture {
-            print("SELECT")
             state.selectVertex(vertice: node.vertice)
         }
 

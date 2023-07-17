@@ -14,7 +14,8 @@ extension Graph: Equatable {
         let vertices = lhs.vertices == rhs.vertices
         let directed = lhs.directed == rhs.directed
         let edges = lhs.edges == rhs.edges
-        return vertices && directed && edges
+        let customData = lhs.graphCustomData == rhs.graphCustomData
+        return vertices && directed && edges && customData
     }
 }
 

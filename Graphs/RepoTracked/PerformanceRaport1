@@ -60,6 +60,15 @@ Time from parser start to xml done 0.15331900119781494
 Time from parser start to all done 0.21489500999450684
 Vertices 10000, edges count 39987
 
+AFTER ADDING CUSTOM DATA PARSING (All other results were achieved without these):
+
+Time from pick file to loaded 0.004371047019958496
+Time from parsing start to end 0.42465102672576904
+Time from parsing end to building node 0.030549049377441406
+Time from parser start to xml done 0.1527329683303833
+Time from parser start to all done 0.4245929718017578
+Vertices 10000, edges count 39987
+
 FUZI parser:
 
 1.

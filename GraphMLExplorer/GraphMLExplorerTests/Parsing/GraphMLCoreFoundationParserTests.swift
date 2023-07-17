@@ -363,7 +363,16 @@ final class GraphMLCoreFoundationParserTests: XCTestCase {
                                          GraphCustomData(key: "d6", dataName: "IntValueAll", value: "4577093235816578299", valueDataType: .int),
                                         ])
         ]
-        XCTAssertEqual(graph, Graph(vertices: expectedVertices, edges: expectedEdges, directed: .undirected))
-        print("TEST")
+        XCTAssertEqual(graph, Graph(vertices: expectedVertices,
+                                    edges: expectedEdges,
+                                    directed: .undirected,
+                                    graphCustomData: [GraphCustomData(key: "d0", dataName: "StringValueAll", value: "magenta", valueDataType: .string),
+                                                      GraphCustomData(key: "d1", dataName: "FloatValueAll", value: "1.2888971e+38", valueDataType: .float),
+                                                      GraphCustomData(key: "d2", dataName: "LongValueAll", value: "9025680419018481014", valueDataType: .long),
+                                                      GraphCustomData(key: "d3", dataName: "StringValueNode", value: "magenta", valueDataType: .string),
+                                                      GraphCustomData(key: "d4", dataName: "BoolValueAll", value: "true", valueDataType: .boolean),
+                                                      GraphCustomData(key: "d5", dataName: "DoubleValueAll", value: "1.6693714602177481e+308", valueDataType: .double),
+                                                      GraphCustomData(key: "d6", dataName: "IntValueAll", value: "584042775091234898", valueDataType: .int),
+                                                     ]))
     }
 }
