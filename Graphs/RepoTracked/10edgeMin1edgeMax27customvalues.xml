@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://graphml.graphdrawing.org/xmlns" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+    <key attr.name="StringValueAll" id="d0" for="all" attr.type="string"></key>
+    <key id="d1" attr.type="float" for="all" attr.name="FloatValueAll"></key>
+    <key attr.name="LongValueAll" for="all" id="d2" attr.type="long"></key>
+    <key attr.name="StringValueNode" for="node" attr.type="string" id="d3"></key>
+    <key attr.type="boolean" id="d4" for="all" attr.name="BoolValueAll"></key>
+    <key for="all" id="d5" attr.name="DoubleValueAll" attr.type="double"></key>
+    <key attr.name="IntValueAll" for="all" attr.type="int" id="d6"></key>
+    <graph id="G" edgedefault="undirected">
+        <data key="d0">magenta</data>
+        <data key="d1">1.2888971e+38</data>
+        <data key="d2">9025680419018481014</data>
+        <data key="d3">magenta</data>
+        <data key="d4">true</data>
+        <data key="d5">1.6693714602177481e+308</data>
+        <data key="d6">584042775091234898</data>
+        <edge target="n0" source="n0" directed="false">
+            <data key="d0">white</data>
+            <data key="d1">7.311948e+37</data>
+            <data key="d2">9176990211375483821</data>
+            <data key="d3">yellow</data>
+            <data key="d4">false</data>
+            <data key="d5">1.0968316966636985e+307</data>
+            <data key="d6">183441927153824516</data>
+        </edge>
+        <node id="n0">
+            <data key="d0">yellow</data>
+            <data key="d1">1.997965e+38</data>
+            <data key="d2">5113407948167091982</data>
+            <data key="d3">black</data>
+            <data key="d4">true</data>
+            <data key="d5">9.11194935774537e+307</data>
+            <data key="d6">2548714977680485076</data>
+        </node>
+        <edge target="n5" source="n1" directed="true">
+            <data key="d0">yellow</data>
+            <data key="d1">3.2485999e+38</data>
+            <data key="d2">8546345005536402528</data>
+            <data key="d3">yellow</data>
+            <data key="d4">false</data>
+            <data key="d5">1.4723096414320015e+308</data>
+            <data key="d6">3048572936723073765</data>
+        </edge>
+        <edge target="n6" source="n1" directed="false">
+            <data key="d0">orange</data>
+            <data key="d1">2.6861342e+38</data>
+            <data key="d2">500758222341855761</data>
+            <data key="d3">white</data>
+            <data key="d4">true</data>
+            <data key="d5">6.693252646214114e+307</data>
+            <data key="d6">5758454096778421922</data>
+        </edge>
+        <node id="n1">
+            <data key="d0">white</data>
+            <data key="d1">2.7455758e+38</data>
+            <data key="d2">8528121733842096482</data>
+            <data key="d3">magenta</data>
+            <data key="d4">true</data>
+            <data key="d5">1.255141819728422e+308</data>
+            <data key="d6">6589667584574196660</data>
+        </node>
+        <edge target="n8" source="n2" directed="true">
+            <data key="d0">red</data>
+            <data key="d1">1.6261319e+37</data>
+            <data key="d2">8742394916074881119</data>
+            <data key="d3">black</data>
+            <data key="d4">true</data>
+            <data key="d5">3.4708463796013304e+307</data>
+            <data key="d6">3924227735256443201</data>
+        </edge>
+        <edge target="n4" source="n2" directed="false">
+            <data key="d0">white</data>
+            <data key="d1">1.8499728e+38</data>
+            <data key="d2">3956539759529661415</data>
+            <data key="d3">red</data>
+            <data key="d4">false</data>
+            <data key="d5">5.605504717954664e+307</data>
+            <data key="d6">3890712591912290873</data>
+        </edge>
+        <node id="n2">
+            <data key="d0">yellow</data>
+            <data key="d1">1.7949991e+38</data>
+            <data key="d2">6679833703266586095</data>
+            <data key="d3">magenta</data>
+            <data key="d4">false</data>
+            <data key="d5">1.7829445549620937e+308</data>
+            <data key="d6">6665473769069083584</data>
+        </node>
+        <edge target="n3" directed="false" source="n3">
+            <data key="d0">red</data>
+            <data key="d1">8.536851e+37</data>
+            <data key="d2">1977008316784322315</data>
+            <data key="d3">orange</data>
+            <data key="d4">true</data>
+            <data key="d5">6.377604066599054e+307</data>
+            <data key="d6">1363475704987383770</data>
+        </edge>
+        <edge target="n4" directed="false" source="n3">
+            <data key="d0">blue</data>
+            <data key="d1">1.2964748e+38</data>
+            <data key="d2">2006932616603802996</data>
+            <data key="d3">black</data>
+            <data key="d4">false</data>
+            <data key="d5">9.944649734293026e+307</data>
+            <data key="d6">7053438554945371588</data>
+        </edge>
+        <node id="n3">
+            <data key="d0">white</data>
+            <data key="d1">3.5981702e+37</data>
+            <data key="d2">3598499059365498688</data>
+            <data key="d3">red</data>
+            <data key="d4">false</data>
+            <data key="d5">6.071940346331122e+307</data>
+            <data key="d6">7476512186766069714</data>
+        </node>
+        <edge target="n0" directed="true" source="n4">
+            <data key="d0">orange</data>
+            <data key="d1">1.4115649e+38</data>
+            <data key="d2">5051225735962247775</data>
+            <data key="d3">yellow</data>
+            <data key="d4">true</data>
+            <data key="d5">1.2246192038094603e+308</data>
+            <data key="d6">729538391231257073</data>
+        </edge>
+        <edge target="n2" directed="true" source="n4">
+            <data key="d0">orange</data>
+            <data key="d1">1.4643623e+38</data>
+            <data key="d2">2434736200612418477</data>
+            <data key="d3">red</data>
+            <data key="d4">true</data>
+            <data key="d5">1.2587426644139495e+308</data>
+            <data key="d6">3421918315247225518</data>
+        </edge>
+        <node id="n4">
+            <data key="d0">blue</data>
+            <data key="d1">1.0312116e+38</data>
+            <data key="d2">4064142745751235316</data>
+            <data key="d3">red</data>
+            <data key="d4">true</data>
+            <data key="d5">5.24115302951802e+307</data>
+            <data key="d6">1345893486487237359</data>
+        </node>
+        <edge target="n2" directed="false" source="n5">
+            <data key="d0">magenta</data>
+            <data key="d1">7.951335e+37</data>
+            <data key="d2">1788129042836424563</data>
+            <data key="d3">yellow</data>
+            <data key="d4">false</data>
+            <data key="d5">1.9379278586209808e+307</data>
+            <data key="d6">4577093235816578299</data>
+        </edge>
+        <edge target="n7" directed="true" source="n5">
+            <data key="d0">magenta</data>
+            <data key="d1">2.6177533e+38</data>
+            <data key="d2">449830591626145303</data>
+            <data key="d3">blue</data>
+            <data key="d4">false</data>
+            <data key="d5">9.582767938620592e+306</data>
+            <data key="d6">6200227037363577410</data>
+        </edge>
+        <node id="n5">
+            <data key="d0">magenta</data>
+            <data key="d1">9.941552e+37</data>
+            <data key="d2">2345967120343992490</data>
+            <data key="d3">white</data>
+            <data key="d4">true</data>
+            <data key="d5">4.604726623836493e+307</data>
+            <data key="d6">1106465074910869863</data>
+        </node>
+        <edge target="n8" directed="true" source="n6">
+            <data key="d0">orange</data>
+            <data key="d1">8.580904e+37</data>
+            <data key="d2">1003627759888922048</data>
+            <data key="d3">orange</data>
+            <data key="d4">true</data>
+            <data key="d5">3.490339019428969e+307</data>
+            <data key="d6">2600493429596903947</data>
+        </edge>
+        <edge target="n1" directed="false" source="n6">
+            <data key="d0">black</data>
+            <data key="d1">2.000636e+38</data>
+            <data key="d2">2691368909360324911</data>
+            <data key="d3">red</data>
+            <data key="d4">false</data>
+            <data key="d5">1.1353317359736156e+308</data>
+            <data key="d6">4875580109570284769</data>
+        </edge>
+        <node id="n6">
+            <data key="d0">black</data>
+            <data key="d1">1.4513436e+38</data>
+            <data key="d2">8408342339453383984</data>
+            <data key="d3">white</data>
+            <data key="d4">true</data>
+            <data key="d5">3.4026797728917043e+307</data>
+            <data key="d6">2980756907253718102</data>
+        </node>
+        <edge directed="true" source="n7" target="n9">
+            <data key="d0">black</data>
+            <data key="d1">2.92992e+38</data>
+            <data key="d2">6620749451274293216</data>
+            <data key="d3">red</data>
+            <data key="d4">false</data>
+            <data key="d5">1.1119482856596854e+308</data>
+            <data key="d6">4294706495508002246</data>
+        </edge>
+        <edge directed="true" source="n7" target="n0">
+            <data key="d0">red</data>
+            <data key="d1">2.8444552e+38</data>
+            <data key="d2">706252498718559939</data>
+            <data key="d3">magenta</data>
+            <data key="d4">false</data>
+            <data key="d5">6.095904918866495e+307</data>
+            <data key="d6">222781845871156127</data>
+        </edge>
+        <node id="n7">
+            <data key="d0">black</data>
+            <data key="d1">1.8509532e+38</data>
+            <data key="d2">657323788219753436</data>
+            <data key="d3">yellow</data>
+            <data key="d4">false</data>
+            <data key="d5">1.776938160959584e+308</data>
+            <data key="d6">7676117959197439107</data>
+        </node>
+        <edge directed="false" source="n8" target="n6">
+            <data key="d0">yellow</data>
+            <data key="d1">2.727684e+38</data>
+            <data key="d2">2709276381422386425</data>
+            <data key="d3">orange</data>
+            <data key="d4">false</data>
+            <data key="d5">8.451879534813068e+307</data>
+            <data key="d6">7947428289111966073</data>
+        </edge>
+        <edge directed="true" source="n8" target="n0">
+            <data key="d0">orange</data>
+            <data key="d1">2.0995344e+38</data>
+            <data key="d2">8371945002567967735</data>
+            <data key="d3">red</data>
+            <data key="d4">false</data>
+            <data key="d5">1.14583311640401e+308</data>
+            <data key="d6">8351196687924126539</data>
+        </edge>
+        <node id="n8">
+            <data key="d0">magenta</data>
+            <data key="d1">2.7042581e+38</data>
+            <data key="d2">1981961715695300594</data>
+            <data key="d3">black</data>
+            <data key="d4">false</data>
+            <data key="d5">1.016502753354606e+308</data>
+            <data key="d6">4182507159363442742</data>
+        </node>
+        <edge directed="false" source="n9" target="n5">
+            <data key="d0">white</data>
+            <data key="d1">3.0285388e+38</data>
+            <data key="d2">536864920023884671</data>
+            <data key="d3">white</data>
+            <data key="d4">false</data>
+            <data key="d5">1.4893121000949964e+308</data>
+            <data key="d6">3987315015660321095</data>
+        </edge>
+        <edge directed="false" source="n9" target="n2">
+            <data key="d0">orange</data>
+            <data key="d1">1.7858033e+38</data>
+            <data key="d2">1066586534380397586</data>
+            <data key="d3">blue</data>
+            <data key="d4">true</data>
+            <data key="d5">3.013554720620916e+306</data>
+            <data key="d6">6535886095342131975</data>
+        </edge>
+        <node id="n9">
+            <data key="d0">yellow</data>
+            <data key="d1">2.233308e+38</data>
+            <data key="d2">3680419734927516269</data>
+            <data key="d3">yellow</data>
+            <data key="d4">false</data>
+            <data key="d5">5.629460823216071e+307</data>
+            <data key="d6">2839660790318500923</data>
+        </node>
+    </graph>
+</graphml>

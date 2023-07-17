@@ -36,6 +36,7 @@
 		7FE86D1C2A6446030084A7E7 /* GraphMLCoreFoundationParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE86D1B2A6446030084A7E7 /* GraphMLCoreFoundationParserTests.swift */; };
 		7FE86D1E2A64462D0084A7E7 /* GraphMLFuziParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE86D1D2A64462D0084A7E7 /* GraphMLFuziParserTests.swift */; };
 		7FE86D202A6462DD0084A7E7 /* 10edgeMin1edgeMax34datatypes.xml in Resources */ = {isa = PBXBuildFile; fileRef = 7FE86D1F2A6462DD0084A7E7 /* 10edgeMin1edgeMax34datatypes.xml */; };
+		7FE86D242A65441C0084A7E7 /* 10edgeMin1edgeMax27customvalues.xml in Resources */ = {isa = PBXBuildFile; fileRef = 7FE86D232A65441C0084A7E7 /* 10edgeMin1edgeMax27customvalues.xml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +87,7 @@
 		7FE86D1B2A6446030084A7E7 /* GraphMLCoreFoundationParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphMLCoreFoundationParserTests.swift; sourceTree = "<group>"; };
 		7FE86D1D2A64462D0084A7E7 /* GraphMLFuziParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphMLFuziParserTests.swift; sourceTree = "<group>"; };
 		7FE86D1F2A6462DD0084A7E7 /* 10edgeMin1edgeMax34datatypes.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = 10edgeMin1edgeMax34datatypes.xml; sourceTree = SOURCE_ROOT; };
+		7FE86D232A65441C0084A7E7 /* 10edgeMin1edgeMax27customvalues.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = 10edgeMin1edgeMax27customvalues.xml; path = ../../Graphs/RepoTracked/10edgeMin1edgeMax27customvalues.xml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +156,7 @@
 				7F5226D72A55C82F0082475D /* Coordination */,
 				7F5226D52A55C70D0082475D /* sample.xml */,
 				7FE86D1F2A6462DD0084A7E7 /* 10edgeMin1edgeMax34datatypes.xml */,
+				7FE86D232A65441C0084A7E7 /* 10edgeMin1edgeMax27customvalues.xml */,
 				7F5226D42A55C5DC0082475D /* Files */,
 				7F5226CF2A55C5620082475D /* Parsing */,
 				7F5226A82A557BC00082475D /* Assets.xcassets */,
@@ -349,6 +352,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F5226D62A55C70E0082475D /* sample.xml in Resources */,
+				7FE86D242A65441C0084A7E7 /* 10edgeMin1edgeMax27customvalues.xml in Resources */,
 				7F5226AD2A557BC00082475D /* Preview Assets.xcassets in Resources */,
 				7FE86D202A6462DD0084A7E7 /* 10edgeMin1edgeMax34datatypes.xml in Resources */,
 				7F5226A92A557BC00082475D /* Assets.xcassets in Resources */,

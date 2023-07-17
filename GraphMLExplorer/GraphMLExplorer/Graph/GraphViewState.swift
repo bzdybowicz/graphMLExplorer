@@ -22,7 +22,7 @@ final class GraphViewState: ObservableObject {
         static let fallbackTitle = "No nodes in loaded graph!"
     }
 
-    init(graph: Graph,//UnweightedGraph<String>,
+    init(graph: Graph,
          unweightedGraphLoader: UnweightedGraphLoaderProtocol) {
         self.graph = graph
         let firstVertex = graph.vertices.first ?? Constant.fallbackTitle

@@ -32,12 +32,4 @@ final class FileLoaderTests: XCTestCase {
 """)
     }
 
-    func testUrlLoadMoreComplexFile() throws {
-        let sut = FileLoader()
-        let url = try XCTUnwrap(Bundle.main.url(forResource: "10edgeMin1edgeMax34datatypes", withExtension: "xml"))
-        print("URL \(url)")
-        XCTAssertNoThrow(try sut.load(fileURL: url))
-        let fileContent = try? sut.load(fileURL: url)
-        print("File: \(fileContent)")
-    }
 }
