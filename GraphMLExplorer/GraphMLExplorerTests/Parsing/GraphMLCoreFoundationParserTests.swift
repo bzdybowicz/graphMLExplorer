@@ -57,6 +57,112 @@ final class GraphMLCoreFoundationParserTests: XCTestCase {
         XCTAssertEqual(graph, Graph(vertices: expectedVertices, edges: expectedEdges, directed: .directed))
     }
 
+    func testParseHyperEdgeGraph() {
+        let hyperEdgeGraph =
+"""
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <graph id="G" edgedefault="undirected">
+    <node id="n0"/>
+    <node id="n1"/>
+    <node id="n2"/>
+    <node id="n3"/>
+    <node id="n4"/>
+    <node id="n5"/>
+    <node id="n6"/>
+    <hyperedge>
+       <endpoint node="n0"/>
+       <endpoint node="n1"/>
+       <endpoint node="n2"/>
+     </hyperedge>
+    <hyperedge>
+       <endpoint node="n3"/>
+       <endpoint node="n4"/>
+       <endpoint node="n5"/>
+       <endpoint node="n6"/>
+     </hyperedge>
+    <hyperedge>
+       <endpoint node="n1"/>
+       <endpoint node="n3"/>
+     </hyperedge>
+    <edge source="n0" target="n4"/>
+  </graph>
+</graphml>
+"""
+        let sut = GraphMLCoreFoundationParser()
+        let graph = sut.parse(xmlString: hyperEdgeGraph)
+        let vertices: Set<Vertice> = Set(["n0", "n1", "n2", "n3", "n4", "n5", "n6"].map { Vertice(id: $0) })
+        let edges: Set<EdgeStruct> = [EdgeStruct(source: "n0", target: "n4", directed: .undirected)]
+        XCTAssertEqual(graph, Graph(vertices: vertices,
+                                    edges: edges,
+                                    directed: .undirected,
+                                    hyperEdges: [HyperEdge(nodes: ["n0, n1, n2"]),
+                                                 HyperEdge(nodes: ["n3", "n4", "n5", "n6"]),
+                                                 HyperEdge(nodes: ["n1", "n3"])]))
+    }
+
+    func testGraphWithIdsInEdges() {
+        let graphString =
+"""
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file was written by the JAVA GraphML Library.-->
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns
+                                http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <graph id="G" edgedefault="directed"
+            parse.nodes="11" parse.edges="12"
+            parse.maxindegree="2" parse.maxoutdegree="3"
+            parse.nodeids="canonical" parse.edgeids="free"
+            parse.order="nodesfirst">
+    <node id="n0" parse.indegree="0" parse.outdegree="1"/>
+    <node id="n1" parse.indegree="0" parse.outdegree="1"/>
+    <node id="n2" parse.indegree="2" parse.outdegree="1"/>
+    <node id="n3" parse.indegree="1" parse.outdegree="2"/>
+    <node id="n4" parse.indegree="1" parse.outdegree="1"/>
+    <node id="n5" parse.indegree="2" parse.outdegree="1"/>
+    <node id="n6" parse.indegree="1" parse.outdegree="2"/>
+    <node id="n7" parse.indegree="2" parse.outdegree="0"/>
+    <node id="n8" parse.indegree="1" parse.outdegree="3"/>
+    <node id="n9" parse.indegree="1" parse.outdegree="0"/>
+    <node id="n10" parse.indegree="1" parse.outdegree="0"/>
+    <edge id="edge0001" source="n0" target="n2"/>
+    <edge id="edge0002" source="n1" target="n2"/>
+    <edge id="edge0003" source="n2" target="n3"/>
+    <edge id="edge0004" source="n3" target="n5"/>
+    <edge id="edge0005" source="n3" target="n4"/>
+    <edge id="edge0006" source="n4" target="n6"/>
+    <edge id="edge0007" source="n6" target="n5"/>
+    <edge id="edge0008" source="n5" target="n7"/>
+    <edge id="edge0009" source="n6" target="n8"/>
+    <edge id="edge0010" source="n8" target="n7"/>
+    <edge id="edge0011" source="n8" target="n9"/>
+    <edge id="edge0012" source="n8" target="n10"/>
+  </graph>
+</graphml>
+"""
+        let sut = GraphMLCoreFoundationParser()
+        let vertices: Set<Vertice> = Set(["n0","n1","n2","n3","n4","n5","n6","n7","n8","n9","n10"].map { Vertice(id: $0) })
+        let edges: Set<EdgeStruct> = [
+            EdgeStruct(source: "n0", target: "n2", directed: .directed),
+            EdgeStruct(source: "n1", target: "n2", directed: .directed),
+            EdgeStruct(source: "n2", target: "n3", directed: .directed),
+            EdgeStruct(source: "n3", target: "n5", directed: .directed),
+            EdgeStruct(source: "n3", target: "n4", directed: .directed),
+            EdgeStruct(source: "n4", target: "n6", directed: .directed),
+            EdgeStruct(source: "n6", target: "n5", directed: .directed),
+            EdgeStruct(source: "n5", target: "n7", directed: .directed),
+            EdgeStruct(source: "n6", target: "n8", directed: .directed),
+            EdgeStruct(source: "n8", target: "n7", directed: .directed),
+            EdgeStruct(source: "n8", target: "n9", directed: .directed),
+            EdgeStruct(source: "n8", target: "n10", directed: .directed),
+        ]
+        let graph = sut.parse(xmlString: graphString)
+        let expected = Graph(vertices: vertices, edges: edges, directed: .directed)
+        XCTAssertEqual(graph, expected)
+    }
+
     func testParseCustomData() {
         let sut = GraphMLCoreFoundationParser()
         let graph = sut.parse(xmlString: GraphMLFuziParserTests.sevenCustomDataValuesXML)

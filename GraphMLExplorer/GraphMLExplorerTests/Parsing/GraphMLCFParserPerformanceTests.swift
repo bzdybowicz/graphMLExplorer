@@ -9,7 +9,7 @@ import Foundation
 @testable import GraphMLExplorer
 import XCTest
 
-final class GraphMLCFParserPerformanceTests: XCTestCase {
+final class GraphMLsParsersPerformanceTests: XCTestCase {
 
     func test() {
         measure {

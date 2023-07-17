@@ -53,19 +53,29 @@ struct Vertice: Equatable, Comparable, Hashable {
     }
 }
 
+struct HyperEdge: Equatable, Hashable {
+    let nodes: [String]
+}
+
 struct Graph {
 
     static let empty = Graph(vertices: [], edges: [], directed: .undirected)
     let edges: Set<EdgeStruct>
     var vertices: Set<Vertice>
+    let hyperEdges: Set<HyperEdge>
     let directed: Directed
     let graphCustomData: [GraphCustomData]
     var edgeCount: Int { edges.count }
 
-    init(vertices: Set<Vertice>, edges: Set<EdgeStruct>, directed: Directed, graphCustomData: [GraphCustomData] = []) {
+    init(vertices: Set<Vertice>,
+         edges: Set<EdgeStruct>,
+         directed: Directed,
+         hyperEdges: Set<HyperEdge> = [],
+         graphCustomData: [GraphCustomData] = []) {
         self.vertices = vertices
         self.edges = edges
         self.directed = directed
+        self.hyperEdges = hyperEdges
         self.graphCustomData = graphCustomData
     }
 

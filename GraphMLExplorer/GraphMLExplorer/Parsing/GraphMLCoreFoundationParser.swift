@@ -44,17 +44,18 @@ struct GraphMLCoreFoundationParser: GraphMLParserProtocol {
     }
 
     private func setupGraph(from element: XMLElement?) -> Graph {
-        guard let element = element else { return .empty }
+        guard let element = element else {
+            return .empty
+        }
         let directed: Directed = Directed.create(rawValue: element.attribute(forName: XMLConstant.edgeDefault)?.stringValue)
         var vertexes: Set<Vertice> = []
         var edges: Set<EdgeStruct> = []
         let nodes: [XMLNode] = element.children ?? []
         for node in nodes {
             if let child = node as? XMLElement {
-                if let name = child.attribute(forName: XMLConstant.id)?.stringValue {
+                if child.name == XMLConstant.node, let name = child.attribute(forName: XMLConstant.id)?.stringValue {
                     vertexes.insert(Vertice(id: name))
-                }
-                if let source = child.attribute(forName: XMLConstant.source)?.stringValue {
+                } else if child.name == XMLConstant.edge, let source = child.attribute(forName: XMLConstant.source)?.stringValue {
                     if let target = child.attribute(forName: XMLConstant.target)?.stringValue {
                         var childDirected = directed
                         if let directedString = child.attribute(forName: XMLConstant.directed)?.stringValue {
@@ -63,6 +64,8 @@ struct GraphMLCoreFoundationParser: GraphMLParserProtocol {
                         edges.insert(EdgeStruct(source: source, target: target, directed: childDirected))
                     }
                 }
+            } else {
+                print("!!! NO")
             }
         }
         return Graph(vertices: vertexes, edges: edges, directed: directed)
