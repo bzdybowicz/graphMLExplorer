@@ -35,7 +35,6 @@ final class GraphMLCoreFoundationParserTests: XCTestCase {
         XCTAssertEqual(graph, Graph(vertices: expectedVertices, edges: expectedEdges, directed: .undirected))
     }
 
-
     func testParseDirected10vertices11edges() {
         let sut = GraphMLCoreFoundationParser()
         let sampleString =
@@ -70,7 +69,7 @@ final class GraphMLCoreFoundationParserTests: XCTestCase {
             EdgeStruct(source: "n6", target: "n8", directed: .directed),
             EdgeStruct(source: "n7", target: "n9", directed: .directed),
             EdgeStruct(source: "n7", target: "n0", directed: .directed),
-            EdgeStruct(source: "n8", target: "n6", directed: .directed),
+            EdgeStruct(source: "n8", target: "n6", directed: .undirected),
             EdgeStruct(source: "n1", target: "n6", directed: .undirected),
             EdgeStruct(source: "n3", target: "n3", directed: .undirected),
             EdgeStruct(source: "n8", target: "n0", directed: .directed),
@@ -78,7 +77,7 @@ final class GraphMLCoreFoundationParserTests: XCTestCase {
             EdgeStruct(source: "n9", target: "n2", directed: .undirected),
             EdgeStruct(source: "n5", target: "n7", directed: .directed),
             EdgeStruct(source: "n2", target: "n4", directed: .undirected),
-            EdgeStruct(source: "n9", target: "n5", directed: .directed),
+            EdgeStruct(source: "n9", target: "n5", directed: .undirected),
             EdgeStruct(source: "n0", target: "n0", directed: .undirected),
             EdgeStruct(source: "n4", target: "n2", directed: .directed),
             EdgeStruct(source: "n5", target: "n2", directed: .undirected),

@@ -16,6 +16,13 @@ extension Graph: Equatable {
         let edges = Set(lhs.edges) == Set(rhs.edges)
         print("LHS count \(lhs.vertices.count), rhs \(rhs.vertices.count)")
         print("Vertices \(vertices), directed \(directed), edges \(edges)")
+        let array = Array(lhs.edges).sorted { e1, e2 in
+            e1.source > e2.source
+        }
+        let array2 = Array(rhs.edges).sorted { e1, e2 in
+            e1.source > e2.source
+        }
+        print("A1 \(array), A2 \(array2)")
         return vertices && directed && edges
     }
 }
@@ -69,7 +76,7 @@ final class GraphMLParserTests: XCTestCase {
         XCTAssertEqual(graph, Graph(vertices: expectedVertices, edges: expectedEdges, directed: .directed))
     }
 
-    func test6CustomDataValuesXML() {
+    func test7CustomDataValuesXML() {
         let sut = GraphMLParser()
         let graph = sut.parse(xmlString: GraphMLFuziParserTests.sevenCustomDataValuesXML)
         let expectedVertices: Set<Vertice> = Set(["n0", "n1", "n2", "n3", "n4", "n5", "n6", "n7", "n8", "n9"].map { Vertice(id: $0) })
@@ -81,7 +88,7 @@ final class GraphMLParserTests: XCTestCase {
             EdgeStruct(source: "n6", target: "n8", directed: .directed),
             EdgeStruct(source: "n7", target: "n9", directed: .directed),
             EdgeStruct(source: "n7", target: "n0", directed: .directed),
-            EdgeStruct(source: "n8", target: "n6", directed: .directed),
+            EdgeStruct(source: "n8", target: "n6", directed: .undirected),
             EdgeStruct(source: "n1", target: "n6", directed: .undirected),
             EdgeStruct(source: "n3", target: "n3", directed: .undirected),
             EdgeStruct(source: "n8", target: "n0", directed: .directed),
@@ -89,7 +96,7 @@ final class GraphMLParserTests: XCTestCase {
             EdgeStruct(source: "n9", target: "n2", directed: .undirected),
             EdgeStruct(source: "n5", target: "n7", directed: .directed),
             EdgeStruct(source: "n2", target: "n4", directed: .undirected),
-            EdgeStruct(source: "n9", target: "n5", directed: .directed),
+            EdgeStruct(source: "n9", target: "n5", directed: .undirected),
             EdgeStruct(source: "n0", target: "n0", directed: .undirected),
             EdgeStruct(source: "n4", target: "n2", directed: .directed),
             EdgeStruct(source: "n5", target: "n2", directed: .undirected),

@@ -9,25 +9,8 @@ import Foundation
 
 struct GraphMLCoreFoundationParser: GraphMLParserProtocol {
 
-    private enum Constant {
-        static let graphmlMarker = "graphml"
-        static let graphMarker = "graph"
-        static let node = "node"
-        static let edge = "edge"
-        static let target = "target"
-        static let source = "source"
-        static let directed = "directed"
-        static let key = "key"
-        static let edgeDefault = "edgedefault"
-        static let id = "id"
-    }
-
     func parse(xmlString: String) -> Graph {
-        guard let data = xmlString.data(using: .utf8) else {
-            return .empty
-        }
         TimeMeasure.instance.event(.parserStart)
-        //let xml = XML.parse(data)
         var document: XMLDocument?
         do {
             document = try XMLDocument(xmlString: xmlString)
@@ -39,7 +22,7 @@ struct GraphMLCoreFoundationParser: GraphMLParserProtocol {
         }
         TimeMeasure.instance.event(.parserXMLDone)
 
-        let graphMLElement = element //getGraphXMLElement(element: element)
+        let graphMLElement = element
         let keys = getKeys(graphMLElement: graphMLElement)
         let graphElement = getGraphElement(element: graphMLElement)
         let graph = keys.isEmpty ? setupGraph(from: graphElement) : setupGraphCustomData(from: graphElement)
@@ -48,32 +31,32 @@ struct GraphMLCoreFoundationParser: GraphMLParserProtocol {
     }
 
     private func getKeys(graphMLElement: XMLElement?) -> [XMLElement] {
-        graphMLElement?.elements(forName: Constant.key) ?? []
+        graphMLElement?.elements(forName: XMLConstant.key) ?? []
     }
 
     private func getGraphXMLElement(element: XMLElement?) -> XMLElement? {
-        element?.elements(forName: Constant.graphmlMarker).first
+        element?.elements(forName: XMLConstant.graphmlMarker).first
     }
 
     private func getGraphElement(element: XMLElement?) -> XMLElement? {
-        element?.elements(forName: Constant.graphMarker).first
+        element?.elements(forName: XMLConstant.graphMarker).first
     }
 
     private func setupGraph(from element: XMLElement?) -> Graph {
         guard let element = element else { return .empty }
-        let directed: Directed = Directed.create(rawValue: element.attribute(forName: Constant.edgeDefault)?.stringValue)
+        let directed: Directed = Directed.create(rawValue: element.attribute(forName: XMLConstant.edgeDefault)?.stringValue)
         var vertexes: Set<Vertice> = []
         var edges: Set<EdgeStruct> = []
         let nodes: [XMLNode] = element.children ?? []
         for node in nodes {
             if let child = node as? XMLElement {
-                if let name = child.attribute(forName: Constant.id)?.stringValue {
+                if let name = child.attribute(forName: XMLConstant.id)?.stringValue {
                     vertexes.insert(Vertice(id: name))
                 }
-                if let source = child.attribute(forName: Constant.source)?.stringValue {
-                    if let target = child.attribute(forName: Constant.target)?.stringValue {
+                if let source = child.attribute(forName: XMLConstant.source)?.stringValue {
+                    if let target = child.attribute(forName: XMLConstant.target)?.stringValue {
                         var childDirected = directed
-                        if let directedString = child.attribute(forName: Constant.directed)?.stringValue {
+                        if let directedString = child.attribute(forName: XMLConstant.directed)?.stringValue {
                             childDirected = Directed.create(rawValue: directedString)
                         }
                         edges.insert(EdgeStruct(source: source, target: target, directed: childDirected))
@@ -86,21 +69,21 @@ struct GraphMLCoreFoundationParser: GraphMLParserProtocol {
 
     private func setupGraphCustomData(from element: XMLElement?) -> Graph {
         guard let element = element else { return .empty }
-        let directed: Directed = Directed.create(rawValue: element.attribute(forName: Constant.edgeDefault)?.stringValue)
+        let directed: Directed = Directed.create(rawValue: element.attribute(forName: XMLConstant.edgeDefault)?.stringValue)
         var vertexes: Set<Vertice> = []
         var edges: Set<EdgeStruct> = []
         let nodes: [XMLNode] = element.children ?? []
         for node in nodes {
             if let child = node as? XMLElement {
-                if let name = child.attribute(forName: Constant.id)?.stringValue {
+                if let name = child.attribute(forName: XMLConstant.id)?.stringValue {
                     
                     vertexes.insert(Vertice(id: name))
                 }
-                if let source = child.attribute(forName: Constant.source)?.stringValue {
-                    if let target = child.attribute(forName: Constant.target)?.stringValue {
+                if let source = child.attribute(forName: XMLConstant.source)?.stringValue {
+                    if let target = child.attribute(forName: XMLConstant.target)?.stringValue {
                         var childDirected = directed
-                        if let directedString = child.attribute(forName: Constant.directed)?.stringValue {
-                            childDirected = Directed.create(rawValue: directedString)
+                        if let directedString = child.attribute(forName: XMLConstant.directed)?.stringValue {
+                            childDirected = Directed.create(graphRawValue: directedString)
                         }
                         edges.insert(EdgeStruct(source: source, target: target, directed: childDirected))
                     }

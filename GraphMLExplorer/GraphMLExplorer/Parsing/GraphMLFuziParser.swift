@@ -10,17 +10,6 @@ import Fuzi
 
 struct GraphMLFuziParser: GraphMLParserProtocol {
 
-    private enum Constant {
-        static let graphmlMarker = "graphml"
-        static let graphMarker = "graph"
-        static let node = "node"
-        static let edge = "edge"
-        static let target = "target"
-        static let source = "source"
-        static let edgeDefault = "edgedefault"
-        static let id = "id"
-    }
-
     func parse(xmlString: String) -> Graph {
         TimeMeasure.instance.event(.parserStart)
         var document: Fuzi.XMLDocument?
@@ -46,27 +35,30 @@ struct GraphMLFuziParser: GraphMLParserProtocol {
     }
 
     private func getGraphElement(element: Fuzi.XMLElement?) -> Fuzi.XMLElement? {
-        element?.firstChild(tag: Constant.graphMarker)
+        element?.firstChild(tag: XMLConstant.graphMarker)
 
     }
 
     private func setupGraph(from element: Fuzi.XMLElement?) -> Graph {
         guard let element = element else { return .empty }
-        let directed: Directed = Directed.create(rawValue: element.attributes[Constant.edgeDefault])
+        let directed: Directed = Directed.create(rawValue: element.attributes[XMLConstant.edgeDefault])
 
         var vertexes: Set<Vertice> = []
         var edges: Set<EdgeStruct> = []
 
         for child in element.children {
-            if child.tag == Constant.node {
-                if let name = child.attributes[Constant.id] {
+            if child.tag == XMLConstant.node {
+                if let name = child.attributes[XMLConstant.id] {
                     vertexes.insert(Vertice(id: name))
                 }
-            } else if child.tag == Constant.edge {
-                if let source = child.attributes[Constant.source] {
-                    if let target = child.attributes[Constant.target] {
-                        edges.insert(EdgeStruct(source: source, target: target, directed: directed))
-
+            } else if child.tag == XMLConstant.edge {
+                if let source = child.attributes[XMLConstant.source] {
+                    if let target = child.attributes[XMLConstant.target] {
+                        var childDirected = directed
+                        if let childSpecificDirection = child.attributes[XMLConstant.directed] {
+                            childDirected = Directed.create(graphRawValue: childSpecificDirection)
+                        }
+                        edges.insert(EdgeStruct(source: source, target: target, directed: childDirected))
                     }
                 }
             }

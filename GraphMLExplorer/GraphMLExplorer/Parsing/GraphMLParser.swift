@@ -27,20 +27,21 @@ enum Directed: String {
         guard let rawValue = rawValue else { return .undirected }
         return Directed(rawValue: rawValue) ?? .undirected
     }
+
+    static func create(graphRawValue: String?) -> Directed {
+        guard let graphRawValue = graphRawValue else { return .undirected }
+        switch graphRawValue {
+        case "true":
+            return .directed
+        case "false":
+            return .undirected
+        default:
+            return .undirected
+        }
+    }
 }
 
 struct GraphMLParser: GraphMLParserProtocol {
-
-    private enum Constant {
-        static let graphmlMarker = "graphml"
-        static let graphMarker = "graph"
-        static let node = "node"
-        static let edge = "edge"
-        static let target = "target"
-        static let source = "source"
-        static let edgeDefault = "edgedefault"
-        static let id = "id"
-    }
 
     func parse(xmlString: String) -> Graph {
         guard let data = xmlString.data(using: .utf8) else {
@@ -66,13 +67,13 @@ struct GraphMLParser: GraphMLParserProtocol {
 
     private func getGraphXMLElement(element: XML.Element?) -> XML.Element? {
         element?.childElements.first { element in
-            element.name == Constant.graphmlMarker
+            element.name == XMLConstant.graphmlMarker
         }
     }
 
     private func getGraphElement(element: XML.Element?) -> XML.Element? {
         element?.childElements.first { element in
-            element.name == Constant.graphMarker
+            element.name == XMLConstant.graphMarker
         }
     }
 
@@ -80,20 +81,24 @@ struct GraphMLParser: GraphMLParserProtocol {
         guard let element = element else {
             return .empty
         }
-        let directed: Directed = Directed.create(rawValue: element.attributes[Constant.edgeDefault])
+        let directed: Directed = Directed.create(rawValue: element.attributes[XMLConstant.edgeDefault])
 
         var vertexes: Set<Vertice> = []
         var edges: Set<EdgeStruct> = []
 
         for child in element.childElements {
-            if child.name == Constant.node {
-                if let name = child.attributes[Constant.id] {
+            if child.name == XMLConstant.node {
+                if let name = child.attributes[XMLConstant.id] {
                     vertexes.insert(Vertice(id: name))
                 }
-            } else if child.name == Constant.edge {
-                if let source = child.attributes[Constant.source] {
-                    if let target = child.attributes[Constant.target] {
-                        edges.insert(EdgeStruct(source: source, target: target, directed: directed))
+            } else if child.name == XMLConstant.edge {
+                if let source = child.attributes[XMLConstant.source] {
+                    if let target = child.attributes[XMLConstant.target] {
+                        var childDirected = directed
+                        if let childSpecificDirection = child.attributes[XMLConstant.directed] {
+                            childDirected = Directed.create(graphRawValue: childSpecificDirection)
+                        }
+                        edges.insert(EdgeStruct(source: source, target: target, directed: childDirected))
                     }
                 }
             }
