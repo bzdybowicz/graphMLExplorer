@@ -19,8 +19,8 @@ final class GraphViewSnapshotsTests: XCTestCase {
 #if os(iOS)
         assertSnapshot(matching: sut.frame(width: 1000, height: 600), as: .image, named: "iphone600x600start")
 #elseif os(macOS)
-
 #endif
+        
     }
 
 }

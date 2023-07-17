@@ -31,6 +31,8 @@
 		7F73A24F2A61596C00CCDA70 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 7F73A24E2A61596C00CCDA70 /* SnapshotTesting */; };
 		7F73A2512A61681900CCDA70 /* GraphViewSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F73A2502A61681800CCDA70 /* GraphViewSnapshotsTests.swift */; };
 		7F73A2532A61817A00CCDA70 /* TimeMeasure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F73A2522A61817A00CCDA70 /* TimeMeasure.swift */; };
+		7F7AE0322A65B46E000A3B07 /* GraphMLCFParserPerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7AE0312A65B46E000A3B07 /* GraphMLCFParserPerformanceTests.swift */; };
+		7F7AE0342A65B59F000A3B07 /* 10000edgeMin3edgeMax4.xml in Resources */ = {isa = PBXBuildFile; fileRef = 7F7AE0332A65B59F000A3B07 /* 10000edgeMin3edgeMax4.xml */; };
 		7FCC81F12A5C33AE0022C243 /* GraphViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCC81F02A5C33AE0022C243 /* GraphViewState.swift */; };
 		7FE86D162A6434830084A7E7 /* Fuzi in Frameworks */ = {isa = PBXBuildFile; productRef = 7FE86D152A6434830084A7E7 /* Fuzi */; };
 		7FE86D182A6436190084A7E7 /* GraphMLCoreFoundationParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE86D172A6436190084A7E7 /* GraphMLCoreFoundationParser.swift */; };
@@ -85,6 +87,8 @@
 		7F6EFE4D2A65635700CCBAD9 /* XMLConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLConstant.swift; sourceTree = "<group>"; };
 		7F73A2502A61681800CCDA70 /* GraphViewSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewSnapshotsTests.swift; sourceTree = "<group>"; };
 		7F73A2522A61817A00CCDA70 /* TimeMeasure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeMeasure.swift; sourceTree = "<group>"; };
+		7F7AE0312A65B46E000A3B07 /* GraphMLCFParserPerformanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphMLCFParserPerformanceTests.swift; sourceTree = "<group>"; };
+		7F7AE0332A65B59F000A3B07 /* 10000edgeMin3edgeMax4.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = 10000edgeMin3edgeMax4.xml; path = ../../Graphs/RepoTracked/10000edgeMin3edgeMax4.xml; sourceTree = "<group>"; };
 		7FCC81F02A5C33AE0022C243 /* GraphViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewState.swift; sourceTree = "<group>"; };
 		7FE86D172A6436190084A7E7 /* GraphMLCoreFoundationParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphMLCoreFoundationParser.swift; sourceTree = "<group>"; };
 		7FE86D192A64426C0084A7E7 /* GraphMLFuziParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphMLFuziParser.swift; sourceTree = "<group>"; };
@@ -128,6 +132,7 @@
 				7F3294CE2A640B3D00AB9251 /* GraphMLParserTests.swift */,
 				7FE86D1B2A6446030084A7E7 /* GraphMLCoreFoundationParserTests.swift */,
 				7FE86D1D2A64462D0084A7E7 /* GraphMLFuziParserTests.swift */,
+				7F7AE0312A65B46E000A3B07 /* GraphMLCFParserPerformanceTests.swift */,
 			);
 			path = Parsing;
 			sourceTree = "<group>";
@@ -159,6 +164,7 @@
 				7F5226E02A55F66B0082475D /* Graph */,
 				7F5226D72A55C82F0082475D /* Coordination */,
 				7F5226D52A55C70D0082475D /* sample.xml */,
+				7F7AE0332A65B59F000A3B07 /* 10000edgeMin3edgeMax4.xml */,
 				7FE86D1F2A6462DD0084A7E7 /* 10edgeMin1edgeMax34datatypes.xml */,
 				7FE86D232A65441C0084A7E7 /* 10edgeMin1edgeMax27customvalues.xml */,
 				7F5226D42A55C5DC0082475D /* Files */,
@@ -357,6 +363,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F7AE0342A65B59F000A3B07 /* 10000edgeMin3edgeMax4.xml in Resources */,
 				7F5226D62A55C70E0082475D /* sample.xml in Resources */,
 				7FE86D242A65441C0084A7E7 /* 10edgeMin1edgeMax27customvalues.xml in Resources */,
 				7F5226AD2A557BC00082475D /* Preview Assets.xcassets in Resources */,
@@ -409,6 +416,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F73A2512A61681900CCDA70 /* GraphViewSnapshotsTests.swift in Sources */,
+				7F7AE0322A65B46E000A3B07 /* GraphMLCFParserPerformanceTests.swift in Sources */,
 				7F2F51DF2A614B5C00A99AB8 /* FileLoaderTests.swift in Sources */,
 				7FE86D1C2A6446030084A7E7 /* GraphMLCoreFoundationParserTests.swift in Sources */,
 				7F3294CF2A640B3D00AB9251 /* GraphMLParserTests.swift in Sources */,
