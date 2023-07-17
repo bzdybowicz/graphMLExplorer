@@ -27,7 +27,7 @@ struct GraphView: View {
 
     private let unweightedGraphLoader: UnweightedGraphLoaderProtocol
 
-    init(graph: Graph,//UnweightedGraph<String>,
+    init(graph: Graph,
          unweightedGraphLoader: UnweightedGraphLoaderProtocol) {
         self.unweightedGraphLoader = unweightedGraphLoader
         _graphViewState = StateObject(wrappedValue: GraphViewState(graph: graph,
@@ -41,17 +41,17 @@ struct GraphView: View {
         print("Vertices \(verticesCount), edges count \(edgesCount)")
         let showForthLevel = verticesCount < 1000 && edgesCount < 2000
         print("show forth \(showForthLevel)")
-        return GraphNode(label: graphViewState.currentNode,
+        return GraphNode(vertice: graphViewState.currentNode,
                          nestLevel: .first,
                          neighbors: graphViewState.childNodes.map {
             let neighbors = graphViewState.graph.neighborsForVertex($0)
-            return GraphNode(label: $0,
+            return GraphNode(vertice: $0,
                              nestLevel: .second,
                              neighbors: neighbors.map {
                 let neighbors = graphViewState.graph.neighborsForVertex($0)
-                return GraphNode(label: $0,
+                return GraphNode(vertice: $0,
                                  nestLevel: .third,
-                                 neighbors: neighbors.map { GraphNode(label: $0,
+                                 neighbors: neighbors.map { GraphNode(vertice: $0,
                                                                       nestLevel: .fourth,
                                                                       neighbors: [])
                 })

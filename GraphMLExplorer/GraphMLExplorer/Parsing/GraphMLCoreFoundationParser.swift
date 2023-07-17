@@ -16,6 +16,8 @@ struct GraphMLCoreFoundationParser: GraphMLParserProtocol {
         static let edge = "edge"
         static let target = "target"
         static let source = "source"
+        static let directed = "directed"
+        static let key = "key"
         static let edgeDefault = "edgedefault"
         static let id = "id"
     }
@@ -38,10 +40,15 @@ struct GraphMLCoreFoundationParser: GraphMLParserProtocol {
         TimeMeasure.instance.event(.parserXMLDone)
 
         let graphMLElement = element //getGraphXMLElement(element: element)
+        let keys = getKeys(graphMLElement: graphMLElement)
         let graphElement = getGraphElement(element: graphMLElement)
-        let graph = setupGraph(from: graphElement)
+        let graph = keys.isEmpty ? setupGraph(from: graphElement) : setupGraphCustomData(from: graphElement)
         TimeMeasure.instance.event(.parserRestDone)
         return graph
+    }
+
+    private func getKeys(graphMLElement: XMLElement?) -> [XMLElement] {
+        graphMLElement?.elements(forName: Constant.key) ?? []
     }
 
     private func getGraphXMLElement(element: XMLElement?) -> XMLElement? {
@@ -55,22 +62,52 @@ struct GraphMLCoreFoundationParser: GraphMLParserProtocol {
     private func setupGraph(from element: XMLElement?) -> Graph {
         guard let element = element else { return .empty }
         let directed: Directed = Directed.create(rawValue: element.attribute(forName: Constant.edgeDefault)?.stringValue)
-        var vertexes: Set<String> = []
+        var vertexes: Set<Vertice> = []
         var edges: Set<EdgeStruct> = []
         let nodes: [XMLNode] = element.children ?? []
         for node in nodes {
             if let child = node as? XMLElement {
                 if let name = child.attribute(forName: Constant.id)?.stringValue {
-                    vertexes.insert(name)
+                    vertexes.insert(Vertice(id: name))
                 }
                 if let source = child.attribute(forName: Constant.source)?.stringValue {
                     if let target = child.attribute(forName: Constant.target)?.stringValue {
-                        edges.insert(EdgeStruct(source: source, target: target))
+                        var childDirected = directed
+                        if let directedString = child.attribute(forName: Constant.directed)?.stringValue {
+                            childDirected = Directed.create(rawValue: directedString)
+                        }
+                        edges.insert(EdgeStruct(source: source, target: target, directed: childDirected))
                     }
                 }
             }
         }
-        return Graph(vertices: Array(vertexes), edges: Array(edges), directed: directed)
+        return Graph(vertices: vertexes, edges: edges, directed: directed)
+    }
+
+    private func setupGraphCustomData(from element: XMLElement?) -> Graph {
+        guard let element = element else { return .empty }
+        let directed: Directed = Directed.create(rawValue: element.attribute(forName: Constant.edgeDefault)?.stringValue)
+        var vertexes: Set<Vertice> = []
+        var edges: Set<EdgeStruct> = []
+        let nodes: [XMLNode] = element.children ?? []
+        for node in nodes {
+            if let child = node as? XMLElement {
+                if let name = child.attribute(forName: Constant.id)?.stringValue {
+                    
+                    vertexes.insert(Vertice(id: name))
+                }
+                if let source = child.attribute(forName: Constant.source)?.stringValue {
+                    if let target = child.attribute(forName: Constant.target)?.stringValue {
+                        var childDirected = directed
+                        if let directedString = child.attribute(forName: Constant.directed)?.stringValue {
+                            childDirected = Directed.create(rawValue: directedString)
+                        }
+                        edges.insert(EdgeStruct(source: source, target: target, directed: childDirected))
+                    }
+                }
+            }
+        }
+        return Graph(vertices: vertexes, edges: edges, directed: directed)
     }
 
 }

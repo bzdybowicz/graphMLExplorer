@@ -7,35 +7,78 @@
 
 import Foundation
 
+enum DataType: String, CaseIterable {
+    case boolean
+    case int
+    case long
+    case float
+    case double
+    case string
+}
+
+struct GraphCustomData: Equatable, Comparable, Hashable  {
+    static func < (lhs: GraphCustomData, rhs: GraphCustomData) -> Bool {
+        guard let lvalue = lhs.value else {
+            return true
+        }
+        guard let rvalue = rhs.value else {
+            return false
+        }
+        return lvalue < rvalue
+    }
+
+    let key: String
+    let value: String?
+    let valueDataType: DataType?
+}
+
+struct Vertice: Equatable, Comparable, Hashable {
+    static func < (lhs: Vertice, rhs: Vertice) -> Bool {
+        lhs.id < rhs.id
+    }
+
+    let id: String
+    let data: GraphCustomData?
+
+    init(id: String, data: GraphCustomData? = nil) {
+        self.id = id
+        self.data = data
+    }
+}
+
 struct Graph {
 
     static let empty = Graph(vertices: [], edges: [], directed: .undirected)
-    let edges: [EdgeStruct]
-    var vertices: [String]
+    let edges: Set<EdgeStruct>
+    var vertices: Set<Vertice>
     let directed: Directed
 
     var edgeCount: Int { edges.count }
 
-    init(vertices: [String], edges: [EdgeStruct], directed: Directed) {
+    init(vertices: Set<Vertice>, edges: Set<EdgeStruct>, directed: Directed) {
         self.vertices = vertices
         self.edges = edges
         self.directed = directed
     }
 
-    func neighborsForVertex(_ vertex: String) -> [String] {
-        var neighbors: [String] = []
+    func neighborsForVertex(_ vertice: Vertice) -> Set<Vertice> {
+        var neighbors: Set<Vertice> = []
         for edge in edges {
-            if edge.source == vertex {
-                neighbors.append(edge.target)
-            } else if edge.target == vertex {
-                neighbors.append(edge.source)
+            if edge.source == vertice.id {
+                if let vertice = (vertices.first { $0.id == edge.target }) {
+                    neighbors.insert(vertice)
+                }
+            } else if edge.target == vertice.id && edge.directed == .undirected {
+                if let vertice = (vertices.first { $0.id == edge.source}) {
+                    neighbors.insert(vertice)
+                }
             }
         }
         return neighbors
     }
 
-    func vertexInGraph(vertex: String) -> Bool {
-        vertices.firstIndex(of: vertex) != nil
+    func vertexInGraph(vertice: Vertice) -> Bool {
+        vertices.firstIndex { $0.id == vertice.id } != nil
     }
 
 }
@@ -43,4 +86,13 @@ struct Graph {
 struct EdgeStruct: Hashable {
     let source: String
     let target: String
+    let directed: Directed
+    let graphCustomData: GraphCustomData?
+
+    init(source: String, target: String, directed: Directed, graphCustomData: GraphCustomData? = nil) {
+        self.source = source
+        self.target = target
+        self.directed = directed
+        self.graphCustomData = graphCustomData
+    }
 }

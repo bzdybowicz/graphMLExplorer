@@ -26,6 +26,7 @@
 		7F5226D92A55C84F0082475D /* UnweightedGraphLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5226D82A55C84F0082475D /* UnweightedGraphLoader.swift */; };
 		7F5226DC2A55C8CE0082475D /* SwiftyXMLParser in Frameworks */ = {isa = PBXBuildFile; productRef = 7F5226DB2A55C8CE0082475D /* SwiftyXMLParser */; };
 		7F5226E42A5600A90082475D /* GraphNodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5226E32A5600A90082475D /* GraphNodeView.swift */; };
+		7F6EFE4C2A6555EC00CCBAD9 /* GraphTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6EFE4B2A6555EC00CCBAD9 /* GraphTests.swift */; };
 		7F73A24F2A61596C00CCDA70 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 7F73A24E2A61596C00CCDA70 /* SnapshotTesting */; };
 		7F73A2512A61681900CCDA70 /* GraphViewSnapshotsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F73A2502A61681800CCDA70 /* GraphViewSnapshotsTests.swift */; };
 		7F73A2532A61817A00CCDA70 /* TimeMeasure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F73A2522A61817A00CCDA70 /* TimeMeasure.swift */; };
@@ -79,6 +80,7 @@
 		7F5226D52A55C70D0082475D /* sample.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = sample.xml; sourceTree = SOURCE_ROOT; };
 		7F5226D82A55C84F0082475D /* UnweightedGraphLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnweightedGraphLoader.swift; sourceTree = "<group>"; };
 		7F5226E32A5600A90082475D /* GraphNodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphNodeView.swift; sourceTree = "<group>"; };
+		7F6EFE4B2A6555EC00CCBAD9 /* GraphTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphTests.swift; sourceTree = "<group>"; };
 		7F73A2502A61681800CCDA70 /* GraphViewSnapshotsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewSnapshotsTests.swift; sourceTree = "<group>"; };
 		7F73A2522A61817A00CCDA70 /* TimeMeasure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeMeasure.swift; sourceTree = "<group>"; };
 		7FCC81F02A5C33AE0022C243 /* GraphViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewState.swift; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 				7F5226B62A557BC00082475D /* GraphMLExplorerTests.swift */,
 				7F2F51DE2A614B5C00A99AB8 /* FileLoaderTests.swift */,
 				7F73A2502A61681800CCDA70 /* GraphViewSnapshotsTests.swift */,
+				7F6EFE4B2A6555EC00CCBAD9 /* GraphTests.swift */,
 			);
 			path = GraphMLExplorerTests;
 			sourceTree = "<group>";
@@ -407,6 +410,7 @@
 				7F3294CF2A640B3D00AB9251 /* GraphMLParserTests.swift in Sources */,
 				7FE86D1E2A64462D0084A7E7 /* GraphMLFuziParserTests.swift in Sources */,
 				7F5226B72A557BC00082475D /* GraphMLExplorerTests.swift in Sources */,
+				7F6EFE4C2A6555EC00CCBAD9 /* GraphTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

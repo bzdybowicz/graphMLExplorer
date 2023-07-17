@@ -38,12 +38,12 @@ enum NestLevel: Int {
 
 final class GraphNode: Identifiable, ObservableObject {
     let id = UUID()
-    let label: String
+    let vertice: Vertice
     let neighbors: [GraphNode]
     let nestLevel: NestLevel
 
-    init(label: String, nestLevel: NestLevel, neighbors: [GraphNode]) {
-        self.label = label
+    init(vertice: Vertice, nestLevel: NestLevel, neighbors: [GraphNode]) {
+        self.vertice = vertice
         self.neighbors = neighbors
         self.nestLevel = nestLevel
     }

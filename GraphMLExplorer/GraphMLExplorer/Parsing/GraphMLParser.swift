@@ -82,24 +82,23 @@ struct GraphMLParser: GraphMLParserProtocol {
         }
         let directed: Directed = Directed.create(rawValue: element.attributes[Constant.edgeDefault])
 
-        var vertexes: Set<String> = []
+        var vertexes: Set<Vertice> = []
         var edges: Set<EdgeStruct> = []
 
         for child in element.childElements {
             if child.name == Constant.node {
                 if let name = child.attributes[Constant.id] {
-                    vertexes.insert(name)
+                    vertexes.insert(Vertice(id: name))
                 }
             } else if child.name == Constant.edge {
                 if let source = child.attributes[Constant.source] {
                     if let target = child.attributes[Constant.target] {
-                        edges.insert(EdgeStruct(source: source, target: target))
-
+                        edges.insert(EdgeStruct(source: source, target: target, directed: directed))
                     }
                 }
             }
         }
-        return Graph(vertices: Array(vertexes), edges: Array(edges), directed: directed)
+        return Graph(vertices: vertexes, edges: edges, directed: directed)
     }
 
 }

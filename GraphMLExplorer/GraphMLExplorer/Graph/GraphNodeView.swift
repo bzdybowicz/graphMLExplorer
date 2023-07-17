@@ -18,7 +18,7 @@ struct GraphNodeView: View {
 
     var body: some View {
         ZStack {
-            Text(node.label)
+            Text(node.vertice.id)
                 .font(.body)
                 .foregroundColor(.white)
                 .fixedSize()
@@ -28,12 +28,12 @@ struct GraphNodeView: View {
         .cornerRadius(4)
         .onTapGesture {
             print("SELECT")
-            state.selectVertex(vertex: node.label)
+            state.selectVertex(vertice: node.vertice)
         }
 
-        ForEach(node.neighbors, id: \.label) { value in
+        ForEach(node.neighbors, id: \.vertice.id) { value in
             GraphNodeLayoutWrapperView(layoutType: node.nestLevel.layoutType,
-                                       node: GraphNode(label: value.label,
+                                       node: GraphNode(vertice: value.vertice,
                                                        nestLevel: node.nestLevel.next,
                                                        neighbors: value.neighbors),
                                        state: state)
