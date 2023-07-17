@@ -50,6 +50,8 @@ struct GraphMLCoreFoundationParser: GraphMLParserProtocol {
         let directed: Directed = Directed.create(rawValue: element.attribute(forName: XMLConstant.edgeDefault)?.stringValue)
         var vertexes: Set<Vertice> = []
         var edges: Set<EdgeStruct> = []
+        var hyperEdges: Set<HyperEdge> = []
+        var hyperIndex = 0
         let nodes: [XMLNode] = element.children ?? []
         for node in nodes {
             if let child = node as? XMLElement {
@@ -63,12 +65,19 @@ struct GraphMLCoreFoundationParser: GraphMLParserProtocol {
                         }
                         edges.insert(EdgeStruct(source: source, target: target, directed: childDirected))
                     }
+                } else if child.name == XMLConstant.hyperEdge {
+                    var nodes: Set<String> = []
+                    for childOfChild in child.elements(forName: XMLConstant.endpoint) {
+                        if let node = childOfChild.attribute(forName: XMLConstant.node)?.stringValue {
+                            nodes.insert(node)
+                        }
+                    }
+                    hyperEdges.insert(HyperEdge(nodes: nodes, index: hyperIndex))
+                    hyperIndex += 1
                 }
-            } else {
-                print("!!! NO")
             }
         }
-        return Graph(vertices: vertexes, edges: edges, directed: directed)
+        return Graph(vertices: vertexes, edges: edges, directed: directed, hyperEdges: hyperEdges)
     }
 
     private func setupGraphCustomData(from element: XMLElement?, keys: [XMLElement]) -> Graph {

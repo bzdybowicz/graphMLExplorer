@@ -54,7 +54,8 @@ struct Vertice: Equatable, Comparable, Hashable {
 }
 
 struct HyperEdge: Equatable, Hashable {
-    let nodes: [String]
+    let nodes: Set<String>
+    let index: Int
 }
 
 struct Graph {

@@ -97,9 +97,9 @@ xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdr
         XCTAssertEqual(graph, Graph(vertices: vertices,
                                     edges: edges,
                                     directed: .undirected,
-                                    hyperEdges: [HyperEdge(nodes: ["n0, n1, n2"]),
-                                                 HyperEdge(nodes: ["n3", "n4", "n5", "n6"]),
-                                                 HyperEdge(nodes: ["n1", "n3"])]))
+                                    hyperEdges: [HyperEdge(nodes: ["n0", "n1", "n2"], index: 0),
+                                                 HyperEdge(nodes: ["n3", "n4", "n5", "n6"], index: 1),
+                                                 HyperEdge(nodes: ["n1", "n3"], index: 2)]))
     }
 
     func testGraphWithIdsInEdges() {

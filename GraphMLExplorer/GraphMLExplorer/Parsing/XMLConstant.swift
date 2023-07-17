@@ -21,4 +21,6 @@ enum XMLConstant {
     static let data = "data"
     static let attrName = "attr.name"
     static let attrType = "attr.type"
+    static let hyperEdge = "hyperedge"
+    static let endpoint = "endpoint"
 }

@@ -16,6 +16,7 @@ extension Graph: Equatable {
         let edges = lhs.edges == rhs.edges
         let customData = lhs.graphCustomData == rhs.graphCustomData
         let hyperedges = lhs.hyperEdges == rhs.hyperEdges
+        print("hyperedges \(hyperedges)")
         return vertices && directed && edges && customData && hyperedges
     }
 }
