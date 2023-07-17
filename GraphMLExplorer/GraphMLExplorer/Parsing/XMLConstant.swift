@@ -18,4 +18,7 @@ enum XMLConstant {
     static let edgeDefault = "edgedefault"
     static let key = "key"
     static let id = "id"
+    static let data = "data"
+    static let attrName = "attr.name"
+    static let attrType = "attr.type"
 }

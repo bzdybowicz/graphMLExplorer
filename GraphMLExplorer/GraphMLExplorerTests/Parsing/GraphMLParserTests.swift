@@ -11,18 +11,9 @@ import XCTest
 
 extension Graph: Equatable {
     public static func == (lhs: Self, rhs: Self) -> Bool {
-        let vertices = Set(lhs.vertices) == Set(rhs.vertices)
+        let vertices = lhs.vertices == rhs.vertices
         let directed = lhs.directed == rhs.directed
-        let edges = Set(lhs.edges) == Set(rhs.edges)
-        print("LHS count \(lhs.vertices.count), rhs \(rhs.vertices.count)")
-        print("Vertices \(vertices), directed \(directed), edges \(edges)")
-        let array = Array(lhs.edges).sorted { e1, e2 in
-            e1.source > e2.source
-        }
-        let array2 = Array(rhs.edges).sorted { e1, e2 in
-            e1.source > e2.source
-        }
-        print("A1 \(array), A2 \(array2)")
+        let edges = lhs.edges == rhs.edges
         return vertices && directed && edges
     }
 }

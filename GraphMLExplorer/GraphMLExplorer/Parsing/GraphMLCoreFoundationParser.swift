@@ -25,7 +25,8 @@ struct GraphMLCoreFoundationParser: GraphMLParserProtocol {
         let graphMLElement = element
         let keys = getKeys(graphMLElement: graphMLElement)
         let graphElement = getGraphElement(element: graphMLElement)
-        let graph = keys.isEmpty ? setupGraph(from: graphElement) : setupGraphCustomData(from: graphElement)
+        // Prevent multiple condition checks for no reason.
+        let graph = keys.isEmpty ? setupGraph(from: graphElement) : setupGraphCustomData(from: graphElement, keys: keys)
         TimeMeasure.instance.event(.parserRestDone)
         return graph
     }
@@ -67,17 +68,27 @@ struct GraphMLCoreFoundationParser: GraphMLParserProtocol {
         return Graph(vertices: vertexes, edges: edges, directed: directed)
     }
 
-    private func setupGraphCustomData(from element: XMLElement?) -> Graph {
+    private func setupGraphCustomData(from element: XMLElement?, keys: [XMLElement]) -> Graph {
         guard let element = element else { return .empty }
         let directed: Directed = Directed.create(rawValue: element.attribute(forName: XMLConstant.edgeDefault)?.stringValue)
         var vertexes: Set<Vertice> = []
         var edges: Set<EdgeStruct> = []
         let nodes: [XMLNode] = element.children ?? []
+        var customDataTemplate: [String: GraphCustomData] = [:]
+        for key in keys {
+            let name = key.attribute(forName: XMLConstant.attrName)?.stringValue
+            let type = key.attribute(forName: XMLConstant.attrType)?.stringValue
+            if let id = key.attribute(forName: XMLConstant.id)?.stringValue {
+                customDataTemplate[id] = (GraphCustomData(key: id,
+                                                          dataName: name,
+                                                          value: nil,
+                                                          valueDataType: DataType.create(xmlString: type)))
+            }
+        }
         for node in nodes {
             if let child = node as? XMLElement {
                 if let name = child.attribute(forName: XMLConstant.id)?.stringValue {
-                    
-                    vertexes.insert(Vertice(id: name))
+                    vertexes.insert(Vertice(id: name, data: customData(element: child, customDataTemplate: customDataTemplate)))
                 }
                 if let source = child.attribute(forName: XMLConstant.source)?.stringValue {
                     if let target = child.attribute(forName: XMLConstant.target)?.stringValue {
@@ -85,12 +96,34 @@ struct GraphMLCoreFoundationParser: GraphMLParserProtocol {
                         if let directedString = child.attribute(forName: XMLConstant.directed)?.stringValue {
                             childDirected = Directed.create(graphRawValue: directedString)
                         }
-                        edges.insert(EdgeStruct(source: source, target: target, directed: childDirected))
+                        edges.insert(EdgeStruct(source: source,
+                                                target: target,
+                                                directed: childDirected,
+                                                graphCustomData: customData(element: child,
+                                                                            customDataTemplate: customDataTemplate)))
                     }
                 }
             }
         }
-        return Graph(vertices: vertexes, edges: edges, directed: directed)
+        return Graph(vertices: vertexes,
+                     edges: edges,
+                     directed: directed,
+                     graphCustomData: customData(element: element,
+                                                 customDataTemplate: customDataTemplate))
+    }
+
+    private func customData(element: XMLElement, customDataTemplate: [String: GraphCustomData]) -> [GraphCustomData] {
+        var customData: [GraphCustomData] = []
+        for dataChild in element.elements(forName: XMLConstant.data) {
+            if let key = dataChild.attribute(forName: XMLConstant.key)?.stringValue {
+                let template = customDataTemplate[key]
+                customData.append(GraphCustomData(key: key,
+                                                  dataName: template?.dataName,
+                                                  value: dataChild.stringValue,
+                                                  valueDataType: template?.valueDataType))
+            }
+        }
+        return customData
     }
 
 }

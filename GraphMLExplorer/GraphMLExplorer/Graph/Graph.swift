@@ -14,6 +14,12 @@ enum DataType: String, CaseIterable {
     case float
     case double
     case string
+    case unknown
+
+    static func create(xmlString: String?) -> DataType {
+        guard let xmlString = xmlString else { return .unknown}
+        return DataType(rawValue: xmlString) ?? .unknown
+    }
 }
 
 struct GraphCustomData: Equatable, Comparable, Hashable  {
@@ -28,6 +34,7 @@ struct GraphCustomData: Equatable, Comparable, Hashable  {
     }
 
     let key: String
+    let dataName: String?
     let value: String?
     let valueDataType: DataType?
 }
@@ -38,9 +45,9 @@ struct Vertice: Equatable, Comparable, Hashable {
     }
 
     let id: String
-    let data: GraphCustomData?
+    let data: [GraphCustomData]
 
-    init(id: String, data: GraphCustomData? = nil) {
+    init(id: String, data: [GraphCustomData] = []) {
         self.id = id
         self.data = data
     }
@@ -52,13 +59,14 @@ struct Graph {
     let edges: Set<EdgeStruct>
     var vertices: Set<Vertice>
     let directed: Directed
-
+    let graphCustomData: [GraphCustomData]
     var edgeCount: Int { edges.count }
 
-    init(vertices: Set<Vertice>, edges: Set<EdgeStruct>, directed: Directed) {
+    init(vertices: Set<Vertice>, edges: Set<EdgeStruct>, directed: Directed, graphCustomData: [GraphCustomData] = []) {
         self.vertices = vertices
         self.edges = edges
         self.directed = directed
+        self.graphCustomData = graphCustomData
     }
 
     func neighborsForVertex(_ vertice: Vertice) -> Set<Vertice> {
@@ -87,9 +95,9 @@ struct EdgeStruct: Hashable {
     let source: String
     let target: String
     let directed: Directed
-    let graphCustomData: GraphCustomData?
+    let graphCustomData: [GraphCustomData]
 
-    init(source: String, target: String, directed: Directed, graphCustomData: GraphCustomData? = nil) {
+    init(source: String, target: String, directed: Directed, graphCustomData: [GraphCustomData] = []) {
         self.source = source
         self.target = target
         self.directed = directed
