@@ -20,3 +20,4 @@ Next goals:
 5. Try to asses or quickly POC if going through xml string without any lib could lead to effective time gains.
 6. First check direct usage of libxml2.
 7. Take advantage of additional parse information to optimize.
+8. Graph/RepoTracked/PerformanceReport1 contains some of past performance results that led to following choices (xml parsing etc.). 
