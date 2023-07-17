@@ -17,10 +17,9 @@
 		7F5226A72A557BBE0082475D /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5226A62A557BBE0082475D /* GraphView.swift */; };
 		7F5226A92A557BC00082475D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F5226A82A557BC00082475D /* Assets.xcassets */; };
 		7F5226AD2A557BC00082475D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F5226AC2A557BC00082475D /* Preview Assets.xcassets */; };
-		7F5226B72A557BC00082475D /* GraphMLExplorerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5226B62A557BC00082475D /* GraphMLExplorerTests.swift */; };
 		7F5226C12A557BC10082475D /* GraphMLExplorerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5226C02A557BC10082475D /* GraphMLExplorerUITests.swift */; };
 		7F5226C32A557BC10082475D /* GraphMLExplorerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5226C22A557BC10082475D /* GraphMLExplorerUITestsLaunchTests.swift */; };
-		7F5226D12A55C56E0082475D /* GraphMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5226D02A55C56E0082475D /* GraphMLParser.swift */; };
+		7F5226D12A55C56E0082475D /* SwiftyXMLGraphMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5226D02A55C56E0082475D /* SwiftyXMLGraphMLParser.swift */; };
 		7F5226D32A55C5AE0082475D /* FileLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5226D22A55C5AE0082475D /* FileLoader.swift */; };
 		7F5226D62A55C70E0082475D /* sample.xml in Resources */ = {isa = PBXBuildFile; fileRef = 7F5226D52A55C70D0082475D /* sample.xml */; };
 		7F5226D92A55C84F0082475D /* UnweightedGraphLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5226D82A55C84F0082475D /* UnweightedGraphLoader.swift */; };
@@ -74,11 +73,10 @@
 		7F5226AA2A557BC00082475D /* GraphMLExplorer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GraphMLExplorer.entitlements; sourceTree = "<group>"; };
 		7F5226AC2A557BC00082475D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7F5226B22A557BC00082475D /* GraphMLExplorerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GraphMLExplorerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7F5226B62A557BC00082475D /* GraphMLExplorerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphMLExplorerTests.swift; sourceTree = "<group>"; };
 		7F5226BC2A557BC10082475D /* GraphMLExplorerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GraphMLExplorerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F5226C02A557BC10082475D /* GraphMLExplorerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphMLExplorerUITests.swift; sourceTree = "<group>"; };
 		7F5226C22A557BC10082475D /* GraphMLExplorerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphMLExplorerUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		7F5226D02A55C56E0082475D /* GraphMLParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphMLParser.swift; sourceTree = "<group>"; };
+		7F5226D02A55C56E0082475D /* SwiftyXMLGraphMLParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyXMLGraphMLParser.swift; sourceTree = "<group>"; };
 		7F5226D22A55C5AE0082475D /* FileLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileLoader.swift; sourceTree = "<group>"; };
 		7F5226D52A55C70D0082475D /* sample.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = sample.xml; sourceTree = SOURCE_ROOT; };
 		7F5226D82A55C84F0082475D /* UnweightedGraphLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnweightedGraphLoader.swift; sourceTree = "<group>"; };
@@ -189,7 +187,6 @@
 			isa = PBXGroup;
 			children = (
 				7F3294CD2A640B2A00AB9251 /* Parsing */,
-				7F5226B62A557BC00082475D /* GraphMLExplorerTests.swift */,
 				7F2F51DE2A614B5C00A99AB8 /* FileLoaderTests.swift */,
 				7F73A2502A61681800CCDA70 /* GraphViewSnapshotsTests.swift */,
 				7F6EFE4B2A6555EC00CCBAD9 /* GraphTests.swift */,
@@ -209,7 +206,7 @@
 		7F5226CF2A55C5620082475D /* Parsing */ = {
 			isa = PBXGroup;
 			children = (
-				7F5226D02A55C56E0082475D /* GraphMLParser.swift */,
+				7F5226D02A55C56E0082475D /* SwiftyXMLGraphMLParser.swift */,
 				7FE86D172A6436190084A7E7 /* GraphMLCoreFoundationParser.swift */,
 				7FE86D192A64426C0084A7E7 /* GraphMLFuziParser.swift */,
 				7F6EFE4D2A65635700CCBAD9 /* XMLConstant.swift */,
@@ -407,7 +404,7 @@
 				7FE86D182A6436190084A7E7 /* GraphMLCoreFoundationParser.swift in Sources */,
 				7F2F51DB2A6132F000A99AB8 /* GraphNodeLayoutWrapperView.swift in Sources */,
 				7F2F51D92A61312500A99AB8 /* RoundedRectangleModifier.swift in Sources */,
-				7F5226D12A55C56E0082475D /* GraphMLParser.swift in Sources */,
+				7F5226D12A55C56E0082475D /* SwiftyXMLGraphMLParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,7 +418,6 @@
 				7FE86D1C2A6446030084A7E7 /* GraphMLCoreFoundationParserTests.swift in Sources */,
 				7F3294CF2A640B3D00AB9251 /* GraphMLParserTests.swift in Sources */,
 				7FE86D1E2A64462D0084A7E7 /* GraphMLFuziParserTests.swift in Sources */,
-				7F5226B72A557BC00082475D /* GraphMLExplorerTests.swift in Sources */,
 				7F6EFE4C2A6555EC00CCBAD9 /* GraphTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -41,7 +41,7 @@ enum Directed: String {
     }
 }
 
-struct GraphMLParser: GraphMLParserProtocol {
+struct SwiftyXMLGraphMLParser: GraphMLParserProtocol {
 
     func parse(xmlString: String) -> Graph {
         guard let data = xmlString.data(using: .utf8) else {
