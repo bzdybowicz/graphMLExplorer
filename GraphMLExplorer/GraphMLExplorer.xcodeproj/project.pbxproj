@@ -34,9 +34,9 @@
 		7F7AE0342A65B59F000A3B07 /* 10000edgeMin3edgeMax4.xml in Resources */ = {isa = PBXBuildFile; fileRef = 7F7AE0332A65B59F000A3B07 /* 10000edgeMin3edgeMax4.xml */; };
 		7FCC81F12A5C33AE0022C243 /* GraphViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCC81F02A5C33AE0022C243 /* GraphViewState.swift */; };
 		7FE86D162A6434830084A7E7 /* Fuzi in Frameworks */ = {isa = PBXBuildFile; productRef = 7FE86D152A6434830084A7E7 /* Fuzi */; };
-		7FE86D182A6436190084A7E7 /* GraphMLCoreFoundationParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE86D172A6436190084A7E7 /* GraphMLCoreFoundationParser.swift */; };
+		7FE86D182A6436190084A7E7 /* GraphMLFoundationParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE86D172A6436190084A7E7 /* GraphMLFoundationParser.swift */; };
 		7FE86D1A2A64426C0084A7E7 /* GraphMLFuziParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE86D192A64426C0084A7E7 /* GraphMLFuziParser.swift */; };
-		7FE86D1C2A6446030084A7E7 /* GraphMLCoreFoundationParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE86D1B2A6446030084A7E7 /* GraphMLCoreFoundationParserTests.swift */; };
+		7FE86D1C2A6446030084A7E7 /* GraphMLFoundationParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE86D1B2A6446030084A7E7 /* GraphMLFoundationParserTests.swift */; };
 		7FE86D1E2A64462D0084A7E7 /* GraphMLFuziParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE86D1D2A64462D0084A7E7 /* GraphMLFuziParserTests.swift */; };
 		7FE86D202A6462DD0084A7E7 /* 10edgeMin1edgeMax34datatypes.xml in Resources */ = {isa = PBXBuildFile; fileRef = 7FE86D1F2A6462DD0084A7E7 /* 10edgeMin1edgeMax34datatypes.xml */; };
 		7FE86D242A65441C0084A7E7 /* 10edgeMin1edgeMax27customvalues.xml in Resources */ = {isa = PBXBuildFile; fileRef = 7FE86D232A65441C0084A7E7 /* 10edgeMin1edgeMax27customvalues.xml */; };
@@ -88,9 +88,9 @@
 		7F7AE0312A65B46E000A3B07 /* GraphMLCFParserPerformanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphMLCFParserPerformanceTests.swift; sourceTree = "<group>"; };
 		7F7AE0332A65B59F000A3B07 /* 10000edgeMin3edgeMax4.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = 10000edgeMin3edgeMax4.xml; path = ../../Graphs/RepoTracked/10000edgeMin3edgeMax4.xml; sourceTree = "<group>"; };
 		7FCC81F02A5C33AE0022C243 /* GraphViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewState.swift; sourceTree = "<group>"; };
-		7FE86D172A6436190084A7E7 /* GraphMLCoreFoundationParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphMLCoreFoundationParser.swift; sourceTree = "<group>"; };
+		7FE86D172A6436190084A7E7 /* GraphMLFoundationParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphMLFoundationParser.swift; sourceTree = "<group>"; };
 		7FE86D192A64426C0084A7E7 /* GraphMLFuziParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphMLFuziParser.swift; sourceTree = "<group>"; };
-		7FE86D1B2A6446030084A7E7 /* GraphMLCoreFoundationParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphMLCoreFoundationParserTests.swift; sourceTree = "<group>"; };
+		7FE86D1B2A6446030084A7E7 /* GraphMLFoundationParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphMLFoundationParserTests.swift; sourceTree = "<group>"; };
 		7FE86D1D2A64462D0084A7E7 /* GraphMLFuziParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphMLFuziParserTests.swift; sourceTree = "<group>"; };
 		7FE86D1F2A6462DD0084A7E7 /* 10edgeMin1edgeMax34datatypes.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = 10edgeMin1edgeMax34datatypes.xml; sourceTree = SOURCE_ROOT; };
 		7FE86D232A65441C0084A7E7 /* 10edgeMin1edgeMax27customvalues.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = 10edgeMin1edgeMax27customvalues.xml; path = ../../Graphs/RepoTracked/10edgeMin1edgeMax27customvalues.xml; sourceTree = "<group>"; };
@@ -128,7 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				7F3294CE2A640B3D00AB9251 /* GraphMLParserTests.swift */,
-				7FE86D1B2A6446030084A7E7 /* GraphMLCoreFoundationParserTests.swift */,
+				7FE86D1B2A6446030084A7E7 /* GraphMLFoundationParserTests.swift */,
 				7FE86D1D2A64462D0084A7E7 /* GraphMLFuziParserTests.swift */,
 				7F7AE0312A65B46E000A3B07 /* GraphMLCFParserPerformanceTests.swift */,
 			);
@@ -207,7 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				7F5226D02A55C56E0082475D /* SwiftyXMLGraphMLParser.swift */,
-				7FE86D172A6436190084A7E7 /* GraphMLCoreFoundationParser.swift */,
+				7FE86D172A6436190084A7E7 /* GraphMLFoundationParser.swift */,
 				7FE86D192A64426C0084A7E7 /* GraphMLFuziParser.swift */,
 				7F6EFE4D2A65635700CCBAD9 /* XMLConstant.swift */,
 			);
@@ -401,7 +401,7 @@
 				7F5226D32A55C5AE0082475D /* FileLoader.swift in Sources */,
 				7FCC81F12A5C33AE0022C243 /* GraphViewState.swift in Sources */,
 				7F5226D92A55C84F0082475D /* UnweightedGraphLoader.swift in Sources */,
-				7FE86D182A6436190084A7E7 /* GraphMLCoreFoundationParser.swift in Sources */,
+				7FE86D182A6436190084A7E7 /* GraphMLFoundationParser.swift in Sources */,
 				7F2F51DB2A6132F000A99AB8 /* GraphNodeLayoutWrapperView.swift in Sources */,
 				7F2F51D92A61312500A99AB8 /* RoundedRectangleModifier.swift in Sources */,
 				7F5226D12A55C56E0082475D /* SwiftyXMLGraphMLParser.swift in Sources */,
@@ -415,7 +415,7 @@
 				7F73A2512A61681900CCDA70 /* GraphViewSnapshotsTests.swift in Sources */,
 				7F7AE0322A65B46E000A3B07 /* GraphMLCFParserPerformanceTests.swift in Sources */,
 				7F2F51DF2A614B5C00A99AB8 /* FileLoaderTests.swift in Sources */,
-				7FE86D1C2A6446030084A7E7 /* GraphMLCoreFoundationParserTests.swift in Sources */,
+				7FE86D1C2A6446030084A7E7 /* GraphMLFoundationParserTests.swift in Sources */,
 				7F3294CF2A640B3D00AB9251 /* GraphMLParserTests.swift in Sources */,
 				7FE86D1E2A64462D0084A7E7 /* GraphMLFuziParserTests.swift in Sources */,
 				7F6EFE4C2A6555EC00CCBAD9 /* GraphTests.swift in Sources */,
