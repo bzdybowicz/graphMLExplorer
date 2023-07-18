@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct GraphMLCoreFoundationParser: GraphMLParserProtocol {
+struct GraphMLFoundationParser: GraphMLParserProtocol {
 
     func parse(xmlString: String) -> Graph {
         TimeMeasure.instance.event(.parserStart)
@@ -56,21 +56,39 @@ struct GraphMLCoreFoundationParser: GraphMLParserProtocol {
         for node in nodes {
             if let child = node as? XMLElement {
                 if child.name == XMLConstant.node, let name = child.attribute(forName: XMLConstant.id)?.stringValue {
-                    vertexes.insert(Vertice(id: name))
+                    vertexes.insert(Vertice(id: name, ports: ports(element: child)))
                 } else if child.name == XMLConstant.edge, let source = child.attribute(forName: XMLConstant.source)?.stringValue {
                     if let target = child.attribute(forName: XMLConstant.target)?.stringValue {
                         var childDirected = directed
                         if let directedString = child.attribute(forName: XMLConstant.directed)?.stringValue {
                             childDirected = Directed.create(rawValue: directedString)
                         }
-                        edges.insert(EdgeStruct(source: source, target: target, directed: childDirected))
+                        var edgeSourcePort: Port?
+                        var edgeTargetPort: Port?
+                        if let sourcePortString = child.attribute(forName: XMLConstant.sourcePort)?.stringValue {
+                            edgeSourcePort = Port(name: sourcePortString)
+                        }
+                        if let edgeTargetString = child.attribute(forName: XMLConstant.targetPort)?.stringValue {
+                            edgeTargetPort = Port(name: edgeTargetString)
+                        }
+                        edges.insert(EdgeStruct(source: source,
+                                                target: target,
+                                                directed: childDirected,
+                                                sourcePort: edgeSourcePort,
+                                                targetPort: edgeTargetPort))
                     }
                 } else if child.name == XMLConstant.hyperEdge {
-                    var nodes: Set<String> = []
+                    var nodes: Set<HyperedgeNode> = []
                     for childOfChild in child.elements(forName: XMLConstant.endpoint) {
+                        var childNodeName: String = ""
+                        var port: Port?
                         if let node = childOfChild.attribute(forName: XMLConstant.node)?.stringValue {
-                            nodes.insert(node)
+                            childNodeName = node
                         }
+                        if let portName = childOfChild.attribute(forName: XMLConstant.port)?.stringValue {
+                            port = Port(name: portName)
+                        }
+                        nodes.insert(HyperedgeNode(id: childNodeName, port: port))
                     }
                     hyperEdges.insert(HyperEdge(nodes: nodes, index: hyperIndex))
                     hyperIndex += 1
@@ -100,7 +118,9 @@ struct GraphMLCoreFoundationParser: GraphMLParserProtocol {
         for node in nodes {
             if let child = node as? XMLElement {
                 if let name = child.attribute(forName: XMLConstant.id)?.stringValue {
-                    vertexes.insert(Vertice(id: name, data: customData(element: child, customDataTemplate: customDataTemplate)))
+                    vertexes.insert(Vertice(id: name, data: customData(element: child,
+                                                                       customDataTemplate: customDataTemplate),
+                                            ports: ports(element: child)))
                 }
                 if let source = child.attribute(forName: XMLConstant.source)?.stringValue {
                     if let target = child.attribute(forName: XMLConstant.target)?.stringValue {
@@ -108,11 +128,21 @@ struct GraphMLCoreFoundationParser: GraphMLParserProtocol {
                         if let directedString = child.attribute(forName: XMLConstant.directed)?.stringValue {
                             childDirected = Directed.create(graphRawValue: directedString)
                         }
+                        var edgeSourcePort: Port?
+                        var edgeTargetPort: Port?
+                        if let sourcePortString = child.attribute(forName: XMLConstant.sourcePort)?.stringValue {
+                            edgeSourcePort = Port(name: sourcePortString)
+                        }
+                        if let edgeTargetString = child.attribute(forName: XMLConstant.targetPort)?.stringValue {
+                            edgeTargetPort = Port(name: edgeTargetString)
+                        }
                         edges.insert(EdgeStruct(source: source,
                                                 target: target,
                                                 directed: childDirected,
                                                 graphCustomData: customData(element: child,
-                                                                            customDataTemplate: customDataTemplate)))
+                                                                            customDataTemplate: customDataTemplate),
+                                                sourcePort: edgeSourcePort,
+                                                targetPort: edgeTargetPort))
                     }
                 }
             }
@@ -122,6 +152,16 @@ struct GraphMLCoreFoundationParser: GraphMLParserProtocol {
                      directed: directed,
                      graphCustomData: customData(element: element,
                                                  customDataTemplate: customDataTemplate))
+    }
+
+    private func ports(element: XMLElement) -> Set<Port> {
+        var ports: Set<Port> = []
+        for dataChild in element.elements(forName: XMLConstant.port) {
+            if let name = dataChild.attribute(forName: XMLConstant.name)?.stringValue {
+                ports.insert(Port(name: name))
+            }
+        }
+        return ports
     }
 
     private func customData(element: XMLElement, customDataTemplate: [String: GraphCustomData]) -> [GraphCustomData] {

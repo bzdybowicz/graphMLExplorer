@@ -23,4 +23,8 @@ enum XMLConstant {
     static let attrType = "attr.type"
     static let hyperEdge = "hyperedge"
     static let endpoint = "endpoint"
+    static let port = "port"
+    static let name = "name"
+    static let sourcePort = "sourceport"
+    static let targetPort = "targetport"
 }

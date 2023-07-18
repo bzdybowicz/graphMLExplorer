@@ -14,7 +14,7 @@ final class GraphMLsParsersPerformanceTests: XCTestCase {
     func test() {
         measure {
             let fileLoader = FileLoader()
-            let sut = GraphMLCoreFoundationParser()
+            let sut = GraphMLFoundationParser()
             guard let string = try? fileLoader.loadAppBundleFile(xmlName: "10000edgeMin3edgeMax4") else {
                 XCTFail("File error!")
                 return

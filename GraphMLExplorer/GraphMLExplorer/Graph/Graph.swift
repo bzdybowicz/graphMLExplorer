@@ -46,16 +46,32 @@ struct Vertice: Equatable, Comparable, Hashable {
 
     let id: String
     let data: [GraphCustomData]
+    let ports: Set<Port>
 
-    init(id: String, data: [GraphCustomData] = []) {
+    init(id: String, data: [GraphCustomData] = [], ports: Set<Port> = []) {
         self.id = id
         self.data = data
+        self.ports = ports
     }
 }
 
-struct HyperEdge: Equatable, Hashable {
-    let nodes: Set<String>
+struct HyperEdge: Hashable {
+    let nodes: Set<HyperedgeNode>
     let index: Int
+}
+
+struct HyperedgeNode: Hashable {
+    let id: String
+    let port: Port?
+
+    init(id: String, port: Port? = nil) {
+        self.id = id
+        self.port = port
+    }
+}
+
+struct Port: Hashable {
+    let name: String
 }
 
 struct Graph {
@@ -64,6 +80,7 @@ struct Graph {
     let edges: Set<EdgeStruct>
     var vertices: Set<Vertice>
     let hyperEdges: Set<HyperEdge>
+    let ports: Set<Port>
     let directed: Directed
     let graphCustomData: [GraphCustomData]
     var edgeCount: Int { edges.count }
@@ -72,11 +89,13 @@ struct Graph {
          edges: Set<EdgeStruct>,
          directed: Directed,
          hyperEdges: Set<HyperEdge> = [],
-         graphCustomData: [GraphCustomData] = []) {
+         graphCustomData: [GraphCustomData] = [],
+         ports: Set<Port> = []) {
         self.vertices = vertices
         self.edges = edges
         self.directed = directed
         self.hyperEdges = hyperEdges
+        self.ports = ports
         self.graphCustomData = graphCustomData
     }
 
@@ -106,12 +125,22 @@ struct EdgeStruct: Hashable {
     let source: String
     let target: String
     let directed: Directed
+    let sourcePort: Port?
+    let targetPort: Port?
     let graphCustomData: [GraphCustomData]
 
-    init(source: String, target: String, directed: Directed, graphCustomData: [GraphCustomData] = []) {
+    init(source: String,
+         target: String,
+         directed: Directed,
+         graphCustomData: [GraphCustomData] = [],
+         sourcePort: Port? = nil,
+         targetPort: Port? = nil
+    ) {
         self.source = source
         self.target = target
         self.directed = directed
         self.graphCustomData = graphCustomData
+        self.sourcePort = sourcePort
+        self.targetPort = targetPort
     }
 }

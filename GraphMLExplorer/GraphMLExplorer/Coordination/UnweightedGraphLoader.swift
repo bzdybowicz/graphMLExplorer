@@ -30,7 +30,7 @@ struct UnweightedGraphLoader: UnweightedGraphLoaderProtocol {
     private let subject = PassthroughSubject<GraphData, Never>()
 
     init(fileLoader: FileLoadProtocol = FileLoader(),
-         graphParser: GraphMLParserProtocol = GraphMLCoreFoundationParser()) {
+         graphParser: GraphMLParserProtocol = GraphMLFoundationParser()) {
         self.fileLoader = fileLoader
         self.graphParser = graphParser
     }
